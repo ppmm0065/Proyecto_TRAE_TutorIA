@@ -1,0 +1,33 @@
+# Entornos virtuales
+.venv/
+venv/
+
+# Archivos de caché de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de configuración de IDEs
+.vscode/
+.idea/
+
+# Archivos generados por la aplicación
+instance/
+uploads/
+seguimiento.db
+faiss_index_multi/
+faiss_index_followups/
+*.log
+
+# Archivos de respaldo o temporales
+__init___original.py
+*.bak
+
+# Archivos de datos locales (opcional, descomentar si se quieren ignorar)
+# *.csv
+# *.xlsx
+# *.json
+
+# Archivo de variables de entorno (¡nunca subir a un repositorio público!)
+.env

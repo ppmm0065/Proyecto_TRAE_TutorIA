@@ -1,0 +1,756 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Análisis Detallado: {{ nombre_entidad | fix_course_characters }}
+{% endblock %}
+
+{% block head_extra %}
+<style>
+    /* Estilos base */
+    .heatmap-table { border-collapse: collapse; width: 100%; font-size: 0.8rem; table-layout: fixed; }
+    .heatmap-table th, .heatmap-table td { border: 1px solid #e2e8f0; padding: 0.4rem 0.3rem; text-align: center; white-space: nowrap; }
+    .heatmap-table th { background-color: #f8fafc; font-weight: 600; position: sticky; top: 0; z-index: 10; }
+    .heatmap-table td.student-name { text-align: left; font-weight: 500; white-space: normal; min-width: 120px; }
+    .history-item-container { margin-bottom: 2rem; padding: 1.5rem; background-color: #ffffff; border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb; }
+    .history-item-content { background-color: #f9fafb; padding: 1rem; border-radius: 0.375rem; border: 1px solid #e5e7eb; margin-bottom: 1rem; }
+    .observation-list-item { padding-bottom: 0.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; }
+    .observation-list-item:last-child { border-bottom: none; }
+    .usage-details { transition: all 0.3s ease-in-out; }
+
+    /* Estilos para el botón de IA */
+    .ai-consultation-button {
+        background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+        color: white;
+        font-weight: 600;
+        padding: 0.75rem 1.5rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        white-space: nowrap;
+    }
+
+    .ai-consultation-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+    }
+
+    .ai-consultation-button .icon {
+        font-size: 1.25rem;
+        transition: transform 0.3s ease;
+    }
+
+    .ai-consultation-button:hover .icon {
+        transform: scale(1.1);
+    }
+
+    /* Mejoras en el header del dashboard */
+    .dashboard-header {
+        display: grid;
+        grid-template-columns: 2fr auto 1fr;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .entity-title {
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .entity-subtitle {
+        color: #6b7280;
+        margin-top: 0.25rem;
+        font-size: 1.125rem;
+    }
+
+    /* --- Estilos compartidos con Chat Avanzado para resaltar insights --- */
+    .ai-response-card { border: 1px solid #e5e7eb; border-radius: 12px; background: #ffffff; box-shadow: 0 8px 20px -8px rgba(0,0,0,0.25); overflow: hidden; }
+    .ai-card-header { display: flex; align-items: center; gap: .5rem; padding: .75rem 1rem; background: linear-gradient(135deg, #6366f1 0%, #22c55e 100%); color: #fff; font-weight: 600; }
+    .ai-card-header i { opacity: .9; }
+    .ai-card-body { padding: 1rem 1.125rem; }
+
+    .ai-card-body.prose h2 { font-size: 1.05rem; color: #0f172a; border-left: 3px solid #6366f1; padding-left: .5rem; margin-top: .75rem; }
+    .ai-card-body.prose h3 { font-size: 1rem; color: #334155; margin-top: .5rem; }
+    .ai-card-body.prose p { line-height: 1.6; color: #334155; }
+    .ai-card-body.prose ul { margin-top: .5rem; margin-bottom: .5rem; }
+    .ai-card-body.prose li { padding-left: .15rem; }
+    .ai-card-body.prose blockquote { background: #f8fafc; border-left: 4px solid #0ea5e9; padding: .6rem .8rem; margin: .6rem 0; border-radius: 8px; color: #0f172a; }
+    .ai-card-body table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+    .ai-card-body table th, .ai-card-body table td { border: 1px solid #e2e8f0; padding: .45rem .5rem; }
+    .ai-card-body table th { background: #f1f5f9; }
+
+    .callout { border-radius: 10px; padding: .75rem .9rem; margin: .6rem 0; border: 1px solid; }
+    .callout .title { font-weight: 700; display: inline-flex; align-items: center; gap: .4rem; margin-bottom: .25rem; }
+    .callout-action { background: #f5f3ff; border-color: #c4b5fd; }
+    .callout-action .title { color: #6d28d9; }
+    .callout-fundamentacion { background: #ecfeff; border-color: #22d3ee; }
+    .callout-fundamentacion .title { color: #0ea5e9; }
+    .callout-recomendacion { background: #f0fdf4; border-color: #86efac; }
+    .callout-recomendacion .title { color: #16a34a; }
+    .callout-objetivo { background: #fff7ed; border-color: #fdba74; }
+    .callout-objetivo .title { color: #ea580c; }
+
+    .insight-title { display: flex; align-items: center; gap: .5rem; background: #eef2ff; border-left: 4px solid #6366f1; padding: .5rem .75rem; border-radius: 8px; font-weight: 700; color: #1f2937; margin: .6rem 0; }
+    .insight-badge { font-size: .75rem; background: #6366f1; color: #fff; border-radius: 9999px; padding: .1rem .5rem; }
+    .intro-title { font-weight: 600; color: #1f2937; margin: .4rem 0; }
+    .insight-block { background: #eef2ff; border-left: 6px solid #6366f1; border-radius: 12px; padding: .55rem .8rem; margin: .75rem 0; }
+    .insight-header { display: flex; align-items: center; gap: .6rem; font-weight: 700; color: #111827; }
+    .insight-header .insight-badge { font-size: .8rem; background: #6366f1; color: #fff; border-radius: 9999px; padding: .15rem .6rem; display: inline-flex; align-items: center; gap: .35rem; }
+    .insight-content { margin-top: .5rem; }
+
+    /* Burbuja del usuario igual que en Chat Avanzado */
+    .user-message .user-bubble { background: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%); color:#fff; }
+</style>
+{% endblock %}
+
+{% block panel_left_content %}
+    <h2 class="text-xl font-semibold text-slate-800 mb-2">Detalle de Entidad</h2>
+    <div class="bg-white p-4 rounded-lg shadow-md border border-slate-200 mb-6">
+        <p class="text-sm text-slate-600">Tipo:</p>
+        <p class="font-semibold text-indigo-700 break-words capitalize">{{ tipo_entidad }}</p>
+        <p class="text-sm text-slate-600 mt-2">Nombre:</p>
+        <p class="font-semibold text-indigo-700 break-words">{{ nombre_entidad | fix_course_characters }}</p>
+    </div>
+    
+    <hr class="my-6 border-slate-300">
+    <h3 class="text-md font-semibold text-slate-700 mb-3">Navegación y Acciones</h3>
+    <ul class="space-y-2 text-sm">
+        <li><a href="{{ url_for('main.index') }}" class="text-slate-600 hover:text-indigo-600 flex items-center"><i class="fas fa-arrow-left mr-2"></i> Volver al Inicio</a></li>
+        {% if datos_dashboard and not error_message %}
+        <li>
+            <a href="{{ url_for('main.generar_reporte_360', tipo_entidad=tipo_entidad, valor_codificado=nombre_entidad) }}"
+               class="mt-3 block w-full text-left bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2.5 px-4 rounded-lg">
+                <i class="fas fa-file-invoice mr-2"></i> Generar Nuevo Reporte 360
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+{% endblock panel_left_content %}
+
+{% block panel_center_content %}
+<div class="flex flex-col h-full">
+    <div class="flex items-center justify-between mb-6 gap-4">
+        <div class="flex-grow">
+            <h1 class="text-2xl md:text-3xl font-bold text-slate-800">
+                Análisis Detallado: <span class="text-indigo-600">{{ nombre_entidad | fix_course_characters }}</span>
+            </h1>
+            <div class="flex items-center gap-4 mt-2">
+                <p class="text-lg text-slate-600">({{ tipo_entidad|capitalize }})</p>
+                <a href="#chat-detalle-section" class="ai-consultation-button group inline-flex items-center">
+                    <div class="icon-container flex items-center justify-center">
+                        <svg class="w-5 h-5 icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                            <g transform="translate(0,0) scale(1.875)">
+                                <path d="M9.6 2.4l1.5 3.6 3.6 1.5-3.6 1.5-1.5 3.6-1.5-3.6-3.6-1.5 3.6-1.5 1.5-3.6z"/>
+                            </g>
+                            <g transform="translate(3,6) scale(1.5)">
+                                <path d="M0 0l0.8 1.8 1.8 0.8-1.8 0.8-0.8 1.8-0.8-1.8-1.8-0.8 1.8-0.8L0 0z"/>
+                            </g>
+                            <g transform="translate(3,11) scale(1.5)">
+                                <path d="M0 0l0.8 1.8 1.8 0.8-1.8 0.8-0.8 1.8-0.8-1.8-1.8-0.8 1.8-0.8L0 0z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <span>Chat Avanzado</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="flex-shrink-0">
+            <a href="javascript:window.print()" 
+               class="text-slate-500 hover:text-indigo-600 transition-all duration-300 transform hover:scale-110" 
+               title="Imprimir/Guardar como PDF">
+                <i class="fas fa-print text-xl"></i>
+            </a>
+        </div>
+    </div>
+
+    {% if error_message %}
+        {# --- INICIO: MODIFICACIÓN Tarjeta de Error --- #}
+        {# Convertimos la alerta en una tarjeta 'bg-slate-50' que contiene la alerta 'bg-red-50' #}
+        <div class="bg-slate-50 p-6 rounded-lg shadow-md border border-slate-200 mb-8">
+            <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4" role="alert">
+                <p class="font-bold">Error</p>
+                <p>{{ error_message }}</p>
+            </div>
+        </div>
+        {# --- FIN: MODIFICACIÓN --- #}
+    {% elif datos_dashboard %}
+        <div id="data-visualization-section" class="mb-8 space-y-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                {# Sección de Resumen de Métricas (título principal) #}
+                <div class="mb-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-6 text-center">Resumen de Métricas</h2>
+                {% if tipo_entidad == 'alumno' and datos_dashboard.info_general %}
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {# Tarjetas de métricas con fondo blanco y sombras #}
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 card-left-shadow transition-shadow duration-300 flex flex-col items-center justify-center">
+                            <p class="text-xs font-medium text-slate-600 uppercase mb-1">Promedio</p>
+                            <p class="text-3xl font-bold text-slate-800">{{ datos_dashboard.info_general.Promedio | nota_un_decimal }}</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 card-left-shadow transition-shadow duration-300 flex flex-col items-center justify-center">
+                            <p class="text-xs font-medium text-slate-600 uppercase mb-1">Curso</p>
+                            <p class="text-2xl font-bold text-slate-800">{{ datos_dashboard.info_general.Curso | fix_course_characters }}</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 card-left-shadow transition-shadow duration-300 flex flex-col items-center justify-center">
+                            <p class="text-xs font-medium text-slate-600 uppercase mb-1">Edad</p>
+                            <p class="text-3xl font-bold text-slate-800">{{ datos_dashboard.info_general.Edad }}</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 card-left-shadow transition-shadow duration-300 flex flex-col items-center justify-center">
+                            <p class="text-xs font-medium text-slate-600 uppercase mb-1">Peor Asignatura</p>
+                            <p class="text-lg font-bold text-slate-800 text-center">{{ datos_dashboard.info_general.AsignaturaMenorPromedio | replace('´','é') | replace('º','á') | fix_course_characters }}</p>
+                        </div>
+                    </div>
+                {% elif tipo_entidad == 'curso' and datos_dashboard.info_general %}
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 card-left-shadow"><p class="text-xs text-slate-600 uppercase">Nº Alumnos</p><p class="text-2xl font-bold text-slate-800">{{ datos_dashboard.info_general.NumeroAlumnos }}</p></div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 card-left-shadow"><p class="text-xs text-slate-600 uppercase">Prom. Curso</p><p class="text-2xl font-bold text-slate-800">{{ datos_dashboard.info_general.PromedioGeneralCurso | nota_un_decimal }}</p></div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 card-left-shadow"><p class="text-xs text-slate-600 uppercase">Peor Asignatura</p><p class="text-lg font-bold text-slate-800">{{ datos_dashboard.info_general.PeorAsignatura | replace('´','é') | replace('º','á') | fix_course_characters }}</p></div>
+                        {% if datos_dashboard.info_general.AlumnoPeorPromedioNombre and datos_dashboard.info_general.AlumnoPeorPromedioNombre != 'N/A' %}
+                            <a href="{{ url_for('main.detalle_entidad', tipo_entidad='alumno', valor_codificado=datos_dashboard.info_general.AlumnoPeorPromedioNombre) }}" class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 card-left-shadow transition block"><p class="text-xs text-slate-600 uppercase">Alumno Menor Prom.</p><p class="text-base font-bold text-slate-800 break-words">{{ datos_dashboard.info_general.AlumnoPeorPromedioNombre | replace('´','é') | replace('º','á') | fix_course_characters }} ({{ datos_dashboard.info_general.AlumnoPeorPromedioValor | nota_un_decimal }})</p></a>
+                        {% else %}
+                            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 card-left-shadow"><p class="text-xs text-slate-600 uppercase">Alumno Menor Prom.</p><p class="text-base font-bold text-slate-800">{{ datos_dashboard.info_general.AlumnoPeorPromedioNombre | replace('´','é') | replace('º','á') | fix_course_characters }}</p></div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+            {# --- FIN: MODIFICACIÓN Tarjeta de KPIs --- #}
+
+            {# Sección de Gráficos #}
+                <div class="mt-8">
+                {% if tipo_entidad == 'alumno' %}
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        {% if datos_dashboard.notas_asignaturas_original and datos_dashboard.notas_asignaturas_original.labels %}
+                        <div class="bg-white p-4 rounded-xl shadow-lg border border-slate-200">
+                            <div class="p-2">
+                                <canvas id="alumnoNotasOriginalChart" style="height: 340px;"></canvas>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if datos_dashboard.student_vs_course_level_chart_data and datos_dashboard.student_vs_course_level_chart_data.labels %}
+                        <div class="bg-white p-4 rounded-xl shadow-lg border border-slate-200">
+                            <div class="p-2">
+                                <canvas id="studentComparativeChart" style="height: 340px;"></canvas>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                {% elif tipo_entidad == 'curso' %}
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                        {% if datos_dashboard.distribucion_promedios_curso and datos_dashboard.distribucion_promedios_curso.labels %}
+                        <div class="bg-white p-4 rounded-lg shadow-sm border"><h3 class="text-center font-semibold text-slate-700 mb-2">Distribución de Promedios</h3><canvas id="cursoDistribucionChart" style="max-height: 250px;"></canvas></div>
+                        {% endif %}
+                        {% if datos_dashboard.course_vs_level_chart_data and datos_dashboard.course_vs_level_chart_data.labels %}
+                        <div class="bg-white p-4 rounded-lg shadow-sm border"><h3 class="text-center font-semibold text-slate-700 mb-2">Promedio del Curso vs. Nivel</h3><canvas id="courseVsLevelChart" style="max-height: 250px;"></canvas></div>
+                        {% endif %}
+                    </div>
+                    {% if datos_dashboard.heatmap_data %}
+                    {# El heatmap se mantiene en su propia sub-tarjeta 'bg-white' para legibilidad #}
+                    <div class="bg-white p-4 rounded-lg shadow-sm border mt-6"><h3 class="text-center font-semibold text-slate-700 mb-3">Mapa de Calor de Calificaciones</h3><div class="overflow-x-auto custom-scrollbar"><table class="heatmap-table"><thead><tr><th class="student-name">Estudiante</th>{% for header in datos_dashboard.heatmap_data.subject_headers %}<th>{{ header }}</th>{% endfor %}</tr></thead><tbody>{% for row in datos_dashboard.heatmap_data.student_performance_rows %}<tr><td class="student-name">{{ row.student_name }}</td>{% for grade in row.grades %}<td class="{{ grade.color_class }}">{{ grade.score_display }}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div></div>
+                    {% endif %}
+                
+                {% else %}
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 text-yellow-700 p-4" role="alert">
+                        <p class="font-bold">Información no disponible</p>
+                        <p>No se pudieron cargar los datos para el dashboard de <span class="font-medium">{{ nombre_entidad | fix_course_characters }}</span>.</p>
+                    </div>
+                {% endif %}
+            </div>
+             {# --- FIN: MODIFICACIÓN Tarjeta de Gráficos --- #}
+
+            {# --- SECCIÓN de Historial eliminada (duplicada en Biblioteca) --- #}
+        </div>
+
+        {# --- SECCIÓN DE CHAT CON GEMINI (DETALLE) --- #}
+        {# --- INICIO: MODIFICACIÓN Tarjeta de Chat --- #}
+        {# Convertimos la sección de chat en una tarjeta 'bg-slate-50' #}
+  <div id="chat-detalle-section" class="mt-auto pt-6 border-t border-slate-200 flex flex-col">
+            <h2 class="text-xl font-semibold text-slate-800 mb-3">
+                <i class="fas fa-comments mr-2 text-teal-500"></i>Consultar sobre <span class="text-teal-600">{{ nombre_entidad | fix_course_characters }}</span>
+            </h2>
+            <div class="bg-slate-50 p-4 rounded-lg shadow-md border border-slate-200">
+                {# El historial de chat (bg-slate-50) se vuelve 'bg-white' o 'bg-slate-100' para contrastar #}
+    <div id="chat-history-detalle" class="flex-grow h-auto min-h-[50vh] md:min-h-[60vh] overflow-y-auto mb-3 p-3 border border-slate-200 rounded-md bg-white custom-scrollbar space-y-4">
+                    {% for message in chat_history_detalle %}
+                        {% if message.user %}
+                            <div class="user-message text-right mb-2"><p class="inline-block user-bubble text-white text-sm rounded-lg px-3 py-2 shadow"><strong>Tú:</strong> {{ message.user | replace('\n', '<br>') | safe }}</p></div>
+                        {% elif message.gemini_html %}
+                             <div class="gemini-message text-left mb-2 flex flex-col items-start"><div class="inline-block bg-transparent text-slate-800 text-sm rounded-lg px-3 py-2 shadow">{{ message.gemini_html | safe }}</div></div>
+                        {% endif %}
+                    {% else %}
+                        <p class="text-sm text-slate-500 italic">Inicia la conversación para analizar a {{ nombre_entidad | fix_course_characters }}...</p>
+                    {% endfor %}
+                </div>
+                <form id="chat-form-detalle" class="flex gap-3">
+                    <textarea id="chat-prompt-detalle" name="user_prompt_detalle" rows="2" class="flex-grow px-3 py-2 border border-slate-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="Ej: ¿Cuáles son las fortalezas de este {{ tipo_entidad }}?"></textarea>
+                    <button type="submit" id="send-chat-detalle" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-5 rounded-lg transition-transform transform hover:scale-105"><i class="fas fa-paper-plane"></i></button>
+                </form>
+                <!-- Botón Volver (oculto inicialmente, se mostrará tras recibir respuesta) -->
+                <div id="chat-return-controls" class="mt-3 hidden flex justify-end">
+                    <a href="#data-visualization-section" id="volver-dashboard-btn"
+                       class="inline-flex items-center gap-2 bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold py-2 px-4 rounded-lg">
+                        <i class="fas fa-arrow-left"></i>
+                        Volver al Dashboard de {{ tipo_entidad|capitalize }}
+                    </a>
+                </div>
+            </div>
+        </div>
+        {# --- FIN: MODIFICACIÓN Tarjeta de Chat --- #}
+    {% endif %}
+</div>
+{% endblock panel_center_content %}
+
+{% block scripts %}
+    {{ super() }} 
+    <script>
+    const TIPO_ENTIDAD_DETALLE = {{ tipo_entidad|tojson }};
+    const NOMBRE_ENTIDAD_DETALLE = {{ (nombre_entidad | fix_course_characters) | tojson }};
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- INICIALIZACIÓN DE GRÁFICOS (SIN CAMBIOS) ---
+        // ... (código de gráficos existente aquí, sin modificaciones) ...
+            {% if tipo_entidad == 'alumno' and datos_dashboard.notas_asignaturas_original and datos_dashboard.notas_asignaturas_original.labels %}
+                try {
+                    const alumnoNotasOriginalCtx = document.getElementById('alumnoNotasOriginalChart')?.getContext('2d');
+                    if (alumnoNotasOriginalCtx) { 
+                        new Chart(alumnoNotasOriginalCtx, { 
+                            type: 'bar', 
+                            data: { 
+                                labels: {{ datos_dashboard.notas_asignaturas_original.labels|tojson|safe }}, 
+                                datasets: [{ 
+                                    label: 'Calificación Individual', 
+                                    data: {{ datos_dashboard.notas_asignaturas_original.scores|tojson|safe }}, 
+                                    backgroundColor: 'rgba(99, 102, 241, 0.8)', // Indigo más visible
+                                    borderColor: 'rgb(79, 70, 229)', // Indigo más oscuro
+                                    borderWidth: 2,
+                                    borderRadius: 4,
+                                    maxBarThickness: 40
+                                }] 
+                            }, 
+                            options: { 
+                                responsive: true, 
+                                maintainAspectRatio: false, 
+                                scales: { 
+                                    y: { 
+                                        beginAtZero: true, 
+                                        suggestedMax: 7,
+                                        grid: {
+                                            color: 'rgba(226, 232, 240, 0.8)', // Slate-200 con transparencia
+                                            drawBorder: false
+                                        },
+                                        ticks: {
+                                            font: {
+                                                family: "'Inter', sans-serif",
+                                                size: 11
+                                            }
+                                        }
+                                    },
+                                    x: {
+                                        grid: {
+                                            display: false
+                                        },
+                                        ticks: {
+                                            font: {
+                                                family: "'Inter', sans-serif",
+                                                size: 11
+                                            }
+                                        }
+                                    }
+                                }, 
+                                plugins: { 
+                                    legend: { 
+                                        display: false 
+                                    } 
+                                }, 
+                                animation: { 
+                                    duration: 500, 
+                                    easing: 'easeInOutQuart' 
+                                } 
+                            } 
+                        }); 
+                    }
+                } catch (e) { console.error("Error inicializando gráfico de notas originales alumno:", e); }
+                {% if datos_dashboard.student_vs_course_level_chart_data and datos_dashboard.student_vs_course_level_chart_data.labels and datos_dashboard.student_vs_course_level_chart_data.datasets %}
+                try {
+                    const studentComparativeCtx = document.getElementById('studentComparativeChart')?.getContext('2d');
+                    if (studentComparativeCtx) { new Chart(studentComparativeCtx, { type: 'bar', data: { labels: {{ datos_dashboard.student_vs_course_level_chart_data.labels|tojson|safe }}, datasets: {{ datos_dashboard.student_vs_course_level_chart_data.datasets|tojson|safe }} }, options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, suggestedMax: 7, title: { display: true, text: 'Promedio Calificación' } } }, plugins: { legend: { position: 'top' } }, animation: { duration: 500, easing: 'easeInOutQuart' } } }); }
+                } catch (e) { console.error("Error inicializando gráfico comparativo de alumno:", e); }
+                {% endif %}
+            {% endif %}
+            {% if tipo_entidad == 'curso' %}
+                {% if datos_dashboard.distribucion_promedios_curso and datos_dashboard.distribucion_promedios_curso.labels %}
+                    try {
+                        const cursoDistribucionCtx = document.getElementById('cursoDistribucionChart')?.getContext('2d');
+                        if (cursoDistribucionCtx) { new Chart(cursoDistribucionCtx, { type: 'bar', data: { labels: {{ datos_dashboard.distribucion_promedios_curso.labels|tojson|safe }}, datasets: [{ label: 'Nº de Estudiantes', data: {{ datos_dashboard.distribucion_promedios_curso.counts|tojson|safe }}, backgroundColor: ['rgba(255, 99, 132, 0.6)','rgba(255, 159, 64, 0.6)','rgba(255, 206, 86, 0.6)','rgba(75, 192, 192, 0.6)'], borderColor: ['rgba(255, 99, 132, 1)','rgba(255, 159, 64, 1)','rgba(255, 206, 86, 1)','rgba(75, 192, 192, 1)'], borderWidth: 1 }] }, options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y', scales: { x: { beginAtZero: true, title: { display: true, text: 'Cantidad de Estudiantes' } } }, plugins: { legend: { display: false } }, animation: { duration: 500, easing: 'easeInOutQuart' } } }); }
+                    } catch (e) { console.error("Error inicializando gráfico de distribución del curso:", e); }
+                {% endif %}
+                {% if datos_dashboard.promedios_asignaturas_curso_original and datos_dashboard.promedios_asignaturas_curso_original.labels %}
+                     try {
+                        const cursoAsignaturasOriginalCtx = document.getElementById('cursoAsignaturasOriginalChart')?.getContext('2d');
+                        if (cursoAsignaturasOriginalCtx) { new Chart(cursoAsignaturasOriginalCtx, { type: 'bar', data: { labels: {{ datos_dashboard.promedios_asignaturas_curso_original.labels|tojson|safe }}, datasets: [{ label: 'Promedio del Curso (Original)', data: {{ datos_dashboard.promedios_asignaturas_curso_original.scores|tojson|safe }}, backgroundColor: 'rgba(255, 159, 64, 0.6)', borderColor: 'rgba(255, 159, 64, 1)', borderWidth: 1 }] }, options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, suggestedMax: 7 } }, plugins: { legend: { display: false } }, animation: { duration: 500, easing: 'easeInOutQuart' } } }); }
+                    } catch (e) { console.error("Error inicializando gráfico de asignaturas original del curso:", e); }
+                {% endif %}
+                {% if datos_dashboard.course_vs_level_chart_data and datos_dashboard.course_vs_level_chart_data.labels and datos_dashboard.course_vs_level_chart_data.datasets %}
+                try {
+                    const courseVsLevelCtx = document.getElementById('courseVsLevelChart')?.getContext('2d');
+                    if (courseVsLevelCtx) { new Chart(courseVsLevelCtx, { type: 'bar', data: { labels: {{ datos_dashboard.course_vs_level_chart_data.labels|tojson|safe }}, datasets: {{ datos_dashboard.course_vs_level_chart_data.datasets|tojson|safe }} }, options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, suggestedMax: 7, title: { display: true, text: 'Promedio Calificación' } } }, plugins: { legend: { position: 'top' } }, animation: { duration: 500, easing: 'easeInOutQuart' } } }); }
+                } catch (e) { console.error("Error inicializando gráfico comparativo curso vs nivel:", e); }
+                {% endif %}
+                {% if datos_dashboard.all_courses_in_level_chart_data and datos_dashboard.all_courses_in_level_chart_data.labels and datos_dashboard.all_courses_in_level_chart_data.datasets %}
+                try {
+                    const allCoursesInLevelCtx = document.getElementById('allCoursesInLevelChart')?.getContext('2d');
+                    if (allCoursesInLevelCtx) { new Chart(allCoursesInLevelCtx, { type: 'bar', data: { labels: {{ datos_dashboard.all_courses_in_level_chart_data.labels|tojson|safe }}, datasets: {{ datos_dashboard.all_courses_in_level_chart_data.datasets|tojson|safe }} }, options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, suggestedMax: 7, title: { display: true, text: 'Promedio Calificación' } } }, plugins: { legend: { position: 'top' } }, animation: { duration: 500, easing: 'easeInOutQuart' } } }); }
+                } catch (e) { console.error("Error inicializando gráfico desglose de cursos en nivel:", e); }
+                {% endif %}
+            {% endif %}
+
+        // --- INICIO: LÓGICA MODIFICADA PARA CHAT DE DETALLE Y OBSERVACIONES ---
+        const chatFormDetalle = document.getElementById('chat-form-detalle');
+        const chatPromptDetalleInput = document.getElementById('chat-prompt-detalle');
+        const chatHistoryDetalleDiv = document.getElementById('chat-history-detalle');
+        const sendChatDetalleButton = document.getElementById('send-chat-detalle');
+        
+        if (chatPromptDetalleInput && sendChatDetalleButton) {
+            chatPromptDetalleInput.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' && !event.shiftKey) {
+                    event.preventDefault();
+                    sendChatDetalleButton.click();
+                }
+            });
+        }
+
+        function escapeHtml(unsafe) { 
+            if (typeof unsafe !== 'string') return '';
+            return unsafe.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        }
+
+        // Post-proceso visual del HTML de Gemini: tarjetas y callouts (copiado de Chat Avanzado)
+        function enhanceGeminiHtml(originalHtml) {
+            try {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(`<div>${originalHtml}</div>`, 'text/html');
+                const root = doc.body.firstElementChild;
+
+                const keywords = [
+                    { key: /^\s*Acción:/i, cls: 'callout-action', icon: 'fas fa-bolt', title: 'Acción' },
+                    { key: /^\s*Fundamentación:/i, cls: 'callout-fundamentacion', icon: 'fas fa-book-open', title: 'Fundamentación' },
+                    { key: /^\s*Recomendación(es)?:/i, cls: 'callout-recomendacion', icon: 'fas fa-lightbulb', title: 'Recomendación' },
+                    { key: /^\s*Objetivo(s)?:/i, cls: 'callout-objetivo', icon: 'fas fa-bullseye', title: 'Objetivos' }
+                ];
+
+                root.querySelectorAll('p').forEach(p => {
+                    const text = p.textContent || '';
+                    const match = keywords.find(k => k.key.test(text));
+                    if (match) {
+                        const content = text.replace(match.key, '').trim();
+                        const wrapper = doc.createElement('div');
+                        wrapper.className = `callout ${match.cls}`;
+                        wrapper.innerHTML = `<div class="title"><i class="${match.icon}"></i>${match.title}</div><div>${content}</div>`;
+                        p.replaceWith(wrapper);
+                    }
+                });
+
+                const isSectionTitle = (t) => {
+                    if (!t) return false;
+                    const s = t.trim();
+                    if (!s.endsWith(':')) return false;
+                    if (/^(Acción|Fundamentación|Recomendación(?:es)?|Objetivo(?:s)?)\s*:/i.test(s)) return false;
+                    return s.length >= 25;
+                };
+
+                const isIntroTitle = (t) => {
+                    if (!t) return false;
+                    const s = t.trim();
+                    if (!s.endsWith(':')) return false;
+                    const introPatterns = [
+                        /^para\s+/i,
+                        /^se\s+/i,
+                        /se\s+aconsejan\s+las\s+siguintes|se\s+aconsejan\s+las\s+siguientes/i,
+                        /se\s+recomienda(n)?/i,
+                        /a\s+continuación/i,
+                        /con\s+el\s+objetivo\s+de/i,
+                        /con\s+el\s+fin\s+de/i,
+                        /basad[oa]\s+en/i,
+                        /bas[áa]ndonos?\s+en/i,
+                        /en\s+base\s+a/i,
+                        /a\s+partir\s+de/i,
+                        /con\s+base\s+en/i,
+                        /se\s+identifican/i,
+                        /se\s+presentan/i,
+                        /se\s+exponen/i
+                    ];
+                    return introPatterns.some(rx => rx.test(s));
+                };
+
+                root.querySelectorAll('h1, h2, h3, h4, p').forEach(el => {
+                    const text = (el.textContent || '').trim();
+                    if (isIntroTitle(text)) {
+                        const title = text.replace(/:\s*$/, '');
+                        const wrapper = doc.createElement('div');
+                        wrapper.className = 'intro-title';
+                        wrapper.textContent = title;
+                        el.replaceWith(wrapper);
+                    } else if (isSectionTitle(text)) {
+                        const title = text.replace(/:\s*$/, '');
+                        const marker = doc.createElement('div');
+                        marker.className = 'insight-title';
+                        marker.innerHTML = `<span class="insight-badge">💡 Insight</span><span>${title}</span>`;
+                        el.replaceWith(marker);
+                    }
+                });
+
+                let node = root.firstElementChild;
+                while (node) {
+                    if (node.classList && node.classList.contains('insight-title')) {
+                        const block = doc.createElement('div');
+                        block.className = 'insight-block';
+                        const header = doc.createElement('div');
+                        header.className = 'insight-header';
+                        header.innerHTML = node.innerHTML;
+                        const content = doc.createElement('div');
+                        content.className = 'insight-content';
+                        let cursor = node.nextElementSibling;
+                        while (cursor && !(cursor.classList && cursor.classList.contains('insight-title'))) {
+                            const next = cursor.nextElementSibling;
+                            content.appendChild(cursor);
+                            cursor = next;
+                        }
+                        block.appendChild(header);
+                        if (content.children.length > 0) block.appendChild(content);
+                        const replaceTarget = node;
+                        node = block;
+                        root.insertBefore(block, replaceTarget);
+                        root.removeChild(replaceTarget);
+                    }
+                    node = node.nextElementSibling;
+                }
+
+                const card = doc.createElement('div');
+                card.className = 'ai-response-card';
+                const header = doc.createElement('div');
+                header.className = 'ai-card-header';
+                header.innerHTML = '<span>🤖</span> Respuesta de IA';
+                const body = doc.createElement('div');
+                body.className = 'ai-card-body prose prose-sm max-w-none';
+                body.innerHTML = root.innerHTML;
+                card.appendChild(header);
+                card.appendChild(body);
+                return card.outerHTML;
+            } catch (e) {
+                console.warn('enhanceGeminiHtml fallo, devolviendo HTML original:', e);
+                return originalHtml;
+            }
+        }
+
+        // NUEVO: Función para crear el div de información de uso
+        function createUsageInfoDiv(usageData) {
+            if (!usageData || !usageData.total_tokens) return null;
+            const cost = usageData.total_cost || 0;
+            const formattedCost = `US$ ${cost.toLocaleString('en-US', {minimumFractionDigits: 6, maximumFractionDigits: 6})}`;
+
+            const infoDiv = document.createElement('div');
+            infoDiv.className = 'text-xs text-slate-400 mt-2 pl-2 border-l-2 border-slate-200';
+            infoDiv.innerHTML = `
+                <span><i class="fas fa-coins fa-fw"></i> Tokens: ${usageData.input_tokens} subida + ${usageData.output_tokens} bajada = <strong>${usageData.total_tokens}</strong></span>
+                <span class="mx-2">|</span>
+                <span><i class="fas fa-dollar-sign fa-fw"></i> Costo: <strong class="font-semibold text-slate-500">${formattedCost}</strong></span>
+            `;
+            return infoDiv;
+        }
+
+        // NUEVO: Función para actualizar los totales de la sesión en la UI
+        function updateSessionTotals(sessionData) {
+            if (!sessionData) return;
+            const tokensEl = document.getElementById('session-total-tokens');
+            const costEl = document.getElementById('session-total-cost');
+            if (tokensEl) tokensEl.textContent = sessionData.total_tokens.toLocaleString('en-US');
+            if (costEl) costEl.textContent = `US$ ${sessionData.total_cost.toLocaleString('en-US', {minimumFractionDigits: 6, maximumFractionDigits: 6})}`;
+        }
+        
+        if (chatFormDetalle) {
+            chatFormDetalle.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const userPrompt = chatPromptDetalleInput.value.trim();
+                if (!userPrompt) return;
+                
+                // Renderiza el mensaje del usuario
+                const initialPlaceholder = chatHistoryDetalleDiv.querySelector('p.italic');
+                if (initialPlaceholder) initialPlaceholder.remove();
+                const userMessageDiv = document.createElement('div');
+                userMessageDiv.classList.add('user-message', 'text-right', 'mb-2');
+                userMessageDiv.innerHTML = `<p class="inline-block user-bubble text-white text-sm rounded-lg px-3 py-2 shadow"><strong>Tú:</strong> ${escapeHtml(userPrompt).replace(/\n/g, '<br>')}</p>`;
+                chatHistoryDetalleDiv.appendChild(userMessageDiv);
+                chatPromptDetalleInput.value = '';
+                sendChatDetalleButton.disabled = true;
+                sendChatDetalleButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                chatHistoryDetalleDiv.scrollTop = chatHistoryDetalleDiv.scrollHeight;
+                (function(){
+                    let overlay = document.getElementById('global-loading-overlay');
+                    if (!overlay){
+                        overlay = document.createElement('div');
+                        overlay.id = 'global-loading-overlay';
+                        overlay.className = 'fixed inset-0 bg-black/20 flex items-center justify-center z-50 hidden';
+                        overlay.innerHTML = '<div class="bg-white rounded-lg shadow-xl p-4 flex items-center gap-3"><i class="fas fa-spinner fa-spin text-2xl text-indigo-600"></i><span class="text-slate-700">Procesando consulta...</span></div>';
+                        document.body.appendChild(overlay);
+                    }
+                    overlay.classList.remove('hidden');
+                })();
+                
+                fetch('/api/detalle_chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', },
+                    body: JSON.stringify({ tipo_entidad: TIPO_ENTIDAD_DETALLE, nombre_entidad: NOMBRE_ENTIDAD_DETALLE, prompt: userPrompt }),
+                })
+                .then(response => {
+                    sendChatDetalleButton.disabled = false;
+                    sendChatDetalleButton.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar';
+                    if (!response.ok) { return response.json().then(err => { throw new Error(err.error || `Error: ${response.status}`) }); }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.error) { throw new Error(data.error); }
+                    
+                    // Renderiza la respuesta de Gemini
+                    const geminiContainer = document.createElement('div');
+                    geminiContainer.classList.add('gemini-message', 'text-left', 'mb-2', 'flex', 'flex-col', 'items-start');
+                    const geminiBubble = document.createElement('div');
+                    geminiBubble.classList.add('inline-block', 'bg-transparent', 'text-slate-800', 'text-sm', 'rounded-lg', 'px-3', 'py-2', 'shadow');
+                    geminiBubble.innerHTML = enhanceGeminiHtml(data.html_output);
+                    geminiContainer.appendChild(geminiBubble);
+
+                    // Renderiza la información de consumo
+                    const usageInfoDiv = createUsageInfoDiv(data);
+                    if (usageInfoDiv) {
+                        geminiContainer.appendChild(usageInfoDiv);
+                    }
+                    chatHistoryDetalleDiv.appendChild(geminiContainer);
+                    chatHistoryDetalleDiv.scrollTop = chatHistoryDetalleDiv.scrollHeight;
+
+                    // Actualiza los totales de la sesión en la UI
+                    updateSessionTotals(data.consumo_sesion);
+                    const overlay = document.getElementById('global-loading-overlay');
+                    if (overlay) overlay.classList.add('hidden');
+                    
+                    // Ajuste visual: asegurar que el contenedor crezca con el viewport
+                    try {
+                        chatHistoryDetalleDiv.classList.remove('h-64', 'md:h-[40vh]');
+                        chatHistoryDetalleDiv.classList.add('flex-grow', 'h-auto', 'min-h-[50vh]');
+                        const returnControls = document.getElementById('chat-return-controls');
+                        if (returnControls) {
+                            returnControls.classList.remove('hidden');
+                        }
+                    } catch (e) { console.warn('No se pudo expandir el chat o mostrar el botón Volver:', e); }
+                })
+                .catch(error => {
+                    const errorMessageDiv = document.createElement('div');
+                    errorMessageDiv.classList.add('gemini-message', 'text-left', 'mb-2');
+                    errorMessageDiv.innerHTML = `<p class="inline-block bg-red-100 text-red-700 text-sm rounded-lg px-3 py-2 shadow"><strong>Error:</strong> ${escapeHtml(error.message)}</p>`;
+                    chatHistoryDetalleDiv.appendChild(errorMessageDiv);
+                    chatHistoryDetalleDiv.scrollTop = chatHistoryDetalleDiv.scrollHeight;
+                    const overlay = document.getElementById('global-loading-overlay');
+                    if (overlay) overlay.classList.add('hidden');
+                });
+            });
+        }
+
+        // Mejora visual de mensajes existentes renderizados en servidor (aplicar estilo de insights)
+        if (chatHistoryDetalleDiv) {
+            const existingBubbles = chatHistoryDetalleDiv.querySelectorAll('.gemini-message .inline-block');
+            existingBubbles.forEach(b => {
+                try {
+                    const original = b.innerHTML;
+                    b.innerHTML = enhanceGeminiHtml(original);
+                    b.classList.remove('bg-slate-100');
+                    b.classList.add('bg-transparent', 'text-slate-800');
+                } catch (e) { console.warn('No se pudo mejorar mensaje existente:', e); }
+            });
+
+            // Si ya hay mensajes de Gemini renderizados, asegurar crecimiento con viewport y mostrar Volver desde el inicio
+            if (chatHistoryDetalleDiv.querySelector('.gemini-message')) {
+                chatHistoryDetalleDiv.classList.remove('h-64', 'md:h-[40vh]');
+                chatHistoryDetalleDiv.classList.add('flex-grow', 'h-auto', 'min-h-[50vh]');
+                const returnControls = document.getElementById('chat-return-controls');
+                if (returnControls) {
+                    returnControls.classList.remove('hidden');
+                }
+            }
+        }
+        
+        // --- Lógica para formularios de observación en reportes históricos (SIN CAMBIOS) ---
+        // ... (código de observaciones existente aquí, sin modificaciones) ...
+        const formsObservacionHistorica = document.querySelectorAll('.form-agregar-observacion-historica');
+        formsObservacionHistorica.forEach(form => {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const reporteId = this.dataset.reporteId; 
+                const observadorNombre = this.querySelector('input[name="observador_nombre_hist"]').value.trim();
+                const observacionTexto = this.querySelector('textarea[name="observacion_texto_hist"]').value.trim();
+                if (!reporteId || !observadorNombre || !observacionTexto) {
+                    alert('Por favor, complete todos los campos del formulario de observación.'); return;
+                }
+                const payload = {
+                    reporte_360_id: reporteId, observador_nombre: observadorNombre, observacion_texto: observacionTexto,
+                    tipo_entidad: TIPO_ENTIDAD_DETALLE, nombre_entidad: NOMBRE_ENTIDAD_DETALLE
+                };
+                const submitButton = this.querySelector('button[type="submit"]');
+                const notificacionDivHist = document.getElementById(`observacion-guardada-notificacion-${reporteId}`);
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i> Guardando...';
+                if(notificacionDivHist) notificacionDivHist.textContent = '';
+                fetch("{{ url_for('main.api_add_observacion_reporte_360') }}", {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+                })
+                .then(response => {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = '<i class="fas fa-plus mr-1"></i> Guardar';
+                    if (!response.ok) { return response.json().then(err => { throw new Error(err.error || `Error del servidor: ${response.status}`) });}
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.error) { throw new Error(data.error); }
+                    if (notificacionDivHist) {
+                        notificacionDivHist.textContent = data.message || 'Observación guardada.';
+                        notificacionDivHist.className = 'text-xs mt-1 h-3 text-green-600';
+                        setTimeout(() => { notificacionDivHist.textContent = ''; }, 4000);
+                    }
+                    this.querySelector('textarea[name="observacion_texto_hist"]').value = '';
+                    const listaObservacionesDivHist = document.getElementById(`lista-observaciones-reporte-${reporteId}`);
+                    if (listaObservacionesDivHist && data.observaciones) {
+                        renderObservacionesParaReporteHistorico(listaObservacionesDivHist, data.observaciones);
+                    }
+                })
+                .catch(error => {
+                    if (notificacionDivHist) {
+                        notificacionDivHist.textContent = `Error: ${error.message}`;
+                        notificacionDivHist.className = 'text-xs mt-1 h-3 text-red-600';
+                    }
+                });
+            });
+        });
+        function renderObservacionesParaReporteHistorico(listaDiv, observaciones) {
+            listaDiv.innerHTML = ''; 
+            if (observaciones && observaciones.length > 0) {
+                observaciones.forEach(obs => {
+                    const obsItemDiv = document.createElement('div');
+                    obsItemDiv.className = 'observation-list-item'; 
+                    obsItemDiv.innerHTML = `
+                        <p class="text-xs text-slate-500 mb-1">
+                            <i class="far fa-calendar-alt mr-1"></i> ${obs.timestamp}
+                            <span class="mx-1">|</span>
+                            <i class="fas fa-user mr-1"></i> Por: <strong class="font-medium">${escapeHtml(obs.observador_nombre)}</strong>
+                        </p>
+                        <div class="text-sm text-slate-700 prose prose-sm max-w-none">${obs.observacion_html}</div>
+                    `;
+                    listaDiv.appendChild(obsItemDiv);
+                });
+            } else {
+                listaDiv.innerHTML = '<p class="text-sm text-slate-500 italic">No hay observaciones para este reporte.</p>';
+            }
+        }
+    });
+</script>
+{% endblock scripts %}

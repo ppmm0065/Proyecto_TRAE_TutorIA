@@ -1,0 +1,522 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if session.file_summary %}
+        Colegio Nueva Esperanza - {{ session.uploaded_filename }}
+    {% else %}
+        Dashboard Principal
+    {% endif %}
+{% endblock %}
+
+{% block panel_left_content %}
+    {# Este bloque se deja vacío para heredar el nuevo menú de base.html #}
+{% endblock panel_left_content %}
+
+{% block panel_center_content %}
+    {% if session.file_summary %}
+        <div class="flex items-center justify-between mb-8 gap-4">
+            <div class="flex-grow">
+                <h1 class="text-xl md:text-2xl font-bold text-slate-800">Dashboard Académico Escolar</h1>
+                <div class="flex items-center gap-4 mt-2">
+                    <p class="text-lg text-slate-600">Sistema de gestión y seguimiento de estudiantes</p>
+                    <a href="{{ url_for('main.chat_avanzado') }}" class="ai-consultation-button group inline-flex items-center">
+                        <div class="icon-container flex items-center justify-center">
+                            <svg class="w-5 h-5 icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                                <g transform="translate(0,0) scale(1.8)">
+                                    <path d="M9.6 2.4l1.5 3.6 3.6 1.5-3.6 1.5-1.5 3.6-1.5-3.6-3.6-1.5 3.6-1.5 1.5-3.6z"/>
+                                </g>
+                                <g transform="translate(3,6) scale(1.6)">
+                                    <path d="M0 0l0.8 1.8 1.8 0.8-1.8 0.8-0.8 1.8-0.8-1.8-1.8-0.8 1.8-0.8L0 0z"/>
+                                </g>
+                                <g transform="translate(3,11) scale(1.6)">
+                                    <path d="M0 0l0.8 1.8 1.8 0.8-1.8 0.8-0.8 1.8-0.8-1.8-1.8-0.8 1.8-0.8L0 0z"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <span>Chat Avanzado</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {# --- INICIO: MODIFICACIÓN KPIs --- #}
+        {# Cambiado 'bg-white' a 'bg-slate-50', añadido 'border' y mantenido 'shadow-sm' #}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 mb-8">
+            <div class="bg-slate-50 p-5 rounded-xl shadow-sm border border-slate-200 border-l-4 border-blue-500">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-500 uppercase">Total Estudiantes</h3>
+                        <p class="text-3xl font-bold text-slate-800 mt-2">{{ session.file_summary.total_alumnos if session.file_summary else 0 }}</p>
+                    </div>
+                    <div class="bg-blue-100 text-blue-600 rounded-lg p-2">
+                        <i class="fa-solid fa-users text-xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-slate-50 p-5 rounded-xl shadow-sm border border-slate-200 border-l-4 border-purple-500">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-500 uppercase">Promedio General</h3>
+                        <p class="text-3xl font-bold text-slate-800 mt-2">{{ session.file_summary.get('promedio_general') | nota_un_decimal if session.file_summary and session.file_summary.get('promedio_general') != "N/A" else "N/A" }}</p>
+                    </div>
+                    <div class="bg-purple-100 text-purple-600 rounded-lg p-2">
+                        <i class="fa-solid fa-arrow-trend-up text-xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-slate-50 p-5 rounded-xl shadow-sm border border-slate-200 border-l-4 border-cyan-500">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-500 uppercase">Asistencia Promedio</h3>
+                        <p class="text-3xl font-bold text-slate-800 mt-2">{{ "%.0f" | format(session.file_summary.asistencia_promedio_global * 100) if session.file_summary and session.file_summary.asistencia_promedio_global else "0" }}%</p>
+                    </div>
+                     <div class="bg-cyan-100 text-cyan-600 rounded-lg p-2">
+                        <i class="fa-solid fa-calendar-check text-xl"></i>
+                    </div>
+                </div>
+            </div>
+            {% set h = risk_summary.totals.alto if risk_summary else 0 %}
+            {% set m = risk_summary.totals.medio if risk_summary else 0 %}
+            {% set b = risk_summary.totals.bajo if risk_summary else 0 %}
+            {% set t = (h + m + b) %}
+            <a href="{{ url_for('main.riesgos') }}" class="bg-slate-50 p-5 rounded-xl shadow-sm border border-slate-200 border-l-4 border-rose-500 block">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-500 uppercase">Estudiantes en Riesgo</h3>
+                        <p class="text-3xl font-bold text-rose-600 mt-2">{{ h }}</p>
+                    </div>
+                    <div class="bg-rose-100 text-rose-600 rounded-lg p-2">
+                        <i class="fa-solid fa-triangle-exclamation text-xl"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {# --- FIN: MODIFICACIÓN KPIs --- #}
+
+        {# --- INICIO: MODIFICACIÓN Alertas --- #}
+        {# Cambiado 'bg-white' a 'bg-slate-50', 'shadow-xl' a 'shadow-md' #}
+        <div class="my-8 p-6 bg-slate-50 rounded-lg shadow-md border border-slate-200">
+            <h2 class="text-xl font-semibold text-slate-800 mb-4 text-center">
+                <i class="fas fa-triangle-exclamation text-red-500 mr-2"></i> Alertas Clave del Establecimiento
+            </h2>
+            <div class="space-y-6">
+                {% if session.file_summary and session.file_summary.advanced_alerts and session.file_summary.advanced_alerts.niveles_bajo_rendimiento %}
+                    <div class="p-4 bg-slate-50 border border-red-200 rounded-lg">
+                        <h3 class="font-semibold text-red-700 mb-2">
+                            <i class="fas fa-chart-line-down mr-1"></i> Niveles con Bajo Rendimiento Significativo
+                        </h3>
+                        <ul class="list-disc list-inside text-sm text-red-600 space-y-1">
+                            {% for alerta in session.file_summary.advanced_alerts.niveles_bajo_rendimiento %}
+                                <li>
+                                    <strong>{{ alerta.nivel }}:</strong> {{ alerta.num_alumnos_bajo_rendimiento }} de {{ alerta.total_alumnos_nivel }} alumnos ({{ alerta.porcentaje_bajo_rendimiento }}) tienen promedio inferior a {{ alerta.umbral_promedio }}.
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                <!-- Cuatro tarjetas uniformes bajo el mismo título -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                    <!-- Alumno con menor rendimiento (General) -->
+                    <div class="bg-white rounded-lg shadow border border-slate-300 transition hover:shadow-md">
+                        {% if session.file_summary and session.file_summary.alumno_menor_promedio and session.file_summary.alumno_menor_promedio.nombre != "N/A" %}
+                            <a href="{{ url_for('main.detalle_entidad', tipo_entidad='alumno', valor_codificado=session.file_summary.alumno_menor_promedio.nombre) }}" class="block p-4 w-full h-full">
+                        {% else %}
+                            <div class="p-4 w-full h-full">
+                        {% endif %}
+                                <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-1 flex items-center">
+                                    <i class="fas fa-arrow-down-short-wide text-slate-500 mr-2"></i> Alumno con Menor Rendimiento (General)
+                                </h3>
+                                {% if session.file_summary and session.file_summary.alumno_menor_promedio and session.file_summary.alumno_menor_promedio.nombre != "N/A" %}
+                                    <p class="text-base font-semibold text-slate-900">{{ session.file_summary.alumno_menor_promedio.nombre }}</p>
+                                    <p class="text-sm text-slate-700">Promedio: {{ session.file_summary.alumno_menor_promedio.promedio | nota_un_decimal if session.file_summary.alumno_menor_promedio.promedio != "N/A" else "N/A" }}</p>
+                                {% else %}
+                                    <p class="text-sm text-slate-700 italic">No disponible.</p>
+                                {% endif %}
+                        {% if session.file_summary and session.file_summary.alumno_menor_promedio and session.file_summary.alumno_menor_promedio.nombre != "N/A" %}
+                            </a>
+                        {% else %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Curso con menor rendimiento (General) -->
+                    <div class="bg-white rounded-lg shadow border border-slate-300 transition hover:shadow-md">
+                        {% if session.file_summary and session.file_summary.curso_menor_promedio and session.file_summary.curso_menor_promedio.nombre != "N/A" %}
+                            <a href="{{ url_for('main.detalle_entidad', tipo_entidad='curso', valor_codificado=session.file_summary.curso_menor_promedio.nombre) }}" class="block p-4 w-full h-full">
+                        {% else %}
+                            <div class="p-4 w-full h-full">
+                        {% endif %}
+                                <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-1 flex items-center">
+                                    <i class="fas fa-chart-simple text-slate-500 mr-2"></i> Curso con Menor Rendimiento (General)
+                                </h3>
+                                {% if session.file_summary and session.file_summary.curso_menor_promedio and session.file_summary.curso_menor_promedio.nombre != "N/A" %}
+                                    <p class="text-base font-semibold text-slate-900">{{ session.file_summary.curso_menor_promedio.nombre | fix_course_characters }}</p>
+                                    <p class="text-sm text-slate-700">Promedio del Curso: {{ session.file_summary.curso_menor_promedio.promedio | nota_un_decimal if session.file_summary.curso_menor_promedio.promedio != "N/A" else "N/A" }}</p>
+                                {% else %}
+                                    <p class="text-sm text-slate-700 italic">No disponible.</p>
+                                {% endif %}
+                        {% if session.file_summary and session.file_summary.curso_menor_promedio and session.file_summary.curso_menor_promedio.nombre != "N/A" %}
+                            </a>
+                        {% else %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Alumnos con menor promedio por nivel (Detalle) -->
+                    <a href="{{ url_for('main.alertas_alumnos_menor_promedio') }}" class="bg-white rounded-lg shadow border border-slate-300 transition hover:shadow-md block p-4 w-full h-full">
+                        <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-1 flex items-center">
+                            <i class="fas fa-chart-line-down text-slate-500 mr-2"></i> Alumnos con Menor Promedio por Nivel (Detalle)
+                        </h3>
+                        <p class="text-sm text-slate-700">Ver tarjetas agrupadas por nivel.</p>
+                    </a>
+
+                    <!-- Alumnos con Observaciones Críticas por nivel (Detalle) -->
+                    <a href="{{ url_for('main.alertas_alumnos_observaciones_criticas') }}" class="bg-white rounded-lg shadow border border-slate-300 transition hover:shadow-md block p-4 w-full h-full">
+                        <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-1 flex items-center">
+                            <i class="fas fa-user-shield text-slate-500 mr-2"></i> Alumnos con Observaciones Críticas por Nivel (Detalle)
+                        </h3>
+                        <p class="text-sm text-slate-700">Ver tarjetas agrupadas por nivel.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {# --- FIN: MODIFICACIÓN Alertas --- #}
+
+
+        {% if session.file_summary and session.file_summary.level_kpis %}
+        {# --- INICIO: MODIFICACIÓN Tabla Nivel --- #}
+        {# Cambiado 'bg-white' a 'bg-slate-50', 'shadow-xl' a 'shadow-md' #}
+        <div class="my-8 p-6 bg-slate-50 rounded-lg shadow-md border border-slate-200">
+            <h2 class="text-xl font-semibold text-slate-800 mb-4 text-center">
+                <i class="fas fa-layer-group text-indigo-500 mr-2"></i> Resumen por Nivel Educativo
+            </h2>
+            <div class="overflow-x-auto custom-scrollbar">
+                <table class="min-w-full divide-y divide-slate-200 text-sm">
+                    <thead class="bg-slate-100"> {# Fondo de a a 'slate-100' para contrastar con la tarjeta 'slate-50' #}
+                        <tr>
+                            <th class="px-4 py-3 text-left font-medium text-slate-600 uppercase tracking-wider">Nivel</th>
+                            <th class="px-4 py-3 text-center font-medium text-slate-600 uppercase tracking-wider">Total Alumnos</th>
+                            <th class="px-4 py-3 text-center font-medium text-slate-600 uppercase tracking-wider">Prom. General (Notas)</th>
+                            {% if session.file_summary and session.file_summary.asistencia_data_available %}
+                            <th class="px-4 py-3 text-center font-medium text-slate-600 uppercase tracking-wider">Asistencia Prom.</th>
+                            {% endif %}
+                            <th class="px-4 py-3 text-left font-medium text-slate-600 uppercase tracking-wider">Curso Menor Prom.</th>
+                            <th class="px-4 py-3 text-left font-medium text-slate-600 uppercase tracking-wider">Curso Menor Asistencia</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-slate-200"> {# Dejamos el fondo de la tabla 'bg-white' para legibilidad #}
+                        {% for nivel, data in (session.file_summary.level_kpis if session.file_summary and session.file_summary.level_kpis else {})|ordenar_niveles_educativos %}
+                        <tr>
+                            <td class="px-4 py-3 whitespace-nowrap font-medium text-slate-800">{{ nivel | fix_course_characters }}</td>
+                            <td class="px-4 py-3 whitespace-nowrap text-center text-slate-700">{{ data.total_alumnos }}</td>
+                            <td class="px-4 py-3 whitespace-nowrap text-center text-slate-700">{{ data.promedio_general_notas | nota_un_decimal }}</td>
+                            {% if session.file_summary and session.file_summary.asistencia_data_available %}
+                            <td class="px-4 py-3 whitespace-nowrap text-center text-slate-700">{{ data.asistencia_promedio }}</td>
+                            {% endif %}
+                            <td class="px-4 py-3 whitespace-nowrap text-slate-700">
+                                {{ data.curso_menor_promedio.nombre | fix_course_characters }} ({{ data.curso_menor_promedio.promedio | nota_un_decimal }})
+                            </td>
+                            <td class="px-4 py-3 whitespace-nowrap text-slate-700">
+                                {% set att = data.curso_menor_asistencia if data.curso_menor_asistencia is defined else {'nombre':'N/A','asistencia':'N/A','asistencia_num': None} %}
+                                {% set low = att and att.asistencia_num is defined and att.asistencia_num and att.asistencia_num < 0.85 %}
+                                <span class="px-2 py-1 rounded {{ 'bg-red-100 text-red-700 font-semibold' if low else 'bg-slate-100 text-slate-700' }}">
+                                    {{ att.nombre | fix_course_characters }} ({{ att.asistencia }})
+                                </span>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="{{ 6 if session.file_summary and session.file_summary.asistencia_data_available else 5 }}" class="px-4 py-3 text-center text-slate-500 italic">No hay datos de niveles para mostrar.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {# --- FIN: MODIFICACIÓN Tabla Nivel --- #}
+        {% endif %}
+
+        {# (Sección "Asistencia Promedio por Curso" eliminada) #}
+        
+        {# --- INICIO: MODIFICACIÓN Gráficos --- #}
+        {# Cambiado 'bg-white' a 'bg-slate-50', añadido 'border' #}
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div class="bg-slate-50 p-6 rounded-lg shadow-sm border border-slate-200">
+                <h3 class="text-lg font-semibold text-slate-800 mb-4">Distribución de Rendimiento Académico</h3>
+                {% if session.file_summary and session.file_summary.average_distribution_data and session.file_summary.average_distribution_data.labels %}
+                    <div><canvas id="rendimientoChart"></canvas></div>
+                    <p class="text-xs text-slate-400 mt-2">Escala de calificaciones: 2.0 (mínimo) - 7.0 (máximo)<br>Nota de aprobación: 4.0</p>
+                {% else %}
+                    <p class="text-center text-slate-500 italic py-10">No hay datos de rendimiento para mostrar.</p>
+                {% endif %}
+            </div>
+            <div class="bg-slate-50 p-6 rounded-lg shadow-sm border border-slate-200">
+                <h3 class="text-lg font-semibold text-slate-800 mb-4">Distribución de Asistencia</h3>
+                 {% if session.file_summary and session.file_summary.attendance_distribution_data and session.file_summary.attendance_distribution_data.labels %}
+                    <div><canvas id="asistenciaChart"></canvas></div>
+                 {% else %}
+                    <p class="text-center text-slate-500 italic py-10">No hay datos de asistencia para mostrar.</p>
+                {% endif %}
+            </div>
+        </div>
+        {# --- FIN: MODIFICACIÓN Gráficos --- #}
+
+        <div class="mb-8">
+            <h3 class="text-md font-semibold text-slate-700 mb-2">Columnas Detectadas:</h3>
+            {# Esta tarjeta ya era 'bg-slate-50', así que se mantiene perfecta #}
+            <p class="text-sm text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200">
+                {{ session.file_summary.column_names | join(', ') if session.file_summary and session.file_summary.column_names else 'No hay columnas disponibles' }}
+            </p>
+        </div>
+        <div class="text-center mb-8">
+             <a href="{{ url_for('main.chat_avanzado') }}" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-lg text-base transition duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 inline-flex items-center">
+                <i class="fas fa-comments mr-2"></i> Ir a Análisis Avanzado con Gemini
+            </a>
+        </div>
+    {% else %}
+        <div class="text-center flex flex-col items-center justify-center h-full">
+            <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="Logo TutorIA360" class="h-24 w-auto mb-6 opacity-80" onerror="this.style.display='none'">
+            <h1 class="text-2xl font-bold text-slate-800 mb-4">Bienvenido a TutorIA360 Dashboard</h1>
+            <p class="text-base text-slate-600 mb-8 max-w-xl">Comienza por cargar un archivo CSV.</p>
+            {# Esta tarjeta ya era 'bg-slate-50', así que se mantiene perfecta #}
+            <div class="bg-slate-50 p-6 rounded-lg border border-slate-200 max-w-md">
+                <h2 class="text-xl font-semibold text-slate-700 mb-3">¿Cómo Empezar?</h2>
+                <ol class="list-decimal list-inside text-left space-y-2 text-slate-600">
+                    <li>Usa el panel izquierdo para cargar tu archivo CSV.</li>
+                    <li>Este panel mostrará un resumen y opciones de análisis.</li>
+<li>Usa el panel derecho para búsquedas específicas.</li>
+                </ol>
+            </div>
+        </div>
+    {% endif %}
+{% endblock panel_center_content %}
+
+{% block panel_right_content %}
+    {{ super() }} 
+{% endblock panel_right_content %}
+
+{% block scripts %}
+    {{ super() }} 
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (!{{ session.file_summary is not none | tojson }}) {
+            return; 
+        }
+
+        // Helper de presentación: nota a 1 decimal, redondeo hacia arriba en .5 y coma como separador
+        function formatNota(n) {
+            if (n === null || n === undefined) return 'N/A';
+            if (typeof n === 'string') {
+                const trimmed = n.trim();
+                if (trimmed.toUpperCase() === 'N/A') return 'N/A';
+                // Permitir coma en entrada
+                n = trimmed.replace(',', '.');
+            }
+            const num = Number(n);
+            if (Number.isNaN(num)) return String(n);
+            const rounded = Math.round(num * 10) / 10; // half-up
+            return rounded.toFixed(1).replace('.', ',');
+        }
+
+        // --- INICIO: NUEVA CONFIGURACIÓN DE GRÁFICOS ---
+
+        // Configuración común para ambos gráficos
+        const chartOptions = {
+            indexAxis: 'y', // <-- Esto hace que las barras sean horizontales
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false // Oculta la leyenda
+                },
+                tooltip: {
+                    backgroundColor: '#1e293b', // Color de fondo del tooltip
+                    titleFont: { size: 14, weight: 'bold' },
+                    bodyFont: { size: 12 },
+                    padding: 10,
+                    cornerRadius: 6
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    grid: {
+                        display: true,
+                        color: '#e2e8f0' // Color de la cuadrícula
+                    },
+                    ticks: {
+                        color: '#64748b' // Color de las etiquetas del eje X
+                    }
+                },
+                y: {
+                    grid: {
+                        display: false // Oculta la cuadrícula del eje Y
+                    },
+                    ticks: {
+                        color: '#334155', // Color de las etiquetas del eje Y
+                        font: {
+                            weight: '500'
+                        }
+                    }
+                }
+            }
+        };
+
+        // 1. Gráfico de Rendimiento Académico
+        {% if session.file_summary and session.file_summary.average_distribution_data and session.file_summary.average_distribution_data.labels %}
+            try {
+                const rendimientoCtx = document.getElementById('rendimientoChart')?.getContext('2d');
+                if (rendimientoCtx) {
+                    new Chart(rendimientoCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: {{ session.file_summary.average_distribution_data.labels | tojson | safe }},
+                            datasets: [{
+                                label: 'Nº de Estudiantes',
+                                data: {{ session.file_summary.average_distribution_data.counts | tojson | safe }},
+                                backgroundColor: ['#ef4444', '#f97316', '#22c55e', '#22c55e'], // Rojo, Naranja, Verde
+                                borderRadius: 4
+                            }]
+                        },
+                        options: { ...chartOptions } // Usa las opciones comunes
+                    });
+                }
+            } catch(e) { console.error("Error al renderizar gráfico de rendimiento:", e); }
+        {% endif %}
+
+        // 2. Gráfico de Distribución de Asistencia
+        {% if session.file_summary and session.file_summary.attendance_distribution_data and session.file_summary.attendance_distribution_data.labels %}
+            try {
+                const asistenciaCtx = document.getElementById('asistenciaChart')?.getContext('2d');
+                if (asistenciaCtx) {
+                     new Chart(asistenciaCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: {{ session.file_summary.attendance_distribution_data.labels | tojson | safe }},
+                            datasets: [{
+                                label: 'Nº de Estudiantes',
+                                data: {{ session.file_summary.attendance_distribution_data.counts | tojson | safe }},
+                                backgroundColor: ['#16a34a', '#22c55e', '#3b82f6', '#f97316', '#ef4444'], // Tonos de Verde, Azul, Naranja, Rojo
+                                borderRadius: 4
+                            }]
+                        },
+                        options: { ...chartOptions } // Usa las opciones comunes
+                    });
+                }
+            } catch(e) { console.error("Error al renderizar gráfico de asistencia:", e); }
+        {% endif %}
+
+        // --- FIN: NUEVA CONFIGURACIÓN DE GRÁFICOS ---
+
+        // --- SCRIPT PARA ALERTAS (EXISTENTE - SIN CAMBIOS EN SU LÓGICA) ---
+        // ... (El resto del script para las alertas desplegables se mantiene igual) ...
+        const btnAlertaPromedio = document.getElementById('btn-alerta-promedio');
+        const listaAlertaPromedio = document.getElementById('lista-alerta-promedio');
+        const iconPromedioAlerta = document.getElementById('icon-promedio-alerta');
+
+        const btnAlertaObservaciones = document.getElementById('btn-alerta-observaciones');
+        const listaAlertaObservaciones = document.getElementById('lista-alerta-observaciones');
+        const iconObservacionesAlerta = document.getElementById('icon-observaciones-alerta');
+
+        async function fetchAndDisplayAlerts(apiUrl, listElement, buttonIconElement, alertType) {
+            if (alertType === 'promedio' && listaAlertaObservaciones.style.display !== 'none') {
+                listaAlertaObservaciones.style.display = 'none';
+                listaAlertaObservaciones.classList.add('hidden'); 
+                iconObservacionesAlerta.classList.remove('fa-chevron-up');
+                iconObservacionesAlerta.classList.add('fa-chevron-down');
+            } else if (alertType === 'observaciones' && listaAlertaPromedio.style.display !== 'none') {
+                listaAlertaPromedio.style.display = 'none';
+                 listaAlertaPromedio.classList.add('hidden'); 
+                iconPromedioAlerta.classList.remove('fa-chevron-up');
+                iconPromedioAlerta.classList.add('fa-chevron-down');
+            }
+
+            const isHidden = listElement.style.display === 'none' || listElement.classList.contains('hidden');
+            if (!isHidden) {
+                listElement.style.display = 'none';
+                listElement.classList.add('hidden');
+                buttonIconElement.classList.remove('fa-chevron-up');
+                buttonIconElement.classList.add('fa-chevron-down');
+                return;
+            }
+
+            listElement.innerHTML = '<p class="text-slate-500 italic p-2">Cargando datos de alerta...</p>';
+            listElement.style.display = 'block';
+            listElement.classList.remove('hidden');
+            buttonIconElement.classList.remove('fa-chevron-down');
+            buttonIconElement.classList.add('fa-chevron-up');
+
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({ error: `Error del servidor: ${response.status}` }));
+                    throw new Error(errorData.error || `Error HTTP: ${response.status}`);
+                }
+                const data = await response.json();
+                
+                listElement.innerHTML = ''; 
+
+                if (data.error) {
+                    listElement.innerHTML = `<p class="text-red-500 p-2">${data.error}</p>`;
+                } else if (data.message) { 
+                     listElement.innerHTML = `<p class="text-slate-600 p-2 italic">${data.message}</p>`;
+                } else if (Object.keys(data).length === 0) {
+                    listElement.innerHTML = `<p class="text-slate-600 p-2 italic">No se encontraron alertas para mostrar.</p>`;
+                } else {
+                    const ul = document.createElement('ul');
+                    ul.className = 'space-y-3';
+
+                    Object.entries(data).forEach(([nivel, alumnos]) => {
+                        if (alumnos.length > 0) {
+                            const nivelLi = document.createElement('li');
+                            nivelLi.className = 'mb-2';
+                            const nivelHeader = document.createElement('h4');
+                            nivelHeader.className = 'font-semibold text-slate-700 text-xs uppercase tracking-wider';
+                            nivelHeader.textContent = nivel;
+                            nivelLi.appendChild(nivelHeader);
+                            
+                            const alumnosUl = document.createElement('ul');
+                            alumnosUl.className = 'list-disc list-inside ml-4 space-y-1 text-slate-600';
+                            alumnos.forEach(alumno => {
+                                const alumnoLi = document.createElement('li');
+                                let alumnoText = `${alumno.nombre} (${alumno.curso_original})`;
+                                if (alertType === 'promedio') {
+                                    alumnoText += ` - Prom: ${formatNota(alumno.promedio)}`;
+                                } else if (alertType === 'observaciones') {
+                                    alumnoText += `: <span class="italic">"${alumno.observacion}"</span>`;
+                                }
+                                alumnoLi.innerHTML = alumnoText; 
+                                alumnosUl.appendChild(alumnoLi);
+                            });
+                            nivelLi.appendChild(alumnosUl);
+                            ul.appendChild(nivelLi);
+                        }
+                    });
+                    if (ul.children.length === 0) {
+                         listElement.innerHTML = `<p class="text-slate-600 p-2 italic">No se encontraron alertas específicas.</p>`;
+                    } else {
+                        listElement.appendChild(ul);
+                    }
+                }
+            } catch (error) {
+                console.error(`Error fetching ${alertType} alerts:`, error);
+                listElement.innerHTML = `<p class="text-red-500 p-2">Error al cargar alertas: ${error.message}</p>`;
+            }
+        }
+
+        if (btnAlertaPromedio) {
+            // Redirigir a la nueva vista de tarjetas sin afectar la lógica de la otra alerta
+            btnAlertaPromedio.addEventListener('click', function() {
+                window.location.href = "{{ url_for('main.alertas_alumnos_menor_promedio') }}";
+            });
+        }
+
+        if (btnAlertaObservaciones) {
+            // Redirigir a la nueva vista de tarjetas de observaciones críticas
+            btnAlertaObservaciones.addEventListener('click', function() {
+                window.location.href = "{{ url_for('main.alertas_alumnos_observaciones_criticas') }}";
+            });
+        }
+    });
+    </script>
+{% endblock scripts %}

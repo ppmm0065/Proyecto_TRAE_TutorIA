@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Título por Defecto{% endblock %} - TutorIA360 Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    
+    {# --- INICIO: MODIFICACIÓN ESTILOS DEL MENÚ --- #}
+    <style>
+        :root {
+            --color-indigo: #4f46e5;
+            --color-indigo-light: #eef2ff;
+            --color-slate-50: #f8fafc;
+            --color-slate-100: #f1f5f9;
+            --color-slate-200: #e2e8f0;
+            --color-slate-300: #cbd5e1;
+            --color-slate-400: #94a3b8;
+            --color-slate-500: #64748b;
+            --color-slate-600: #475569;
+            --color-slate-700: #334155;
+            --color-slate-800: #1e293b;
+        }
+
+        /* Estilos del botón de IA */
+        .ai-consultation-button {
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+            color: white;
+            font-weight: 600;
+            padding: 0.6rem 1.2rem; /* Compacta el botón para ganar espacio */
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            white-space: nowrap;
+        }
+
+        .ai-consultation-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+        }
+
+        .ai-consultation-button .icon {
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        .ai-consultation-button:hover .icon {
+            transform: scale(1.1);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        #panel_center, #panel_right {
+            height: calc(100vh - 5rem);
+            overflow-y: auto;
+        }
+        
+        /* Scrollbar personalizado */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: var(--color-slate-50);
+            border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: var(--color-slate-300);
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: var(--color-slate-400);
+        }
+        
+        /* Menú lateral */
+        #side-menu {
+            display: flex;
+            flex-direction: column;
+            width: 280px;
+            height: calc(100vh - 5rem);
+            background: linear-gradient(to bottom, white, var(--color-slate-50));
+            font-size: 0.75rem; /* ~25% reducción de tamaño del texto del menú */
+            position: relative;
+            z-index: 30;
+            overflow: hidden; /* El contenedor oculta desbordes; el scroll va en .flex-grow */
+        }
+
+        /* Habilitar scroll en el área de contenido del menú, conservando header y perfil visibles */
+        #side-menu .flex-grow {
+            min-height: 0; /* Necesario en Flexbox para permitir que el hijo pueda hacer scroll */
+            height: 100%;
+            flex: 1 1 auto;
+            overflow-y: auto;
+        }
+        
+        .menu-header {
+            padding: 0.75rem; /* Compacta el encabezado del menú */
+            border-bottom: 1px solid var(--color-slate-200);
+            background-color: white;
+            position: relative;
+        }
+        
+        .menu-header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, var(--color-indigo), transparent);
+        }
+        
+        /* Elementos del menú */
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0.8rem; /* Mayor densidad */
+            color: var(--color-slate-600);
+            font-weight: 500;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 3px solid transparent;
+            margin: 2px 0;
+            position: relative;
+        }
+        
+        .menu-item-action {
+            cursor: pointer;
+        }
+        
+        .menu-item-action:hover {
+            background-color: var(--color-slate-50);
+            color: var(--color-slate-800);
+            border-left-color: var(--color-slate-300);
+            transform: translateX(2px);
+        }
+        
+        .menu-item-disabled {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0.8rem; /* Mayor densidad */
+            color: var(--color-slate-400);
+            cursor: not-allowed;
+            opacity: 0.8;
+            border-left: 3px solid transparent;
+            position: relative;
+        }
+        
+        .menu-item-disabled::after {
+            content: attr(title);
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-slate-800);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            pointer-events: none;
+            white-space: nowrap;
+            z-index: 10;
+        }
+        
+        .menu-item-disabled:hover::after {
+            opacity: 1;
+        }
+        
+        .menu-item-disabled i.fa-fw {
+            color: var(--color-slate-400);
+        }
+        
+        .menu-item.active {
+            background-color: var(--color-indigo-light);
+            color: var(--color-indigo);
+            font-weight: 600;
+            border-left-color: var(--color-indigo);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ajustes para items dentro de submenús */
+        .submenu .menu-item {
+            border-radius: 10px;
+        }
+        .submenu .menu-item.active {
+            border-left-width: 5px;
+        }
+        
+        .menu-item i.fa-fw {
+            width: 0.95rem; /* Ajuste proporcional al texto reducido */
+            margin-right: 0.5rem; /* Menor separación acorde al nuevo tamaño */
+            color: var(--color-indigo);
+            transition: transform 0.2s ease;
+        }
+        
+        .menu-item:hover i.fa-fw {
+            transform: scale(1.1);
+        }
+        
+        .menu-section-title {
+            padding: 1rem 1rem 0.25rem; /* Compacta el espaciado superior */
+            font-size: 0.52rem; /* ~25% menos */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-slate-700);
+            font-weight: 600;
+            background: linear-gradient(to right, var(--color-slate-100), transparent);
+            margin: 0.5rem 0;
+        }
+
+        /* Submenús con franja destacada */
+        .submenu {
+            position: relative;
+            background: linear-gradient(to right, var(--color-indigo-light), white);
+            border-radius: 10px;
+            margin: 0.5rem 0.4rem; /* Mayor densidad */
+            padding: 0.3rem 0.3rem 0.45rem 0.45rem; /* Mayor densidad */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .submenu::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            border-radius: 10px 0 0 10px;
+            background: var(--color-indigo);
+        }
+        .submenu-title {
+            padding: 0.3rem 0.2rem 0.45rem 0.2rem; /* Mayor densidad */
+            font-size: 0.54rem; /* ~25% menos */
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--color-indigo);
+            font-weight: 700;
+        }
+        
+        .user-profile {
+            margin-top: auto;
+            border-top: 1px solid var(--color-slate-200);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        
+        .user-profile:hover {
+            background-color: var(--color-slate-50);
+        }
+        #entity-selector-modal { transition: opacity 0.3s ease-in-out; }
+        .modal-content { transition: transform 0.3s ease-in-out; }
+
+        .clear-btn {
+            opacity: 0.6;
+            transition: all 0.2s ease-in-out;
+        }
+        .clear-btn:hover {
+            opacity: 1;
+            transform: scale(1.1);
+            color: #e74c3c; /* Tono rojo para eliminar */
+        }
+        .nowrap { white-space: nowrap; }
+        .card-left-shadow { position: relative; box-shadow: inset 14px 0 14px rgba(226,232,240,0.7), 0 1px 2px rgba(0,0,0,0.04); }
+    </style>
+    {# --- FIN: MODIFICACIÓN ESTILOS DEL MENÚ --- #}
+
+    {% block head_extra %}{% endblock %}
+</head>
+<body class="bg-slate-100 text-slate-700 antialiased">
+
+    <header class="bg-white shadow-lg sticky top-0 z-50 w-full h-20 flex-shrink-0">
+        {# ... Contenido del header (sin cambios) ... #}
+        </header>
+
+    <div class="w-full z-40 flex-shrink-0">
+        {# ... Contenido de la barra de sub-navegación (sin cambios) ... #}
+        </div>
+
+    <main id="main-dashboard-container" class="flex flex-1 w-full">
+
+        {# --- INICIO: MODIFICACIÓN ESTRUCTURA Y CLASES DEL MENÚ --- #}
+        <aside id="side-menu" class="flex-shrink-0 custom-scrollbar bg-white border-r border-slate-200 shadow-md">
+            <div class="flex-grow overflow-y-auto custom-scrollbar">
+                {% if session.uploaded_filename %}
+                    <div class="menu-header">
+                        <p class="text-xs text-slate-500 mb-2">Archivo Activo:</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center min-w-0">
+                                <i class="fas fa-file-csv fa-fw text-xl" style="color: var(--color-indigo);"></i>
+                                <span class="font-semibold text-slate-800 break-words truncate ml-2" title="{{ session.uploaded_filename }}">
+                                    {{ session.uploaded_filename }}
+                                </span>
+                            </div>
+                            <a href="{{ url_for('main.clear_session_file') }}" class="clear-btn text-xl font-light ml-2 flex-shrink-0 text-slate-400" title="Limpiar y Cargar Nuevo">
+                                &times;
+                            </a>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="menu-header">
+                        <form action="{{ url_for('main.upload_file') }}" method="post" enctype="multipart/form-data">
+                            <label for="datafile" class="block text-sm font-medium text-slate-700 mb-2">Cargar Archivo de Estudiantes:</label>
+                            <input type="file" id="datafile" name="datafile" accept=".csv" required
+                                class="block w-full text-xs text-slate-700 border border-slate-300 rounded-lg cursor-pointer bg-white file:mr-2 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-indigo-100 file:text-indigo-700 hover:file:bg-indigo-200">
+                            <button type="submit" class="w-full mt-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg text-sm transition">
+                                <i class="fas fa-cloud-upload-alt mr-2"></i> Cargar y Analizar
+                            </button>
+                        </form>
+                    </div>
+                {% endif %}
+                <nav>
+                    <ul>
+                        <!-- Submenú: Buscar Alumno / Curso (encima de Inicio, sin título) -->
+                        <li class="submenu">
+                            <ul>
+                                <li>
+                                    <button id="open-entity-selector-btn" class="menu-item w-full text-left menu-item-action">
+                                        <i class="fas fa-search fa-fw"></i> Buscar Alumno / Curso
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Submenú: Inicio / Dashboard (sin título) -->
+                        <li class="submenu">
+                            <ul>
+                                <li>
+                                    <a href="{{ url_for('main.index') }}" class="menu-item menu-item-action {% if request.endpoint == 'main.index' %}active{% endif %}">
+                                        <i class="fas fa-home fa-fw"></i> Inicio / Dashboard
+                                    </a>
+                                </li>
+                            <li>
+                                <a href="{{ url_for('main.riesgos') }}" class="menu-item menu-item-action {% if request.endpoint == 'main.riesgos' %}active{% endif %}">
+                                    <i class="fas fa-exclamation-triangle fa-fw"></i> Panel de Riesgos
+                                </a>
+                            </li>
+                            
+                                <li>
+                                    <a href="{{ url_for('main.efectividad_intervenciones') }}" class="menu-item menu-item-action {% if request.endpoint == 'main.efectividad_intervenciones' %}active{% endif %}">
+                                        <i class="fas fa-chart-line fa-fw"></i> Efectividad de Intervenciones
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Submenú: Herramientas -->
+                        <li class="submenu">
+                            <div class="submenu-title">Herramientas</div>
+                            <ul>
+                        
+
+                        {% if request.endpoint == 'main.detalle_entidad' or 'generar_reporte_360' in request.endpoint or 'visualizar_plan_intervencion' in request.endpoint or 'generar_recursos_apoyo' in request.endpoint %}
+                            <li><a href="{{ url_for('main.generar_reporte_360', tipo_entidad=tipo_entidad, valor_codificado=nombre_entidad) }}" class="menu-item menu-item-action {% if 'generar_reporte_360' in request.endpoint %}active{% endif %}"><i class="fas fa-file-invoice fa-fw"></i> Generar Reporte 360</a></li>
+                            {% if session.reporte_360_markdown and session.reporte_360_entidad_nombre == nombre_entidad %}
+                                <li><a href="{{ url_for('main.generar_plan_intervencion', tipo_entidad=tipo_entidad, valor_codificado=nombre_entidad) }}" class="menu-item menu-item-action {% if 'plan_intervencion' in request.endpoint %}active{% endif %}"><i class="fas fa-clipboard-list fa-fw"></i> Generar Plan de Intervención</a></li>
+                            {% else %}
+                                <li class="menu-item menu-item-disabled" title="Genera un Reporte 360 primero"><i class="fas fa-clipboard-list fa-fw"></i><span>Generar Plan de Intervención</span></li>
+                            {% endif %}
+                            {% if 'visualizar_plan_intervencion' in request.endpoint and request.view_args.get('plan_ref') %}
+                                <li><a href="{{ url_for('main.generar_recursos_apoyo', tipo_entidad=tipo_entidad, valor_codificado=nombre_entidad, plan_ref=request.view_args.get('plan_ref')) }}" class="menu-item menu-item-action {% if 'recursos_apoyo' in request.endpoint %}active{% endif %}"><i class="fas fa-lightbulb fa-fw"></i> Generar Recursos de Apoyo</a></li>
+                            {% else %}
+                                <li class="menu-item menu-item-disabled" title="Genera y visualiza un Plan de Intervención primero"><i class="fas fa-lightbulb fa-fw"></i><span>Generar Recursos de Apoyo</span></li>
+                            {% endif %}
+                            <!-- Nuevo: Registrar Observación (abrir buscador de entidad y luego redirigir a ingreso) -->
+                            <li>
+                                <button id="open-observation-selector-btn" class="menu-item w-full text-left menu-item-action {% if 'registrar_observacion' in request.endpoint %}active{% endif %}">
+                                    <i class="fas fa-comment-dots fa-fw"></i> Registrar Observación
+                                </button>
+                            </li>
+                        {% else %}
+                            <li class="menu-item menu-item-disabled" title="Selecciona un alumno o curso primero"><i class="fas fa-file-invoice fa-fw"></i><span>Generar Reporte 360</span></li>
+                            <li class="menu-item menu-item-disabled" title="Selecciona un alumno o curso primero"><i class="fas fa-clipboard-list fa-fw"></i><span>Generar Plan de Intervención</span></li>
+                            <li class="menu-item menu-item-disabled" title="Selecciona un alumno o curso primero"><i class="fas fa-lightbulb fa-fw"></i><span>Generar Recursos de Apoyo</span></li>
+                            <!-- Nuevo: Registrar Observación (habilitado aún sin seleccionar entidad, abre buscador de entidad) -->
+                            <li>
+                                <button id="open-observation-selector-btn" class="menu-item w-full text-left menu-item-action {% if 'registrar_observacion' in request.endpoint %}active{% endif %}">
+                                    <i class="fas fa-comment-dots fa-fw"></i> Registrar Observación
+                                </button>
+                            </li>
+                        
+                            </ul>
+                        </li>
+                        {% endif %}
+
+                        <!-- Submenú más abajo: Documentos y Biblioteca -->
+                        <li class="submenu">
+                            <div class="submenu-title">Documentos y Biblioteca</div>
+                            <ul>
+                                <li>
+                                    <button id="open-context-uploader-btn" class="menu-item w-full text-left menu-item-action">
+                                        <i class="fas fa-file-alt fa-fw"></i> Cargar Documento de Contexto
+                                    </button>
+                                </li>
+                                <li>
+                                    <button id="open-library-search-btn" class="menu-item w-full text-left menu-item-action {% if 'biblioteca' in request.endpoint %}active{% endif %}">
+                                        <i class="fas fa-book fa-fw"></i> Biblioteca de Reportes
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- NUEVO Submenú: Consumo de Tokens -->
+                        <li class="submenu">
+                            <div class="submenu-title">Consumo</div>
+                            <ul>
+                                <li>
+                                    <div class="menu-item">
+                                        <i class="fas fa-coins fa-fw"></i>
+                                        <div class="flex flex-col">
+                                            <span class="text-xs text-slate-500">Hoy</span>
+                                            <span class="text-sm">
+                                                <span id="daily-total-tokens" class="font-mono">-</span> tokens • <span class="nowrap">US$ <span id="daily-total-cost" class="font-mono">0.000000</span></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="menu-item">
+                                        <i class="fas fa-calendar-days fa-fw"></i>
+                                        <div class="flex flex-col">
+                                            <span class="text-xs text-slate-500">Mes</span>
+                                            <span class="text-sm">
+                                                <span id="monthly-total-tokens" class="font-mono">-</span> tokens • <span class="nowrap">US$ <span id="monthly-total-cost" class="font-mono">0.000000</span></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="user-profile group w-full justify-between">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3 group-hover:bg-indigo-200 transition-colors">
+                        <i class="fas fa-user text-indigo-600 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div>
+                        {% if session.get('user') %}
+                        <p class="font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors">{{ session.get('user').username }}</p>
+                        <p class="text-xs text-slate-500">{{ session.get('user').role or 'Usuario' }}</p>
+                        {% else %}
+                        <p class="font-semibold text-slate-800">Invitado</p>
+                        <p class="text-xs text-slate-500">Sin sesión</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <div>
+                    {% if session.get('user') %}
+                    <a href="{{ url_for('main.logout') }}" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-sm font-semibold">
+                        <i class="fas fa-sign-out-alt mr-2"></i> Salir
+                    </a>
+                    {% else %}
+                    <a href="{{ url_for('main.login') }}" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-sm font-semibold">
+                        <i class="fas fa-sign-in-alt mr-2"></i> Ingresar
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </aside>
+        {# --- FIN: MODIFICACIÓN ESTRUCTURA Y CLASES DEL MENÚ --- #}
+        
+        {# Panel central: reducimos padding izquierdo para minimizar la separación con el menú #}
+        <section id="panel_center" class="flex-grow bg-white pl-2 pr-4 py-3 md:pl-3 md:pr-5 md:py-4 custom-scrollbar">
+            {% block panel_center_content %}{% endblock %}
+        </section>
+
+    </main>
+
+    {# ... Modales (sin cambios en su estructura interna) ... #}
+    <div id="entity-selector-modal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-[100] hidden opacity-0">
+        <div class="modal-content transform -translate-y-10 bg-white rounded-lg shadow-2xl w-full max-w-2xl max-h-[80vh] flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b"><h2 class="text-xl font-bold text-slate-800">Seleccionar Entidad</h2><button id="close-entity-selector-btn" class="text-slate-500 hover:text-red-600 text-2xl">&times;</button></div>
+            <div class="p-6 flex-grow overflow-y-auto"><div class="mb-4 border-b border-gray-200"><nav class="flex space-x-4" aria-label="Tabs"><button id="tab-alumno" class="px-3 py-2 font-medium text-sm rounded-t-lg border-b-2 border-indigo-500 text-indigo-600">Buscar Alumno</button><button id="tab-curso" class="px-3 py-2 font-medium text-sm rounded-t-lg border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">Seleccionar Curso</button></nav></div><div id="tab-content-alumno"><label for="modal-search-student" class="block text-sm font-medium text-slate-700 mb-1">Nombre del Estudiante:</label><input type="text" id="modal-search-student" class="w-full p-2 border border-slate-300 rounded-lg" placeholder="Escribe 2 o más letras para buscar..."><div id="modal-student-suggestions" class="mt-2 border rounded-md bg-white max-h-64 overflow-y-auto z-20 shadow-lg"></div></div><div id="tab-content-curso" class="hidden"><label for="modal-select-course" class="block text-sm font-medium text-slate-700 mb-1">Selecciona un Curso de la Lista:</label><select id="modal-select-course" class="w-full p-2 border border-slate-300 rounded-lg bg-white"></select></div></div>
+            <div class="p-4 bg-gray-50 border-t flex justify-end"><button id="modal-view-dashboard-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg disabled:bg-gray-400" disabled>Ver Dashboard</button></div>
+        </div>
+    </div>
+
+    <div id="context-uploader-modal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-[100] hidden opacity-0">
+        <div class="modal-content transform -translate-y-10 bg-white rounded-lg shadow-2xl w-full max-w-2xl flex flex-col max-h-[80vh]">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold text-slate-800">Gestionar Documentos de Contexto</h2>
+                <button id="close-context-uploader-btn" class="text-slate-500 hover:text-red-600 text-2xl">&times;</button>
+            </div>
+        
+            <div class="p-6 border-b">
+                <h3 class="font-semibold text-slate-700 mb-3">Subir Nuevo Documento</h3>
+                <p class="text-sm text-slate-600 mb-4">Sube archivos PDF o TXT (reglamentos, etc.) para darle más contexto a la IA.</p>
+                <form action="{{ url_for('main.upload_context_pdf') }}" method="post" enctype="multipart/form-data">
+                    <input type="file" id="context_pdf_file" name="context_pdf_file" accept=".pdf,.txt" required class="block w-full text-sm text-slate-500 border border-slate-300 rounded-lg cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-100 file:text-indigo-700 hover:file:bg-indigo-200">
+                    <div class="flex justify-end mt-4">
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg"><i class="fas fa-cloud-upload-alt mr-2"></i> Subir Documento</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="p-6 flex-grow overflow-y-auto custom-scrollbar">
+                <h3 class="font-semibold text-slate-700 mb-3">Documentos Cargados</h3>
+                <div id="context-docs-list-container">
+                    <p class="text-slate-500 italic text-sm">Cargando lista...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // ===== LÓGICA PARA MODAL BUSCADOR DE ENTIDAD (MODIFICADO) =====
+    const modal = document.getElementById('entity-selector-modal');
+    const openBtn = document.getElementById('open-entity-selector-btn');
+    const closeBtn = document.getElementById('close-entity-selector-btn');
+    const tabAlumno = document.getElementById('tab-alumno');
+    const tabCurso = document.getElementById('tab-curso');
+    const contentAlumno = document.getElementById('tab-content-alumno');
+    const contentCurso = document.getElementById('tab-content-curso');
+    const studentInput = document.getElementById('modal-search-student');
+    const studentSuggestions = document.getElementById('modal-student-suggestions');
+    const courseSelect = document.getElementById('modal-select-course');
+    const viewDashboardBtn = document.getElementById('modal-view-dashboard-btn');
+    
+    // --- NUEVAS LÍNEAS PARA GESTIONAR EL CONTEXTO ---
+    const openLibraryBtn = document.getElementById('open-library-search-btn');
+    const openObservationBtn = document.getElementById('open-observation-selector-btn');
+    let modalSearchContext = 'dashboard'; // Contexto por defecto
+
+    let selectedEntityType = 'alumno';
+    let selectedEntityValue = '';
+    let studentSearchDebounceTimer;
+
+    // --- LÓGICA DE APERTURA MODIFICADA ---
+    function openModal(context) {
+        modalSearchContext = context; // Establece el contexto ('dashboard' o 'library')
+        if (modal) { 
+            modal.classList.remove('hidden'); 
+            setTimeout(() => { 
+                modal.classList.remove('opacity-0'); 
+                modal.querySelector('.modal-content').classList.remove('-translate-y-10'); 
+            }, 10); 
+            loadCoursesToModal();
+            validateSelection(); // Llama a validateSelection para actualizar el texto del botón
+        } 
+    }
+    
+    openBtn.addEventListener('click', () => openModal('dashboard'));
+    openLibraryBtn.addEventListener('click', () => openModal('library'));
+    if (openObservationBtn) {
+        openObservationBtn.addEventListener('click', () => openModal('observacion'));
+    }
+    // --- FIN LÓGICA DE APERTURA ---
+
+    function closeModal() { if (modal) { modal.classList.add('opacity-0'); modal.querySelector('.modal-content').classList.add('-translate-y-10'); setTimeout(() => modal.classList.add('hidden'), 300); } }
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+    tabAlumno.addEventListener('click', () => { selectedEntityType = 'alumno'; contentAlumno.classList.remove('hidden'); contentCurso.classList.add('hidden'); tabAlumno.className = 'px-3 py-2 font-medium text-sm rounded-t-lg border-b-2 border-indigo-500 text-indigo-600'; tabCurso.className = 'px-3 py-2 font-medium text-sm rounded-t-lg border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'; validateSelection(); });
+    tabCurso.addEventListener('click', () => { selectedEntityType = 'curso'; contentCurso.classList.remove('hidden'); contentAlumno.classList.add('hidden'); tabCurso.className = 'px-3 py-2 font-medium text-sm rounded-t-lg border-b-2 border-indigo-500 text-indigo-600'; tabAlumno.className = 'px-3 py-2 font-medium text-sm rounded-t-lg border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'; validateSelection(); });
+
+    function loadCoursesToModal() { fetch("{{ url_for('main.api_get_courses') }}").then(res => res.json()).then(data => { courseSelect.innerHTML = '<option value="" selected disabled>-- Selecciona un curso --</option>'; data.forEach(course => { const option = document.createElement('option'); option.value = course; option.textContent = course; courseSelect.appendChild(option); }); }); }
+
+    // === NUEVO: Cargar totales de consumo (día y mes) en el menú lateral ===
+    function cargarTotalesConsumo() {
+        try {
+            fetch("{{ url_for('main.api_consumo_totales') }}")
+                .then(res => res.json())
+                .then(data => {
+                    if (!data || data.error) return;
+                    const dia = data.dia || {};
+                    const mes = data.mes || {};
+                    const dTokensEl = document.getElementById('daily-total-tokens');
+                    const dCostEl = document.getElementById('daily-total-cost');
+                    const mTokensEl = document.getElementById('monthly-total-tokens');
+                    const mCostEl = document.getElementById('monthly-total-cost');
+                    if (dTokensEl) dTokensEl.textContent = (dia.total_tokens || 0).toLocaleString('en-US');
+                    if (dCostEl) dCostEl.textContent = (dia.costo_total || 0).toFixed(6);
+                    if (mTokensEl) mTokensEl.textContent = (mes.total_tokens || 0).toLocaleString('en-US');
+                    if (mCostEl) mCostEl.textContent = (mes.costo_total || 0).toFixed(6);
+                })
+                .catch(() => {/* silencioso */});
+        } catch (e) { /* silencioso */ }
+    }
+    // Cargar una vez al iniciar la página
+    cargarTotalesConsumo();
+    // Opcional: refrescar cada cierto tiempo por si hay actividad
+    setInterval(cargarTotalesConsumo, 60_000);
+    
+    studentInput.addEventListener('input', () => { clearTimeout(studentSearchDebounceTimer); const searchTerm = studentInput.value.trim(); selectedEntityValue = ''; validateSelection(); if (searchTerm.length < 2) { studentSuggestions.innerHTML = ''; return; } studentSuggestions.innerHTML = '<div class="p-2 text-sm text-slate-500">Buscando...</div>'; studentSearchDebounceTimer = setTimeout(() => { fetch(`{{ url_for('main.api_search_students') }}?term=${encodeURIComponent(searchTerm)}`).then(res => res.json()).then(data => { studentSuggestions.innerHTML = ''; if (data.length > 0) { data.forEach(name => { const div = document.createElement('div'); div.className = 'p-2 text-sm cursor-pointer hover:bg-indigo-50'; div.textContent = name; div.addEventListener('click', () => { studentInput.value = name; selectedEntityValue = name; studentSuggestions.innerHTML = ''; validateSelection(); }); studentSuggestions.appendChild(div); }); } else { studentSuggestions.innerHTML = '<div class="p-2 text-sm text-slate-500">No se encontraron estudiantes.</div>'; } }); }, 350); });
+    
+    courseSelect.addEventListener('change', () => { selectedEntityValue = courseSelect.value; validateSelection(); });
+
+    // --- FUNCIÓN DE VALIDACIÓN MODIFICADA ---
+    function validateSelection() { 
+        let isValid = false; 
+        if (selectedEntityType === 'alumno' && studentInput.value && studentInput.value === selectedEntityValue) { 
+            isValid = true; 
+        } else if (selectedEntityType === 'curso' && courseSelect.value) { 
+            selectedEntityValue = courseSelect.value; 
+            isValid = true; 
+        } else { 
+            selectedEntityValue = ''; 
+        } 
+        
+        if (viewDashboardBtn) {
+            viewDashboardBtn.disabled = !isValid; 
+            // Cambia el texto del botón según el contexto
+            if (modalSearchContext === 'library') {
+                viewDashboardBtn.textContent = 'Ver Historial de Reportes';
+            } else if (modalSearchContext === 'observacion') {
+                viewDashboardBtn.textContent = 'Ingresar Observación';
+            } else {
+                viewDashboardBtn.textContent = 'Ver Dashboard';
+            }
+        }
+    }
+    
+    // --- LÓGICA DE REDIRECCIÓN MODIFICADA ---
+    if(viewDashboardBtn) {
+        viewDashboardBtn.addEventListener('click', () => {
+            if (!viewDashboardBtn.disabled) {
+                let finalUrl = '';
+                if (modalSearchContext === 'library') {
+                    // Nueva URL para la biblioteca filtrada
+                    const baseUrl = "{{ url_for('main.biblioteca_reportes') }}";
+                    finalUrl = `${baseUrl}?tipo_entidad=${selectedEntityType}&nombre_entidad=${encodeURIComponent(selectedEntityValue)}`;
+                } else if (modalSearchContext === 'observacion') {
+                    // Redirigir a la ventana de ingreso de observación con la entidad preseleccionada
+                    const baseUrl = "{{ url_for('main.registrar_observacion') }}";
+                    finalUrl = `${baseUrl}?tipo_entidad=${selectedEntityType}&nombre_entidad=${encodeURIComponent(selectedEntityValue)}`;
+                } else {
+                    // Lógica existente para ir al dashboard
+                    const baseUrl = "{{ url_for('main.detalle_entidad', tipo_entidad='TYPE_PLACEHOLDER', valor_codificado='VALUE_PLACEHOLDER') }}";
+                    finalUrl = baseUrl.replace('TYPE_PLACEHOLDER', selectedEntityType).replace('VALUE_PLACEHOLDER', encodeURIComponent(selectedEntityValue));
+                }
+                window.location.href = finalUrl;
+            }
+        });
+    }
+
+    // ===== LÓGICA PARA MODAL GESTOR DE CONTEXTO (Existente - sin cambios) =====
+    const contextModal = document.getElementById('context-uploader-modal');
+    const openContextBtn = document.getElementById('open-context-uploader-btn');
+    const closeContextBtn = document.getElementById('close-context-uploader-btn');
+    const contextDocsListContainer = document.getElementById('context-docs-list-container');
+
+    async function loadContextDocs() {
+        if (!contextDocsListContainer) return;
+        contextDocsListContainer.innerHTML = '<p class="text-slate-500 italic text-sm">Cargando lista...</p>';
+        try {
+            const response = await fetch("{{ url_for('main.api_get_context_docs') }}");
+            const docs = await response.json();
+            contextDocsListContainer.innerHTML = '';
+            if (docs.error) { throw new Error(docs.error); }
+            if (docs.length === 0) {
+                contextDocsListContainer.innerHTML = '<p class="text-slate-500 italic text-sm">No hay documentos de contexto cargados.</p>';
+                return;
+            }
+            const ul = document.createElement('ul');
+            ul.className = 'space-y-2';
+            docs.forEach(docName => {
+                const li = document.createElement('li');
+                li.className = 'flex justify-between items-center p-2 bg-slate-50 rounded-md border';
+                li.innerHTML = `
+                    <span class="text-sm text-slate-700"><i class="fas fa-file-alt text-slate-400 mr-2"></i>${docName}</span>
+                    <button class="delete-context-doc-btn text-red-500 hover:text-red-700 text-lg" data-filename="${docName}" title="Eliminar archivo"><i class="fas fa-trash-alt"></i></button>
+                `;
+                ul.appendChild(li);
+            });
+            contextDocsListContainer.appendChild(ul);
+        } catch (error) {
+            contextDocsListContainer.innerHTML = `<p class="text-red-600 text-sm">Error al cargar la lista: ${error.message}</p>`;
+        }
+    }
+
+    async function deleteContextDoc(filename) {
+        if (!confirm(`¿Estás seguro de que quieres eliminar el archivo "${filename}"? Esta acción es irreversible.`)) {
+            return;
+        }
+        try {
+            const response = await fetch("{{ url_for('main.api_delete_context_doc') }}", {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ filename: filename })
+            });
+            const result = await response.json();
+            if (result.error) { throw new Error(result.error); }
+            alert(result.message);
+            loadContextDocs();
+        } catch (error) {
+            alert(`Error al eliminar el archivo: ${error.message}`);
+        }
+    }
+
+    if(contextDocsListContainer){
+        contextDocsListContainer.addEventListener('click', function(event) {
+            const deleteButton = event.target.closest('.delete-context-doc-btn');
+            if (deleteButton) {
+                const filename = deleteButton.dataset.filename;
+                deleteContextDoc(filename);
+            }
+        });
+    }
+
+    if (contextModal && openContextBtn && closeContextBtn) {
+        openContextBtn.addEventListener('click', () => {
+            contextModal.classList.remove('hidden');
+            setTimeout(() => { 
+                contextModal.classList.remove('opacity-0');
+                contextModal.querySelector('.modal-content').classList.remove('-translate-y-10');
+            }, 10);
+            loadContextDocs();
+        });
+
+        const closeContextModal = () => {
+            contextModal.classList.add('opacity-0');
+            contextModal.querySelector('.modal-content').classList.add('-translate-y-10');
+            setTimeout(() => contextModal.classList.add('hidden'), 300);
+        };
+
+        closeContextBtn.addEventListener('click', closeContextModal);
+        contextModal.addEventListener('click', (e) => {
+            if (e.target === contextModal) closeContextModal();
+        });
+    }
+});
+</script>
+    {% endblock %}
+
+</body>
+</html>
