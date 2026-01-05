@@ -9,9 +9,12 @@ try:
 except Exception:
     RecursiveCharacterTextSplitter = None
 try:
-    from langchain_community.embeddings import SentenceTransformerEmbeddings
-except Exception:
-    SentenceTransformerEmbeddings = None
+    from langchain_huggingface import HuggingFaceEmbeddings as SentenceTransformerEmbeddings
+except ImportError:
+    try:
+        from langchain_community.embeddings import SentenceTransformerEmbeddings
+    except Exception:
+        SentenceTransformerEmbeddings = None
 try:
     from langchain_community.vectorstores import FAISS
     _FAISS_AVAILABLE = True
