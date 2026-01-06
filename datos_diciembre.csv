@@ -1,0 +1,865 @@
+﻿ID Estudiante;Nombre;curso;edad;Asignatura;Nota;Observacion de conducta;materias_debiles;Asistencia;profesor;Familia;Entrevistas
+1;Ana Pizarro Salazar;1° Básico A;7;Lenguaje;5.5;;Inglés;0.89;Marisol Pérez;Apoderado: Isabella Riquelme;Sin entrevistas registradas.
+1;Ana Pizarro Salazar;1° Básico A;7;Matemáticas;5.2;;Inglés;0.89;Marisol Pérez;Apoderado: Isabella Riquelme;Sin entrevistas registradas.
+1;Ana Pizarro Salazar;1° Básico A;7;Ciencias Naturales;6.0;Muy responsable y puntual con sus entregas.;Inglés;0.89;Marisol Pérez;Apoderado: Isabella Riquelme;Sin entrevistas registradas.
+1;Ana Pizarro Salazar;1° Básico A;7;Historia;5.5;;Inglés;0.89;Marisol Pérez;Apoderado: Isabella Riquelme;Sin entrevistas registradas.
+1;Ana Pizarro Salazar;1° Básico A;7;Inglés;4.9;;Inglés;0.89;Marisol Pérez;Apoderado: Isabella Riquelme;Sin entrevistas registradas.
+1;Ana Pizarro Salazar;1° Básico A;7;Música;5.1;;Inglés;0.89;Marisol Pérez;Apoderado: Isabella Riquelme;Sin entrevistas registradas.
+1;Ana Pizarro Salazar;1° Básico A;7;Artes Visuales;4.5;Copia en la prueba.;Inglés;0.89;Marisol Pérez;Apoderado: Isabella Riquelme;Sin entrevistas registradas.
+1;Ana Pizarro Salazar;1° Básico A;7;Educación Física;6.1;;Inglés;0.89;Marisol Pérez;Apoderado: Isabella Riquelme;Sin entrevistas registradas.
+2;Isabella Herrera Tapia;1° Básico A;7;Lenguaje;6.1;;;0.97;Sofía Prieto;Apoderado: Fernanda Soto;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+2;Isabella Herrera Tapia;1° Básico A;7;Matemáticas;5.6;;;0.97;Sofía Prieto;Apoderado: Fernanda Soto;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+2;Isabella Herrera Tapia;1° Básico A;7;Ciencias Naturales;5.3;;;0.97;Sofía Prieto;Apoderado: Fernanda Soto;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+2;Isabella Herrera Tapia;1° Básico A;7;Historia;6.0;Liderazgo positivo dentro del grupo.;;0.97;Sofía Prieto;Apoderado: Fernanda Soto;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+2;Isabella Herrera Tapia;1° Básico A;7;Inglés;5.9;Demuestra gran interés por la asignatura.;;0.97;Sofía Prieto;Apoderado: Fernanda Soto;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+2;Isabella Herrera Tapia;1° Básico A;7;Música;5.6;;;0.97;Sofía Prieto;Apoderado: Fernanda Soto;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+2;Isabella Herrera Tapia;1° Básico A;7;Artes Visuales;6.2;;;0.97;Sofía Prieto;Apoderado: Fernanda Soto;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+2;Isabella Herrera Tapia;1° Básico A;7;Educación Física;5.3;;;0.97;Sofía Prieto;Apoderado: Fernanda Soto;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+3;Benjamín Baltra Baltra;1° Básico A;7;Lenguaje;6.1;;;0.93;Antonia Carrasco;Apoderado: Francisca Márquez;Sin entrevistas registradas.
+3;Benjamín Baltra Baltra;1° Básico A;7;Matemáticas;5.6;Copia en la prueba.;;0.93;Antonia Carrasco;Apoderado: Francisca Márquez;Sin entrevistas registradas.
+3;Benjamín Baltra Baltra;1° Básico A;7;Ciencias Naturales;6.3;;;0.93;Antonia Carrasco;Apoderado: Francisca Márquez;Sin entrevistas registradas.
+3;Benjamín Baltra Baltra;1° Básico A;7;Historia;5.6;Registra agresiones físicas a compañeros.;;0.93;Antonia Carrasco;Apoderado: Francisca Márquez;Sin entrevistas registradas.
+3;Benjamín Baltra Baltra;1° Básico A;7;Inglés;6.6;;;0.93;Antonia Carrasco;Apoderado: Francisca Márquez;Sin entrevistas registradas.
+3;Benjamín Baltra Baltra;1° Básico A;7;Música;7.0;;;0.93;Antonia Carrasco;Apoderado: Francisca Márquez;Sin entrevistas registradas.
+3;Benjamín Baltra Baltra;1° Básico A;7;Artes Visuales;6.9;Liderazgo positivo dentro del grupo.;;0.93;Antonia Carrasco;Apoderado: Francisca Márquez;Sin entrevistas registradas.
+3;Benjamín Baltra Baltra;1° Básico A;7;Educación Física;6.6;;;0.93;Antonia Carrasco;Apoderado: Francisca Márquez;Sin entrevistas registradas.
+4;Camila Márquez Saavedra;1° Básico A;7;Lenguaje;5.5;Ha mejorado notablemente su rendimiento.;;0.73;Marisol Ibarra;Apoderado: María Castro;Sin entrevistas registradas.
+4;Camila Márquez Saavedra;1° Básico A;7;Matemáticas;4.9;;;0.73;Marisol Ibarra;Apoderado: María Castro;Sin entrevistas registradas.
+4;Camila Márquez Saavedra;1° Básico A;7;Ciencias Naturales;5.3;;;0.73;Marisol Ibarra;Apoderado: María Castro;Sin entrevistas registradas.
+4;Camila Márquez Saavedra;1° Básico A;7;Historia;5.8;;;0.73;Marisol Ibarra;Apoderado: María Castro;Sin entrevistas registradas.
+4;Camila Márquez Saavedra;1° Básico A;7;Inglés;5.9;;;0.73;Marisol Ibarra;Apoderado: María Castro;Sin entrevistas registradas.
+4;Camila Márquez Saavedra;1° Básico A;7;Música;5.8;Dificultad para concentrarse en clases.;;0.73;Marisol Ibarra;Apoderado: María Castro;Sin entrevistas registradas.
+4;Camila Márquez Saavedra;1° Básico A;7;Artes Visuales;5.9;Creativo y con gran potencial.;;0.73;Marisol Ibarra;Apoderado: María Castro;Sin entrevistas registradas.
+4;Camila Márquez Saavedra;1° Básico A;7;Educación Física;5.5;Falta de estudio y preparación para las evaluaciones.;;0.73;Marisol Ibarra;Apoderado: María Castro;Sin entrevistas registradas.
+5;Antonia Romero Vásquez;1° Básico A;7;Lenguaje;5.7;;;0.98;Mario Riquelme;Apoderado: Ana Castro;Sin entrevistas registradas.
+5;Antonia Romero Vásquez;1° Básico A;7;Matemáticas;7.0;;;0.98;Mario Riquelme;Apoderado: Ana Castro;Sin entrevistas registradas.
+5;Antonia Romero Vásquez;1° Básico A;7;Ciencias Naturales;7.0;Ha mejorado notablemente su rendimiento.;;0.98;Mario Riquelme;Apoderado: Ana Castro;Sin entrevistas registradas.
+5;Antonia Romero Vásquez;1° Básico A;7;Historia;6.8;Colabora activamente con sus compañeros.;;0.98;Mario Riquelme;Apoderado: Ana Castro;Sin entrevistas registradas.
+5;Antonia Romero Vásquez;1° Básico A;7;Inglés;6.0;Registra agresiones físicas a compañeros.;;0.98;Mario Riquelme;Apoderado: Ana Castro;Sin entrevistas registradas.
+5;Antonia Romero Vásquez;1° Básico A;7;Música;5.7;Falta de respeto hacia el profesor.;;0.98;Mario Riquelme;Apoderado: Ana Castro;Sin entrevistas registradas.
+5;Antonia Romero Vásquez;1° Básico A;7;Artes Visuales;6.0;;;0.98;Mario Riquelme;Apoderado: Ana Castro;Sin entrevistas registradas.
+5;Antonia Romero Vásquez;1° Básico A;7;Educación Física;5.4;;;0.98;Mario Riquelme;Apoderado: Ana Castro;Sin entrevistas registradas.
+6;María Escobar Soto;1° Básico B;7;Lenguaje;5.0;;;0.9;Andrea Campos;Apoderado: Francisca Soto;Sin entrevistas registradas.
+6;María Escobar Soto;1° Básico B;7;Matemáticas;4.9;;;0.9;Andrea Campos;Apoderado: Francisca Soto;Sin entrevistas registradas.
+6;María Escobar Soto;1° Básico B;7;Ciencias Naturales;4.3;;;0.9;Andrea Campos;Apoderado: Francisca Soto;Sin entrevistas registradas.
+6;María Escobar Soto;1° Básico B;7;Historia;4.7;;;0.9;Andrea Campos;Apoderado: Francisca Soto;Sin entrevistas registradas.
+6;María Escobar Soto;1° Básico B;7;Inglés;4.4;;;0.9;Andrea Campos;Apoderado: Francisca Soto;Sin entrevistas registradas.
+6;María Escobar Soto;1° Básico B;7;Música;4.3;;;0.9;Andrea Campos;Apoderado: Francisca Soto;Sin entrevistas registradas.
+6;María Escobar Soto;1° Básico B;7;Artes Visuales;5.8;Colabora activamente con sus compañeros.;;0.9;Andrea Campos;Apoderado: Francisca Soto;Sin entrevistas registradas.
+6;María Escobar Soto;1° Básico B;7;Educación Física;5.0;;;0.9;Andrea Campos;Apoderado: Francisca Soto;Sin entrevistas registradas.
+7;Fernanda Ibarra Carrasco;1° Básico B;7;Lenguaje;3.9;Falta de respeto hacia el profesor.;;0.98;Isabella Hidalgo;Apoderado: Javiera Figueroa;Sin entrevistas registradas.
+7;Fernanda Ibarra Carrasco;1° Básico B;7;Matemáticas;3.1;Registra agresiones físicas a compañeros.;;0.98;Isabella Hidalgo;Apoderado: Javiera Figueroa;Sin entrevistas registradas.
+7;Fernanda Ibarra Carrasco;1° Básico B;7;Ciencias Naturales;3.3;;;0.98;Isabella Hidalgo;Apoderado: Javiera Figueroa;Sin entrevistas registradas.
+7;Fernanda Ibarra Carrasco;1° Básico B;7;Historia;3.5;Progreso inconsistente, alterna entre notas altas y bajas.;;0.98;Isabella Hidalgo;Apoderado: Javiera Figueroa;Sin entrevistas registradas.
+7;Fernanda Ibarra Carrasco;1° Básico B;7;Inglés;4.2;;;0.98;Isabella Hidalgo;Apoderado: Javiera Figueroa;Sin entrevistas registradas.
+7;Fernanda Ibarra Carrasco;1° Básico B;7;Música;3.7;Dificultad para concentrarse en clases.;;0.98;Isabella Hidalgo;Apoderado: Javiera Figueroa;Sin entrevistas registradas.
+7;Fernanda Ibarra Carrasco;1° Básico B;7;Artes Visuales;3.0;;;0.98;Isabella Hidalgo;Apoderado: Javiera Figueroa;Sin entrevistas registradas.
+7;Fernanda Ibarra Carrasco;1° Básico B;7;Educación Física;4.4;;;0.98;Isabella Hidalgo;Apoderado: Javiera Figueroa;Sin entrevistas registradas.
+8;Ana Salazar Saavedra;1° Básico B;7;Lenguaje;5.9;Molesta a sus compañeros e interrumpe la clase.;;0.9;Paula Escobar;Apoderado: Benjamín Aguirre;Sin entrevistas registradas.
+8;Ana Salazar Saavedra;1° Básico B;7;Matemáticas;4.8;;;0.9;Paula Escobar;Apoderado: Benjamín Aguirre;Sin entrevistas registradas.
+8;Ana Salazar Saavedra;1° Básico B;7;Ciencias Naturales;4.7;;;0.9;Paula Escobar;Apoderado: Benjamín Aguirre;Sin entrevistas registradas.
+8;Ana Salazar Saavedra;1° Básico B;7;Historia;5.7;;;0.9;Paula Escobar;Apoderado: Benjamín Aguirre;Sin entrevistas registradas.
+8;Ana Salazar Saavedra;1° Básico B;7;Inglés;5.2;Colabora activamente con sus compañeros.;;0.9;Paula Escobar;Apoderado: Benjamín Aguirre;Sin entrevistas registradas.
+8;Ana Salazar Saavedra;1° Básico B;7;Música;5.9;;;0.9;Paula Escobar;Apoderado: Benjamín Aguirre;Sin entrevistas registradas.
+8;Ana Salazar Saavedra;1° Básico B;7;Artes Visuales;5.0;;;0.9;Paula Escobar;Apoderado: Benjamín Aguirre;Sin entrevistas registradas.
+8;Ana Salazar Saavedra;1° Básico B;7;Educación Física;4.9;;;0.9;Paula Escobar;Apoderado: Benjamín Aguirre;Sin entrevistas registradas.
+9;Diego Arteaga Herrera;1° Básico B;7;Lenguaje;4.2;;;0.97;Antonia Morales;Apoderado: Gabriela Rojas;Los apoderados agradecen la actividad pastoral de la semana pasada.
+9;Diego Arteaga Herrera;1° Básico B;7;Matemáticas;4.3;Liderazgo positivo dentro del grupo.;;0.97;Antonia Morales;Apoderado: Gabriela Rojas;Los apoderados agradecen la actividad pastoral de la semana pasada.
+9;Diego Arteaga Herrera;1° Básico B;7;Ciencias Naturales;3.3;;;0.97;Antonia Morales;Apoderado: Gabriela Rojas;Los apoderados agradecen la actividad pastoral de la semana pasada.
+9;Diego Arteaga Herrera;1° Básico B;7;Historia;3.3;Progreso inconsistente, alterna entre notas altas y bajas.;;0.97;Antonia Morales;Apoderado: Gabriela Rojas;Los apoderados agradecen la actividad pastoral de la semana pasada.
+9;Diego Arteaga Herrera;1° Básico B;7;Inglés;3.4;;;0.97;Antonia Morales;Apoderado: Gabriela Rojas;Los apoderados agradecen la actividad pastoral de la semana pasada.
+9;Diego Arteaga Herrera;1° Básico B;7;Música;3.0;;;0.97;Antonia Morales;Apoderado: Gabriela Rojas;Los apoderados agradecen la actividad pastoral de la semana pasada.
+9;Diego Arteaga Herrera;1° Básico B;7;Artes Visuales;3.8;Falta de estudio y preparación para las evaluaciones.;;0.97;Antonia Morales;Apoderado: Gabriela Rojas;Los apoderados agradecen la actividad pastoral de la semana pasada.
+9;Diego Arteaga Herrera;1° Básico B;7;Educación Física;3.4;Progreso inconsistente, alterna entre notas altas y bajas.;;0.97;Antonia Morales;Apoderado: Gabriela Rojas;Los apoderados agradecen la actividad pastoral de la semana pasada.
+10;María López Herrera;2° Básico A;8;Lenguaje;6.4;;;0.94;Camila Muñoz;Apoderado: Ignacio Araya;Sin entrevistas registradas.
+10;María López Herrera;2° Básico A;8;Matemáticas;5.3;;;0.94;Camila Muñoz;Apoderado: Ignacio Araya;Sin entrevistas registradas.
+10;María López Herrera;2° Básico A;8;Ciencias Naturales;5.4;Muy responsable y puntual con sus entregas.;;0.94;Camila Muñoz;Apoderado: Ignacio Araya;Sin entrevistas registradas.
+10;María López Herrera;2° Básico A;8;Historia;6.1;;;0.94;Camila Muñoz;Apoderado: Ignacio Araya;Sin entrevistas registradas.
+10;María López Herrera;2° Básico A;8;Inglés;5.2;Dificultad para concentrarse en clases.;;0.94;Camila Muñoz;Apoderado: Ignacio Araya;Sin entrevistas registradas.
+10;María López Herrera;2° Básico A;8;Música;6.6;;;0.94;Camila Muñoz;Apoderado: Ignacio Araya;Sin entrevistas registradas.
+10;María López Herrera;2° Básico A;8;Artes Visuales;5.4;;;0.94;Camila Muñoz;Apoderado: Ignacio Araya;Sin entrevistas registradas.
+10;María López Herrera;2° Básico A;8;Educación Física;5.7;;;0.94;Camila Muñoz;Apoderado: Ignacio Araya;Sin entrevistas registradas.
+11;Diego Rojas Pérez;2° Básico A;8;Lenguaje;6.0;Tímido, le cuesta participar oralmente.;;0.87;Valentina Salazar;Apoderado: Nicolás Salazar;Sin entrevistas registradas.
+11;Diego Rojas Pérez;2° Básico A;8;Matemáticas;6.4;Ha mejorado notablemente su rendimiento.;;0.87;Valentina Salazar;Apoderado: Nicolás Salazar;Sin entrevistas registradas.
+11;Diego Rojas Pérez;2° Básico A;8;Ciencias Naturales;5.0;Molesta a sus compañeros e interrumpe la clase.;;0.87;Valentina Salazar;Apoderado: Nicolás Salazar;Sin entrevistas registradas.
+11;Diego Rojas Pérez;2° Básico A;8;Historia;6.1;;;0.87;Valentina Salazar;Apoderado: Nicolás Salazar;Sin entrevistas registradas.
+11;Diego Rojas Pérez;2° Básico A;8;Inglés;5.2;;;0.87;Valentina Salazar;Apoderado: Nicolás Salazar;Sin entrevistas registradas.
+11;Diego Rojas Pérez;2° Básico A;8;Música;6.3;Colabora activamente con sus compañeros.;;0.87;Valentina Salazar;Apoderado: Nicolás Salazar;Sin entrevistas registradas.
+11;Diego Rojas Pérez;2° Básico A;8;Artes Visuales;5.1;;;0.87;Valentina Salazar;Apoderado: Nicolás Salazar;Sin entrevistas registradas.
+11;Diego Rojas Pérez;2° Básico A;8;Educación Física;5.6;Tímido, le cuesta participar oralmente.;;0.87;Valentina Salazar;Apoderado: Nicolás Salazar;Sin entrevistas registradas.
+12;Javiera Pérez Tapia;2° Básico A;8;Lenguaje;5.8;Liderazgo positivo dentro del grupo.;;0.85;José Riquelme;Apoderado: Marisol Soto;Sin entrevistas registradas.
+12;Javiera Pérez Tapia;2° Básico A;8;Matemáticas;7.0;Liderazgo positivo dentro del grupo.;;0.85;José Riquelme;Apoderado: Marisol Soto;Sin entrevistas registradas.
+12;Javiera Pérez Tapia;2° Básico A;8;Ciencias Naturales;5.5;;;0.85;José Riquelme;Apoderado: Marisol Soto;Sin entrevistas registradas.
+12;Javiera Pérez Tapia;2° Básico A;8;Historia;6.8;;;0.85;José Riquelme;Apoderado: Marisol Soto;Sin entrevistas registradas.
+12;Javiera Pérez Tapia;2° Básico A;8;Inglés;6.4;;;0.85;José Riquelme;Apoderado: Marisol Soto;Sin entrevistas registradas.
+12;Javiera Pérez Tapia;2° Básico A;8;Música;5.9;;;0.85;José Riquelme;Apoderado: Marisol Soto;Sin entrevistas registradas.
+12;Javiera Pérez Tapia;2° Básico A;8;Artes Visuales;6.4;;;0.85;José Riquelme;Apoderado: Marisol Soto;Sin entrevistas registradas.
+12;Javiera Pérez Tapia;2° Básico A;8;Educación Física;7.0;;;0.85;José Riquelme;Apoderado: Marisol Soto;Sin entrevistas registradas.
+13;Luis Baltra Ibarra;2° Básico A;8;Lenguaje;4.4;Creativo y con gran potencial.;;0.89;Gabriela Vásquez;Apoderado: Esteban Riquelme;Sin entrevistas registradas.
+13;Luis Baltra Ibarra;2° Básico A;8;Matemáticas;3.4;Registra agresiones físicas a compañeros.;;0.89;Gabriela Vásquez;Apoderado: Esteban Riquelme;Sin entrevistas registradas.
+13;Luis Baltra Ibarra;2° Básico A;8;Ciencias Naturales;4.2;Liderazgo positivo dentro del grupo.;;0.89;Gabriela Vásquez;Apoderado: Esteban Riquelme;Sin entrevistas registradas.
+13;Luis Baltra Ibarra;2° Básico A;8;Historia;3.4;;;0.89;Gabriela Vásquez;Apoderado: Esteban Riquelme;Sin entrevistas registradas.
+13;Luis Baltra Ibarra;2° Básico A;8;Inglés;4.2;;;0.89;Gabriela Vásquez;Apoderado: Esteban Riquelme;Sin entrevistas registradas.
+13;Luis Baltra Ibarra;2° Básico A;8;Música;3.7;;;0.89;Gabriela Vásquez;Apoderado: Esteban Riquelme;Sin entrevistas registradas.
+13;Luis Baltra Ibarra;2° Básico A;8;Artes Visuales;3.7;Dificultad para concentrarse en clases.;;0.89;Gabriela Vásquez;Apoderado: Esteban Riquelme;Sin entrevistas registradas.
+13;Luis Baltra Ibarra;2° Básico A;8;Educación Física;4.5;;;0.89;Gabriela Vásquez;Apoderado: Esteban Riquelme;Sin entrevistas registradas.
+14;Isabella Hidalgo González;2° Básico A;8;Lenguaje;6.0;Se distrae con facilidad.;;0.95;Gabriela Campos;Apoderado: María Soto;Sin entrevistas registradas.
+14;Isabella Hidalgo González;2° Básico A;8;Matemáticas;5.5;;;0.95;Gabriela Campos;Apoderado: María Soto;Sin entrevistas registradas.
+14;Isabella Hidalgo González;2° Básico A;8;Ciencias Naturales;5.2;;;0.95;Gabriela Campos;Apoderado: María Soto;Sin entrevistas registradas.
+14;Isabella Hidalgo González;2° Básico A;8;Historia;4.9;;;0.95;Gabriela Campos;Apoderado: María Soto;Sin entrevistas registradas.
+14;Isabella Hidalgo González;2° Básico A;8;Inglés;6.3;;;0.95;Gabriela Campos;Apoderado: María Soto;Sin entrevistas registradas.
+14;Isabella Hidalgo González;2° Básico A;8;Música;5.3;Se distrae con facilidad.;;0.95;Gabriela Campos;Apoderado: María Soto;Sin entrevistas registradas.
+14;Isabella Hidalgo González;2° Básico A;8;Artes Visuales;5.5;;;0.95;Gabriela Campos;Apoderado: María Soto;Sin entrevistas registradas.
+14;Isabella Hidalgo González;2° Básico A;8;Educación Física;6.3;;;0.95;Gabriela Campos;Apoderado: María Soto;Sin entrevistas registradas.
+15;Paola Valenzuela Vega;2° Básico B;8;Lenguaje;5.0;;Inglés;0.87;Lucía Tapia;Apoderado: Fernanda Reyes;Sin entrevistas registradas.
+15;Paola Valenzuela Vega;2° Básico B;8;Matemáticas;4.0;;Inglés;0.87;Lucía Tapia;Apoderado: Fernanda Reyes;Sin entrevistas registradas.
+15;Paola Valenzuela Vega;2° Básico B;8;Ciencias Naturales;4.9;;Inglés;0.87;Lucía Tapia;Apoderado: Fernanda Reyes;Sin entrevistas registradas.
+15;Paola Valenzuela Vega;2° Básico B;8;Historia;5.3;;Inglés;0.87;Lucía Tapia;Apoderado: Fernanda Reyes;Sin entrevistas registradas.
+15;Paola Valenzuela Vega;2° Básico B;8;Inglés;3.8;Falta de respeto hacia el profesor.;Inglés;0.87;Lucía Tapia;Apoderado: Fernanda Reyes;Sin entrevistas registradas.
+15;Paola Valenzuela Vega;2° Básico B;8;Música;4.9;;Inglés;0.87;Lucía Tapia;Apoderado: Fernanda Reyes;Sin entrevistas registradas.
+15;Paola Valenzuela Vega;2° Básico B;8;Artes Visuales;5.2;;Inglés;0.87;Lucía Tapia;Apoderado: Fernanda Reyes;Sin entrevistas registradas.
+15;Paola Valenzuela Vega;2° Básico B;8;Educación Física;4.2;;Inglés;0.87;Lucía Tapia;Apoderado: Fernanda Reyes;Sin entrevistas registradas.
+16;Sofía Baltra Vega;2° Básico B;8;Lenguaje;5.5;;Física;0.91;Tomás Vásquez;Apoderado: Constanza Márquez;Sin entrevistas registradas.
+16;Sofía Baltra Vega;2° Básico B;8;Matemáticas;4.5;Colabora activamente con sus compañeros.;Física;0.91;Tomás Vásquez;Apoderado: Constanza Márquez;Sin entrevistas registradas.
+16;Sofía Baltra Vega;2° Básico B;8;Ciencias Naturales;5.3;;Física;0.91;Tomás Vásquez;Apoderado: Constanza Márquez;Sin entrevistas registradas.
+16;Sofía Baltra Vega;2° Básico B;8;Historia;4.6;Progreso inconsistente, alterna entre notas altas y bajas.;Física;0.91;Tomás Vásquez;Apoderado: Constanza Márquez;Sin entrevistas registradas.
+16;Sofía Baltra Vega;2° Básico B;8;Inglés;5.4;Falta de estudio y preparación para las evaluaciones.;Física;0.91;Tomás Vásquez;Apoderado: Constanza Márquez;Sin entrevistas registradas.
+16;Sofía Baltra Vega;2° Básico B;8;Música;4.9;Muy responsable y puntual con sus entregas.;Física;0.91;Tomás Vásquez;Apoderado: Constanza Márquez;Sin entrevistas registradas.
+16;Sofía Baltra Vega;2° Básico B;8;Artes Visuales;4.3;Colabora activamente con sus compañeros.;Física;0.91;Tomás Vásquez;Apoderado: Constanza Márquez;Sin entrevistas registradas.
+16;Sofía Baltra Vega;2° Básico B;8;Educación Física;4.7;Copia en la prueba.;Física;0.91;Tomás Vásquez;Apoderado: Constanza Márquez;Sin entrevistas registradas.
+17;Camila López Castro;2° Básico B;8;Lenguaje;6.5;Muy responsable y puntual con sus entregas.;;0.87;Luis Gutiérrez;Apoderado: Claudia Díaz;Se destaca al apoderado el excelente desempeño del estudiante en el debate de Historia, mostrando gran liderazgo.
+17;Camila López Castro;2° Básico B;8;Matemáticas;5.7;;;0.87;Luis Gutiérrez;Apoderado: Claudia Díaz;Se destaca al apoderado el excelente desempeño del estudiante en el debate de Historia, mostrando gran liderazgo.
+17;Camila López Castro;2° Básico B;8;Ciencias Naturales;6.3;;;0.87;Luis Gutiérrez;Apoderado: Claudia Díaz;Se destaca al apoderado el excelente desempeño del estudiante en el debate de Historia, mostrando gran liderazgo.
+17;Camila López Castro;2° Básico B;8;Historia;5.4;Muy responsable y puntual con sus entregas.;;0.87;Luis Gutiérrez;Apoderado: Claudia Díaz;Se destaca al apoderado el excelente desempeño del estudiante en el debate de Historia, mostrando gran liderazgo.
+17;Camila López Castro;2° Básico B;8;Inglés;6.2;;;0.87;Luis Gutiérrez;Apoderado: Claudia Díaz;Se destaca al apoderado el excelente desempeño del estudiante en el debate de Historia, mostrando gran liderazgo.
+17;Camila López Castro;2° Básico B;8;Música;5.5;;;0.87;Luis Gutiérrez;Apoderado: Claudia Díaz;Se destaca al apoderado el excelente desempeño del estudiante en el debate de Historia, mostrando gran liderazgo.
+17;Camila López Castro;2° Básico B;8;Artes Visuales;5.3;;;0.87;Luis Gutiérrez;Apoderado: Claudia Díaz;Se destaca al apoderado el excelente desempeño del estudiante en el debate de Historia, mostrando gran liderazgo.
+17;Camila López Castro;2° Básico B;8;Educación Física;6.7;Muy responsable y puntual con sus entregas.;;0.87;Luis Gutiérrez;Apoderado: Claudia Díaz;Se destaca al apoderado el excelente desempeño del estudiante en el debate de Historia, mostrando gran liderazgo.
+18;José Herrera Salazar;2° Básico B;8;Lenguaje;5.6;;;0.66;Mario Ramírez;Apoderado: Ignacio Márquez;Sin entrevistas registradas.
+18;José Herrera Salazar;2° Básico B;8;Matemáticas;6.3;;;0.66;Mario Ramírez;Apoderado: Ignacio Márquez;Sin entrevistas registradas.
+18;José Herrera Salazar;2° Básico B;8;Ciencias Naturales;6.6;Creativo y con gran potencial.;;0.66;Mario Ramírez;Apoderado: Ignacio Márquez;Sin entrevistas registradas.
+18;José Herrera Salazar;2° Básico B;8;Historia;6.3;;;0.66;Mario Ramírez;Apoderado: Ignacio Márquez;Sin entrevistas registradas.
+18;José Herrera Salazar;2° Básico B;8;Inglés;6.4;;;0.66;Mario Ramírez;Apoderado: Ignacio Márquez;Sin entrevistas registradas.
+18;José Herrera Salazar;2° Básico B;8;Música;6.6;;;0.66;Mario Ramírez;Apoderado: Ignacio Márquez;Sin entrevistas registradas.
+18;José Herrera Salazar;2° Básico B;8;Artes Visuales;6.6;Creativo y con gran potencial.;;0.66;Mario Ramírez;Apoderado: Ignacio Márquez;Sin entrevistas registradas.
+18;José Herrera Salazar;2° Básico B;8;Educación Física;6.3;Liderazgo positivo dentro del grupo.;;0.66;Mario Ramírez;Apoderado: Ignacio Márquez;Sin entrevistas registradas.
+19;Lucía Ibarra Contreras;3° Básico A;9;Lenguaje;5.2;Muy responsable y puntual con sus entregas.;;0.97;Isabella Aguirre;Apoderado: Pedro Carrasco;Sin entrevistas registradas.
+19;Lucía Ibarra Contreras;3° Básico A;9;Matemáticas;5.0;Colabora activamente con sus compañeros.;;0.97;Isabella Aguirre;Apoderado: Pedro Carrasco;Sin entrevistas registradas.
+19;Lucía Ibarra Contreras;3° Básico A;9;Ciencias Naturales;5.0;Molesta a sus compañeros e interrumpe la clase.;;0.97;Isabella Aguirre;Apoderado: Pedro Carrasco;Sin entrevistas registradas.
+19;Lucía Ibarra Contreras;3° Básico A;9;Historia;6.2;;;0.97;Isabella Aguirre;Apoderado: Pedro Carrasco;Sin entrevistas registradas.
+19;Lucía Ibarra Contreras;3° Básico A;9;Inglés;5.8;Creativo y con gran potencial.;;0.97;Isabella Aguirre;Apoderado: Pedro Carrasco;Sin entrevistas registradas.
+19;Lucía Ibarra Contreras;3° Básico A;9;Música;6.4;Excelente participación en clases.;;0.97;Isabella Aguirre;Apoderado: Pedro Carrasco;Sin entrevistas registradas.
+19;Lucía Ibarra Contreras;3° Básico A;9;Artes Visuales;6.4;;;0.97;Isabella Aguirre;Apoderado: Pedro Carrasco;Sin entrevistas registradas.
+19;Lucía Ibarra Contreras;3° Básico A;9;Educación Física;5.3;;;0.97;Isabella Aguirre;Apoderado: Pedro Carrasco;Sin entrevistas registradas.
+20;Francisca Soto Leiva;3° Básico A;9;Lenguaje;6.3;Creativo y con gran potencial.;Matemáticas;0.87;Alicia Vásquez;Apoderado: Tomás Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+20;Francisca Soto Leiva;3° Básico A;9;Matemáticas;6.3;Ha mejorado notablemente su rendimiento.;Matemáticas;0.87;Alicia Vásquez;Apoderado: Tomás Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+20;Francisca Soto Leiva;3° Básico A;9;Ciencias Naturales;6.7;Muy responsable y puntual con sus entregas.;Matemáticas;0.87;Alicia Vásquez;Apoderado: Tomás Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+20;Francisca Soto Leiva;3° Básico A;9;Historia;6.7;Colabora activamente con sus compañeros.;Matemáticas;0.87;Alicia Vásquez;Apoderado: Tomás Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+20;Francisca Soto Leiva;3° Básico A;9;Inglés;7.0;Creativo y con gran potencial.;Matemáticas;0.87;Alicia Vásquez;Apoderado: Tomás Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+20;Francisca Soto Leiva;3° Básico A;9;Música;5.8;;Matemáticas;0.87;Alicia Vásquez;Apoderado: Tomás Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+20;Francisca Soto Leiva;3° Básico A;9;Artes Visuales;7.0;Demuestra gran interés por la asignatura.;Matemáticas;0.87;Alicia Vásquez;Apoderado: Tomás Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+20;Francisca Soto Leiva;3° Básico A;9;Educación Física;6.1;;Matemáticas;0.87;Alicia Vásquez;Apoderado: Tomás Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+21;Luis Figueroa López;3° Básico A;9;Lenguaje;5.4;;Lenguaje;0.67;Paola Araya;Apoderado: Esteban Romero;Sin entrevistas registradas.
+21;Luis Figueroa López;3° Básico A;9;Matemáticas;6.4;;Lenguaje;0.67;Paola Araya;Apoderado: Esteban Romero;Sin entrevistas registradas.
+21;Luis Figueroa López;3° Básico A;9;Ciencias Naturales;6.3;;Lenguaje;0.67;Paola Araya;Apoderado: Esteban Romero;Sin entrevistas registradas.
+21;Luis Figueroa López;3° Básico A;9;Historia;5.9;;Lenguaje;0.67;Paola Araya;Apoderado: Esteban Romero;Sin entrevistas registradas.
+21;Luis Figueroa López;3° Básico A;9;Inglés;6.0;Dificultad para concentrarse en clases.;Lenguaje;0.67;Paola Araya;Apoderado: Esteban Romero;Sin entrevistas registradas.
+21;Luis Figueroa López;3° Básico A;9;Música;6.5;Liderazgo positivo dentro del grupo.;Lenguaje;0.67;Paola Araya;Apoderado: Esteban Romero;Sin entrevistas registradas.
+21;Luis Figueroa López;3° Básico A;9;Artes Visuales;5.6;;Lenguaje;0.67;Paola Araya;Apoderado: Esteban Romero;Sin entrevistas registradas.
+21;Luis Figueroa López;3° Básico A;9;Educación Física;5.5;;Lenguaje;0.67;Paola Araya;Apoderado: Esteban Romero;Sin entrevistas registradas.
+22;Mario Vega Morales;3° Básico A;9;Lenguaje;7.0;Creativo y con gran potencial.;;0.98;Pablo Herrera;Apoderado: Francisco Contreras;Sin entrevistas registradas.
+22;Mario Vega Morales;3° Básico A;9;Matemáticas;5.6;Liderazgo positivo dentro del grupo.;;0.98;Pablo Herrera;Apoderado: Francisco Contreras;Sin entrevistas registradas.
+22;Mario Vega Morales;3° Básico A;9;Ciencias Naturales;6.1;Creativo y con gran potencial.;;0.98;Pablo Herrera;Apoderado: Francisco Contreras;Sin entrevistas registradas.
+22;Mario Vega Morales;3° Básico A;9;Historia;6.2;Demuestra gran interés por la asignatura.;;0.98;Pablo Herrera;Apoderado: Francisco Contreras;Sin entrevistas registradas.
+22;Mario Vega Morales;3° Básico A;9;Inglés;6.8;;;0.98;Pablo Herrera;Apoderado: Francisco Contreras;Sin entrevistas registradas.
+22;Mario Vega Morales;3° Básico A;9;Música;6.6;;;0.98;Pablo Herrera;Apoderado: Francisco Contreras;Sin entrevistas registradas.
+22;Mario Vega Morales;3° Básico A;9;Artes Visuales;6.9;;;0.98;Pablo Herrera;Apoderado: Francisco Contreras;Sin entrevistas registradas.
+22;Mario Vega Morales;3° Básico A;9;Educación Física;5.9;Ha mejorado notablemente su rendimiento.;;0.98;Pablo Herrera;Apoderado: Francisco Contreras;Sin entrevistas registradas.
+23;Mario Saavedra Gutiérrez;3° Básico A;9;Lenguaje;4.7;Registra agresiones físicas a compañeros.;Lenguaje;0.87;Ana Pérez;Apoderado: Matías Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+23;Mario Saavedra Gutiérrez;3° Básico A;9;Matemáticas;5.7;;Lenguaje;0.87;Ana Pérez;Apoderado: Matías Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+23;Mario Saavedra Gutiérrez;3° Básico A;9;Ciencias Naturales;6.4;;Lenguaje;0.87;Ana Pérez;Apoderado: Matías Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+23;Mario Saavedra Gutiérrez;3° Básico A;9;Historia;6.9;;Lenguaje;0.87;Ana Pérez;Apoderado: Matías Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+23;Mario Saavedra Gutiérrez;3° Básico A;9;Inglés;6.2;;Lenguaje;0.87;Ana Pérez;Apoderado: Matías Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+23;Mario Saavedra Gutiérrez;3° Básico A;9;Música;6.5;Ha mejorado notablemente su rendimiento.;Lenguaje;0.87;Ana Pérez;Apoderado: Matías Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+23;Mario Saavedra Gutiérrez;3° Básico A;9;Artes Visuales;6.8;Muy responsable y puntual con sus entregas.;Lenguaje;0.87;Ana Pérez;Apoderado: Matías Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+23;Mario Saavedra Gutiérrez;3° Básico A;9;Educación Física;5.6;Falta de respeto hacia el profesor.;Lenguaje;0.87;Ana Pérez;Apoderado: Matías Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+24;Ignacio Figueroa Tapia;3° Básico B;9;Lenguaje;3.3;Molesta a sus compañeros e interrumpe la clase.;Física;0.97;María Hidalgo;Apoderado: Felipe Escobar;Sin entrevistas registradas.
+24;Ignacio Figueroa Tapia;3° Básico B;9;Matemáticas;3.3;;Física;0.97;María Hidalgo;Apoderado: Felipe Escobar;Sin entrevistas registradas.
+24;Ignacio Figueroa Tapia;3° Básico B;9;Ciencias Naturales;4.5;Se distrae con facilidad.;Física;0.97;María Hidalgo;Apoderado: Felipe Escobar;Sin entrevistas registradas.
+24;Ignacio Figueroa Tapia;3° Básico B;9;Historia;4.3;;Física;0.97;María Hidalgo;Apoderado: Felipe Escobar;Sin entrevistas registradas.
+24;Ignacio Figueroa Tapia;3° Básico B;9;Inglés;4.5;;Física;0.97;María Hidalgo;Apoderado: Felipe Escobar;Sin entrevistas registradas.
+24;Ignacio Figueroa Tapia;3° Básico B;9;Música;4.5;;Física;0.97;María Hidalgo;Apoderado: Felipe Escobar;Sin entrevistas registradas.
+24;Ignacio Figueroa Tapia;3° Básico B;9;Artes Visuales;4.0;;Física;0.97;María Hidalgo;Apoderado: Felipe Escobar;Sin entrevistas registradas.
+24;Ignacio Figueroa Tapia;3° Básico B;9;Educación Física;3.1;Molesta a sus compañeros e interrumpe la clase.;Física;0.97;María Hidalgo;Apoderado: Felipe Escobar;Sin entrevistas registradas.
+25;Claudia Baltra Pizarro;3° Básico B;9;Lenguaje;4.6;;;0.99;Fernanda Romero;Apoderado: Isabella Vega;Sin entrevistas registradas.
+25;Claudia Baltra Pizarro;3° Básico B;9;Matemáticas;5.1;;;0.99;Fernanda Romero;Apoderado: Isabella Vega;Sin entrevistas registradas.
+25;Claudia Baltra Pizarro;3° Básico B;9;Ciencias Naturales;5.7;Demuestra gran interés por la asignatura.;;0.99;Fernanda Romero;Apoderado: Isabella Vega;Sin entrevistas registradas.
+25;Claudia Baltra Pizarro;3° Básico B;9;Historia;4.6;;;0.99;Fernanda Romero;Apoderado: Isabella Vega;Sin entrevistas registradas.
+25;Claudia Baltra Pizarro;3° Básico B;9;Inglés;4.6;;;0.99;Fernanda Romero;Apoderado: Isabella Vega;Sin entrevistas registradas.
+25;Claudia Baltra Pizarro;3° Básico B;9;Música;5.2;;;0.99;Fernanda Romero;Apoderado: Isabella Vega;Sin entrevistas registradas.
+25;Claudia Baltra Pizarro;3° Básico B;9;Artes Visuales;5.9;Falta de estudio y preparación para las evaluaciones.;;0.99;Fernanda Romero;Apoderado: Isabella Vega;Sin entrevistas registradas.
+25;Claudia Baltra Pizarro;3° Básico B;9;Educación Física;5.3;;;0.99;Fernanda Romero;Apoderado: Isabella Vega;Sin entrevistas registradas.
+26;Ana Ortega Escobar;3° Básico B;9;Lenguaje;6.2;;;1.0;Lucía Saavedra;Apoderado: Ana Díaz;Sin entrevistas registradas.
+26;Ana Ortega Escobar;3° Básico B;9;Matemáticas;6.9;Liderazgo positivo dentro del grupo.;;1.0;Lucía Saavedra;Apoderado: Ana Díaz;Sin entrevistas registradas.
+26;Ana Ortega Escobar;3° Básico B;9;Ciencias Naturales;6.3;Demuestra gran interés por la asignatura.;;1.0;Lucía Saavedra;Apoderado: Ana Díaz;Sin entrevistas registradas.
+26;Ana Ortega Escobar;3° Básico B;9;Historia;5.7;Molesta a sus compañeros e interrumpe la clase.;;1.0;Lucía Saavedra;Apoderado: Ana Díaz;Sin entrevistas registradas.
+26;Ana Ortega Escobar;3° Básico B;9;Inglés;6.5;;;1.0;Lucía Saavedra;Apoderado: Ana Díaz;Sin entrevistas registradas.
+26;Ana Ortega Escobar;3° Básico B;9;Música;6.1;;;1.0;Lucía Saavedra;Apoderado: Ana Díaz;Sin entrevistas registradas.
+26;Ana Ortega Escobar;3° Básico B;9;Artes Visuales;6.3;Demuestra gran interés por la asignatura.;;1.0;Lucía Saavedra;Apoderado: Ana Díaz;Sin entrevistas registradas.
+26;Ana Ortega Escobar;3° Básico B;9;Educación Física;6.2;;;1.0;Lucía Saavedra;Apoderado: Ana Díaz;Sin entrevistas registradas.
+27;Camila Saavedra Aguirre;3° Básico B;9;Lenguaje;5.0;;Inglés;1.0;Nicolás Riquelme;Apoderado: Marisol Reyes;Sin entrevistas registradas.
+27;Camila Saavedra Aguirre;3° Básico B;9;Matemáticas;4.9;Muy responsable y puntual con sus entregas.;Inglés;1.0;Nicolás Riquelme;Apoderado: Marisol Reyes;Sin entrevistas registradas.
+27;Camila Saavedra Aguirre;3° Básico B;9;Ciencias Naturales;5.5;Copia en la prueba.;Inglés;1.0;Nicolás Riquelme;Apoderado: Marisol Reyes;Sin entrevistas registradas.
+27;Camila Saavedra Aguirre;3° Básico B;9;Historia;6.0;;Inglés;1.0;Nicolás Riquelme;Apoderado: Marisol Reyes;Sin entrevistas registradas.
+27;Camila Saavedra Aguirre;3° Básico B;9;Inglés;5.4;Copia en la prueba.;Inglés;1.0;Nicolás Riquelme;Apoderado: Marisol Reyes;Sin entrevistas registradas.
+27;Camila Saavedra Aguirre;3° Básico B;9;Música;5.0;;Inglés;1.0;Nicolás Riquelme;Apoderado: Marisol Reyes;Sin entrevistas registradas.
+27;Camila Saavedra Aguirre;3° Básico B;9;Artes Visuales;5.1;;Inglés;1.0;Nicolás Riquelme;Apoderado: Marisol Reyes;Sin entrevistas registradas.
+27;Camila Saavedra Aguirre;3° Básico B;9;Educación Física;5.4;Registra agresiones físicas a compañeros.;Inglés;1.0;Nicolás Riquelme;Apoderado: Marisol Reyes;Sin entrevistas registradas.
+28;Esteban Araya Arteaga;4° Básico A;10;Lenguaje;5.9;Creativo y con gran potencial.;;0.9;Daniela Márquez;Apoderado: María Romero;Sin entrevistas registradas.
+28;Esteban Araya Arteaga;4° Básico A;10;Matemáticas;5.6;Liderazgo positivo dentro del grupo.;;0.9;Daniela Márquez;Apoderado: María Romero;Sin entrevistas registradas.
+28;Esteban Araya Arteaga;4° Básico A;10;Ciencias Naturales;5.7;Liderazgo positivo dentro del grupo.;;0.9;Daniela Márquez;Apoderado: María Romero;Sin entrevistas registradas.
+28;Esteban Araya Arteaga;4° Básico A;10;Historia;5.4;Se distrae con facilidad.;;0.9;Daniela Márquez;Apoderado: María Romero;Sin entrevistas registradas.
+28;Esteban Araya Arteaga;4° Básico A;10;Inglés;5.7;Falta de respeto hacia el profesor.;;0.9;Daniela Márquez;Apoderado: María Romero;Sin entrevistas registradas.
+28;Esteban Araya Arteaga;4° Básico A;10;Música;6.7;Liderazgo positivo dentro del grupo.;;0.9;Daniela Márquez;Apoderado: María Romero;Sin entrevistas registradas.
+28;Esteban Araya Arteaga;4° Básico A;10;Artes Visuales;5.9;Liderazgo positivo dentro del grupo.;;0.9;Daniela Márquez;Apoderado: María Romero;Sin entrevistas registradas.
+28;Esteban Araya Arteaga;4° Básico A;10;Educación Física;6.1;;;0.9;Daniela Márquez;Apoderado: María Romero;Sin entrevistas registradas.
+29;Fernanda Silva González;4° Básico A;10;Lenguaje;3.6;;;0.99;Fernanda Soto;Apoderado: Valentina Escobar;Sin entrevistas registradas.
+29;Fernanda Silva González;4° Básico A;10;Matemáticas;2.9;Molesta a sus compañeros e interrumpe la clase.;;0.99;Fernanda Soto;Apoderado: Valentina Escobar;Sin entrevistas registradas.
+29;Fernanda Silva González;4° Básico A;10;Ciencias Naturales;3.1;;;0.99;Fernanda Soto;Apoderado: Valentina Escobar;Sin entrevistas registradas.
+29;Fernanda Silva González;4° Básico A;10;Historia;3.6;;;0.99;Fernanda Soto;Apoderado: Valentina Escobar;Sin entrevistas registradas.
+29;Fernanda Silva González;4° Básico A;10;Inglés;3.8;Registra agresiones físicas a compañeros.;;0.99;Fernanda Soto;Apoderado: Valentina Escobar;Sin entrevistas registradas.
+29;Fernanda Silva González;4° Básico A;10;Música;4.3;Muy responsable y puntual con sus entregas.;;0.99;Fernanda Soto;Apoderado: Valentina Escobar;Sin entrevistas registradas.
+29;Fernanda Silva González;4° Básico A;10;Artes Visuales;2.9;Dificultad para concentrarse en clases.;;0.99;Fernanda Soto;Apoderado: Valentina Escobar;Sin entrevistas registradas.
+29;Fernanda Silva González;4° Básico A;10;Educación Física;3.4;;;0.99;Fernanda Soto;Apoderado: Valentina Escobar;Sin entrevistas registradas.
+30;Francisca Rojas Pérez;4° Básico A;10;Lenguaje;5.5;;Inglés;0.91;Sebastián Morales;Apoderado: José Leiva;Sin entrevistas registradas.
+30;Francisca Rojas Pérez;4° Básico A;10;Matemáticas;6.2;Creativo y con gran potencial.;Inglés;0.91;Sebastián Morales;Apoderado: José Leiva;Sin entrevistas registradas.
+30;Francisca Rojas Pérez;4° Básico A;10;Ciencias Naturales;6.7;;Inglés;0.91;Sebastián Morales;Apoderado: José Leiva;Sin entrevistas registradas.
+30;Francisca Rojas Pérez;4° Básico A;10;Historia;5.8;;Inglés;0.91;Sebastián Morales;Apoderado: José Leiva;Sin entrevistas registradas.
+30;Francisca Rojas Pérez;4° Básico A;10;Inglés;4.5;Dificultad para concentrarse en clases.;Inglés;0.91;Sebastián Morales;Apoderado: José Leiva;Sin entrevistas registradas.
+30;Francisca Rojas Pérez;4° Básico A;10;Música;6.6;;Inglés;0.91;Sebastián Morales;Apoderado: José Leiva;Sin entrevistas registradas.
+30;Francisca Rojas Pérez;4° Básico A;10;Artes Visuales;5.7;;Inglés;0.91;Sebastián Morales;Apoderado: José Leiva;Sin entrevistas registradas.
+30;Francisca Rojas Pérez;4° Básico A;10;Educación Física;5.6;;Inglés;0.91;Sebastián Morales;Apoderado: José Leiva;Sin entrevistas registradas.
+31;Lucía Miranda López;4° Básico A;10;Lenguaje;6.5;;;0.99;Ana Baltra;Apoderado: Esteban Saavedra;Sin entrevistas registradas.
+31;Lucía Miranda López;4° Básico A;10;Matemáticas;6.9;;;0.99;Ana Baltra;Apoderado: Esteban Saavedra;Sin entrevistas registradas.
+31;Lucía Miranda López;4° Básico A;10;Ciencias Naturales;6.2;Ha mejorado notablemente su rendimiento.;;0.99;Ana Baltra;Apoderado: Esteban Saavedra;Sin entrevistas registradas.
+31;Lucía Miranda López;4° Básico A;10;Historia;5.9;Colabora activamente con sus compañeros.;;0.99;Ana Baltra;Apoderado: Esteban Saavedra;Sin entrevistas registradas.
+31;Lucía Miranda López;4° Básico A;10;Inglés;5.6;;;0.99;Ana Baltra;Apoderado: Esteban Saavedra;Sin entrevistas registradas.
+31;Lucía Miranda López;4° Básico A;10;Música;6.1;Muy responsable y puntual con sus entregas.;;0.99;Ana Baltra;Apoderado: Esteban Saavedra;Sin entrevistas registradas.
+31;Lucía Miranda López;4° Básico A;10;Artes Visuales;6.9;;;0.99;Ana Baltra;Apoderado: Esteban Saavedra;Sin entrevistas registradas.
+31;Lucía Miranda López;4° Básico A;10;Educación Física;5.9;;;0.99;Ana Baltra;Apoderado: Esteban Saavedra;Sin entrevistas registradas.
+32;Valentina Pérez Prieto;4° Básico A;10;Lenguaje;5.7;Creativo y con gran potencial.;;0.85;Camila Reyes;Apoderado: Isabella Ramírez;Sin entrevistas registradas.
+32;Valentina Pérez Prieto;4° Básico A;10;Matemáticas;6.1;;;0.85;Camila Reyes;Apoderado: Isabella Ramírez;Sin entrevistas registradas.
+32;Valentina Pérez Prieto;4° Básico A;10;Ciencias Naturales;5.6;;;0.85;Camila Reyes;Apoderado: Isabella Ramírez;Sin entrevistas registradas.
+32;Valentina Pérez Prieto;4° Básico A;10;Historia;5.6;Tímido, le cuesta participar oralmente.;;0.85;Camila Reyes;Apoderado: Isabella Ramírez;Sin entrevistas registradas.
+32;Valentina Pérez Prieto;4° Básico A;10;Inglés;5.4;;;0.85;Camila Reyes;Apoderado: Isabella Ramírez;Sin entrevistas registradas.
+32;Valentina Pérez Prieto;4° Básico A;10;Música;5.1;Liderazgo positivo dentro del grupo.;;0.85;Camila Reyes;Apoderado: Isabella Ramírez;Sin entrevistas registradas.
+32;Valentina Pérez Prieto;4° Básico A;10;Artes Visuales;5.5;Molesta a sus compañeros e interrumpe la clase.;;0.85;Camila Reyes;Apoderado: Isabella Ramírez;Sin entrevistas registradas.
+32;Valentina Pérez Prieto;4° Básico A;10;Educación Física;6.4;;;0.85;Camila Reyes;Apoderado: Isabella Ramírez;Sin entrevistas registradas.
+33;Andrea Silva Herrera;4° Básico B;10;Lenguaje;7.0;Demuestra gran interés por la asignatura.;;0.88;Sebastián Prieto;Apoderado: Matías Escobar;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+33;Andrea Silva Herrera;4° Básico B;10;Matemáticas;6.7;Creativo y con gran potencial.;;0.88;Sebastián Prieto;Apoderado: Matías Escobar;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+33;Andrea Silva Herrera;4° Básico B;10;Ciencias Naturales;6.7;;;0.88;Sebastián Prieto;Apoderado: Matías Escobar;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+33;Andrea Silva Herrera;4° Básico B;10;Historia;6.7;Excelente participación en clases.;;0.88;Sebastián Prieto;Apoderado: Matías Escobar;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+33;Andrea Silva Herrera;4° Básico B;10;Inglés;6.2;;;0.88;Sebastián Prieto;Apoderado: Matías Escobar;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+33;Andrea Silva Herrera;4° Básico B;10;Música;6.0;Muy responsable y puntual con sus entregas.;;0.88;Sebastián Prieto;Apoderado: Matías Escobar;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+33;Andrea Silva Herrera;4° Básico B;10;Artes Visuales;6.4;Creativo y con gran potencial.;;0.88;Sebastián Prieto;Apoderado: Matías Escobar;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+33;Andrea Silva Herrera;4° Básico B;10;Educación Física;6.6;Excelente participación en clases.;;0.88;Sebastián Prieto;Apoderado: Matías Escobar;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+34;Francisco Riquelme González;4° Básico B;10;Lenguaje;5.9;Liderazgo positivo dentro del grupo.;Física;0.92;Carlos Baltra;Apoderado: Claudia Morales;Sin entrevistas registradas.
+34;Francisco Riquelme González;4° Básico B;10;Matemáticas;5.7;;Física;0.92;Carlos Baltra;Apoderado: Claudia Morales;Sin entrevistas registradas.
+34;Francisco Riquelme González;4° Básico B;10;Ciencias Naturales;5.7;;Física;0.92;Carlos Baltra;Apoderado: Claudia Morales;Sin entrevistas registradas.
+34;Francisco Riquelme González;4° Básico B;10;Historia;6.4;Excelente participación en clases.;Física;0.92;Carlos Baltra;Apoderado: Claudia Morales;Sin entrevistas registradas.
+34;Francisco Riquelme González;4° Básico B;10;Inglés;6.0;Colabora activamente con sus compañeros.;Física;0.92;Carlos Baltra;Apoderado: Claudia Morales;Sin entrevistas registradas.
+34;Francisco Riquelme González;4° Básico B;10;Música;6.6;;Física;0.92;Carlos Baltra;Apoderado: Claudia Morales;Sin entrevistas registradas.
+34;Francisco Riquelme González;4° Básico B;10;Artes Visuales;6.1;Creativo y con gran potencial.;Física;0.92;Carlos Baltra;Apoderado: Claudia Morales;Sin entrevistas registradas.
+34;Francisco Riquelme González;4° Básico B;10;Educación Física;5.5;;Física;0.92;Carlos Baltra;Apoderado: Claudia Morales;Sin entrevistas registradas.
+35;Paola Pizarro Valenzuela;4° Básico B;10;Lenguaje;6.8;;;0.99;Pedro Ortega;Apoderado: Ignacio Gutiérrez;Sin entrevistas registradas.
+35;Paola Pizarro Valenzuela;4° Básico B;10;Matemáticas;6.8;;;0.99;Pedro Ortega;Apoderado: Ignacio Gutiérrez;Sin entrevistas registradas.
+35;Paola Pizarro Valenzuela;4° Básico B;10;Ciencias Naturales;6.3;;;0.99;Pedro Ortega;Apoderado: Ignacio Gutiérrez;Sin entrevistas registradas.
+35;Paola Pizarro Valenzuela;4° Básico B;10;Historia;6.6;Ha mejorado notablemente su rendimiento.;;0.99;Pedro Ortega;Apoderado: Ignacio Gutiérrez;Sin entrevistas registradas.
+35;Paola Pizarro Valenzuela;4° Básico B;10;Inglés;5.3;Dificultad para concentrarse en clases.;;0.99;Pedro Ortega;Apoderado: Ignacio Gutiérrez;Sin entrevistas registradas.
+35;Paola Pizarro Valenzuela;4° Básico B;10;Música;5.8;;;0.99;Pedro Ortega;Apoderado: Ignacio Gutiérrez;Sin entrevistas registradas.
+35;Paola Pizarro Valenzuela;4° Básico B;10;Artes Visuales;6.5;;;0.99;Pedro Ortega;Apoderado: Ignacio Gutiérrez;Sin entrevistas registradas.
+35;Paola Pizarro Valenzuela;4° Básico B;10;Educación Física;6.2;Demuestra gran interés por la asignatura.;;0.99;Pedro Ortega;Apoderado: Ignacio Gutiérrez;Sin entrevistas registradas.
+36;Francisco Ramírez Sepúlveda;4° Básico B;10;Lenguaje;6.3;;;0.92;Esteban Díaz;Apoderado: Sofía Campos;Sin entrevistas registradas.
+36;Francisco Ramírez Sepúlveda;4° Básico B;10;Matemáticas;5.2;;;0.92;Esteban Díaz;Apoderado: Sofía Campos;Sin entrevistas registradas.
+36;Francisco Ramírez Sepúlveda;4° Básico B;10;Ciencias Naturales;6.4;Muy responsable y puntual con sus entregas.;;0.92;Esteban Díaz;Apoderado: Sofía Campos;Sin entrevistas registradas.
+36;Francisco Ramírez Sepúlveda;4° Básico B;10;Historia;5.1;Copia en la prueba.;;0.92;Esteban Díaz;Apoderado: Sofía Campos;Sin entrevistas registradas.
+36;Francisco Ramírez Sepúlveda;4° Básico B;10;Inglés;5.8;;;0.92;Esteban Díaz;Apoderado: Sofía Campos;Sin entrevistas registradas.
+36;Francisco Ramírez Sepúlveda;4° Básico B;10;Música;5.3;Muy responsable y puntual con sus entregas.;;0.92;Esteban Díaz;Apoderado: Sofía Campos;Sin entrevistas registradas.
+36;Francisco Ramírez Sepúlveda;4° Básico B;10;Artes Visuales;5.3;Colabora activamente con sus compañeros.;;0.92;Esteban Díaz;Apoderado: Sofía Campos;Sin entrevistas registradas.
+36;Francisco Ramírez Sepúlveda;4° Básico B;10;Educación Física;5.7;Dificultad para concentrarse en clases.;;0.92;Esteban Díaz;Apoderado: Sofía Campos;Sin entrevistas registradas.
+37;Gabriela Ibarra Ibarra;5° Básico A;11;Lenguaje;6.1;Demuestra gran interés por la asignatura.;;0.98;Julio Riquelme;Apoderado: Matías Díaz;Sin entrevistas registradas.
+37;Gabriela Ibarra Ibarra;5° Básico A;11;Matemáticas;5.0;;;0.98;Julio Riquelme;Apoderado: Matías Díaz;Sin entrevistas registradas.
+37;Gabriela Ibarra Ibarra;5° Básico A;11;Ciencias Naturales;5.2;Copia en la prueba.;;0.98;Julio Riquelme;Apoderado: Matías Díaz;Sin entrevistas registradas.
+37;Gabriela Ibarra Ibarra;5° Básico A;11;Historia;6.2;Ha mejorado notablemente su rendimiento.;;0.98;Julio Riquelme;Apoderado: Matías Díaz;Sin entrevistas registradas.
+37;Gabriela Ibarra Ibarra;5° Básico A;11;Inglés;5.0;Falta de respeto hacia el profesor.;;0.98;Julio Riquelme;Apoderado: Matías Díaz;Sin entrevistas registradas.
+37;Gabriela Ibarra Ibarra;5° Básico A;11;Música;5.7;Colabora activamente con sus compañeros.;;0.98;Julio Riquelme;Apoderado: Matías Díaz;Sin entrevistas registradas.
+37;Gabriela Ibarra Ibarra;5° Básico A;11;Artes Visuales;6.4;;;0.98;Julio Riquelme;Apoderado: Matías Díaz;Sin entrevistas registradas.
+37;Gabriela Ibarra Ibarra;5° Básico A;11;Educación Física;6.5;;;0.98;Julio Riquelme;Apoderado: Matías Díaz;Sin entrevistas registradas.
+38;Camila Pérez Rojas;5° Básico A;11;Lenguaje;5.8;;;0.95;Javiera Arteaga;Apoderado: Tomás Sepúlveda;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+38;Camila Pérez Rojas;5° Básico A;11;Matemáticas;5.8;;;0.95;Javiera Arteaga;Apoderado: Tomás Sepúlveda;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+38;Camila Pérez Rojas;5° Básico A;11;Ciencias Naturales;6.7;Ha mejorado notablemente su rendimiento.;;0.95;Javiera Arteaga;Apoderado: Tomás Sepúlveda;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+38;Camila Pérez Rojas;5° Básico A;11;Historia;6.1;Colabora activamente con sus compañeros.;;0.95;Javiera Arteaga;Apoderado: Tomás Sepúlveda;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+38;Camila Pérez Rojas;5° Básico A;11;Inglés;5.9;Excelente participación en clases.;;0.95;Javiera Arteaga;Apoderado: Tomás Sepúlveda;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+38;Camila Pérez Rojas;5° Básico A;11;Música;6.6;Demuestra gran interés por la asignatura.;;0.95;Javiera Arteaga;Apoderado: Tomás Sepúlveda;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+38;Camila Pérez Rojas;5° Básico A;11;Artes Visuales;6.4;;;0.95;Javiera Arteaga;Apoderado: Tomás Sepúlveda;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+38;Camila Pérez Rojas;5° Básico A;11;Educación Física;5.5;;;0.95;Javiera Arteaga;Apoderado: Tomás Sepúlveda;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+39;Constanza Prieto Pizarro;5° Básico A;11;Lenguaje;3.6;Falta de respeto hacia el profesor.;;0.98;Constanza Arteaga;Apoderado: Felipe Ibarra;Sin entrevistas registradas.
+39;Constanza Prieto Pizarro;5° Básico A;11;Matemáticas;4.1;Excelente participación en clases.;;0.98;Constanza Arteaga;Apoderado: Felipe Ibarra;Sin entrevistas registradas.
+39;Constanza Prieto Pizarro;5° Básico A;11;Ciencias Naturales;3.9;;;0.98;Constanza Arteaga;Apoderado: Felipe Ibarra;Sin entrevistas registradas.
+39;Constanza Prieto Pizarro;5° Básico A;11;Historia;4.2;Demuestra gran interés por la asignatura.;;0.98;Constanza Arteaga;Apoderado: Felipe Ibarra;Sin entrevistas registradas.
+39;Constanza Prieto Pizarro;5° Básico A;11;Inglés;4.2;;;0.98;Constanza Arteaga;Apoderado: Felipe Ibarra;Sin entrevistas registradas.
+39;Constanza Prieto Pizarro;5° Básico A;11;Música;4.3;;;0.98;Constanza Arteaga;Apoderado: Felipe Ibarra;Sin entrevistas registradas.
+39;Constanza Prieto Pizarro;5° Básico A;11;Artes Visuales;3.3;Falta de estudio y preparación para las evaluaciones.;;0.98;Constanza Arteaga;Apoderado: Felipe Ibarra;Sin entrevistas registradas.
+39;Constanza Prieto Pizarro;5° Básico A;11;Educación Física;4.2;;;0.98;Constanza Arteaga;Apoderado: Felipe Ibarra;Sin entrevistas registradas.
+40;Sofía Riquelme López;5° Básico A;11;Lenguaje;7.0;;;0.87;Sebastián Pérez;Apoderado: Antonia Baltra;Sin entrevistas registradas.
+40;Sofía Riquelme López;5° Básico A;11;Matemáticas;7.0;Colabora activamente con sus compañeros.;;0.87;Sebastián Pérez;Apoderado: Antonia Baltra;Sin entrevistas registradas.
+40;Sofía Riquelme López;5° Básico A;11;Ciencias Naturales;7.0;Colabora activamente con sus compañeros.;;0.87;Sebastián Pérez;Apoderado: Antonia Baltra;Sin entrevistas registradas.
+40;Sofía Riquelme López;5° Básico A;11;Historia;6.0;;;0.87;Sebastián Pérez;Apoderado: Antonia Baltra;Sin entrevistas registradas.
+40;Sofía Riquelme López;5° Básico A;11;Inglés;7.0;;;0.87;Sebastián Pérez;Apoderado: Antonia Baltra;Sin entrevistas registradas.
+40;Sofía Riquelme López;5° Básico A;11;Música;6.2;;;0.87;Sebastián Pérez;Apoderado: Antonia Baltra;Sin entrevistas registradas.
+40;Sofía Riquelme López;5° Básico A;11;Artes Visuales;7.0;;;0.87;Sebastián Pérez;Apoderado: Antonia Baltra;Sin entrevistas registradas.
+40;Sofía Riquelme López;5° Básico A;11;Educación Física;6.2;Muy responsable y puntual con sus entregas.;;0.87;Sebastián Pérez;Apoderado: Antonia Baltra;Sin entrevistas registradas.
+41;Antonia Rojas Rojas;5° Básico B;11;Lenguaje;7.0;;Física;0.97;Javiera Ramírez;Apoderado: Daniela Reyes;Sin entrevistas registradas.
+41;Antonia Rojas Rojas;5° Básico B;11;Matemáticas;6.2;;Física;0.97;Javiera Ramírez;Apoderado: Daniela Reyes;Sin entrevistas registradas.
+41;Antonia Rojas Rojas;5° Básico B;11;Ciencias Naturales;7.0;Colabora activamente con sus compañeros.;Física;0.97;Javiera Ramírez;Apoderado: Daniela Reyes;Sin entrevistas registradas.
+41;Antonia Rojas Rojas;5° Básico B;11;Historia;6.1;Ha mejorado notablemente su rendimiento.;Física;0.97;Javiera Ramírez;Apoderado: Daniela Reyes;Sin entrevistas registradas.
+41;Antonia Rojas Rojas;5° Básico B;11;Inglés;6.1;;Física;0.97;Javiera Ramírez;Apoderado: Daniela Reyes;Sin entrevistas registradas.
+41;Antonia Rojas Rojas;5° Básico B;11;Música;7.0;;Física;0.97;Javiera Ramírez;Apoderado: Daniela Reyes;Sin entrevistas registradas.
+41;Antonia Rojas Rojas;5° Básico B;11;Artes Visuales;6.0;;Física;0.97;Javiera Ramírez;Apoderado: Daniela Reyes;Sin entrevistas registradas.
+41;Antonia Rojas Rojas;5° Básico B;11;Educación Física;5.0;;Física;0.97;Javiera Ramírez;Apoderado: Daniela Reyes;Sin entrevistas registradas.
+42;Julio Soto Prieto;5° Básico B;11;Lenguaje;4.9;;;0.96;Nicolás López;Apoderado: Miguel Márquez;Sin entrevistas registradas.
+42;Julio Soto Prieto;5° Básico B;11;Matemáticas;4.9;;;0.96;Nicolás López;Apoderado: Miguel Márquez;Sin entrevistas registradas.
+42;Julio Soto Prieto;5° Básico B;11;Ciencias Naturales;6.0;Creativo y con gran potencial.;;0.96;Nicolás López;Apoderado: Miguel Márquez;Sin entrevistas registradas.
+42;Julio Soto Prieto;5° Básico B;11;Historia;5.7;;;0.96;Nicolás López;Apoderado: Miguel Márquez;Sin entrevistas registradas.
+42;Julio Soto Prieto;5° Básico B;11;Inglés;4.8;Falta de estudio y preparación para las evaluaciones.;;0.96;Nicolás López;Apoderado: Miguel Márquez;Sin entrevistas registradas.
+42;Julio Soto Prieto;5° Básico B;11;Música;5.6;Creativo y con gran potencial.;;0.96;Nicolás López;Apoderado: Miguel Márquez;Sin entrevistas registradas.
+42;Julio Soto Prieto;5° Básico B;11;Artes Visuales;4.6;;;0.96;Nicolás López;Apoderado: Miguel Márquez;Sin entrevistas registradas.
+42;Julio Soto Prieto;5° Básico B;11;Educación Física;4.9;;;0.96;Nicolás López;Apoderado: Miguel Márquez;Sin entrevistas registradas.
+43;Mario Silva Rojas;5° Básico B;11;Lenguaje;5.9;Molesta a sus compañeros e interrumpe la clase.;;0.63;Catalina Tapia;Apoderado: Mario Márquez;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+43;Mario Silva Rojas;5° Básico B;11;Matemáticas;4.6;Colabora activamente con sus compañeros.;;0.63;Catalina Tapia;Apoderado: Mario Márquez;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+43;Mario Silva Rojas;5° Básico B;11;Ciencias Naturales;4.7;Tímido, le cuesta participar oralmente.;;0.63;Catalina Tapia;Apoderado: Mario Márquez;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+43;Mario Silva Rojas;5° Básico B;11;Historia;4.6;;;0.63;Catalina Tapia;Apoderado: Mario Márquez;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+43;Mario Silva Rojas;5° Básico B;11;Inglés;4.9;Liderazgo positivo dentro del grupo.;;0.63;Catalina Tapia;Apoderado: Mario Márquez;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+43;Mario Silva Rojas;5° Básico B;11;Música;4.4;;;0.63;Catalina Tapia;Apoderado: Mario Márquez;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+43;Mario Silva Rojas;5° Básico B;11;Artes Visuales;5.5;;;0.63;Catalina Tapia;Apoderado: Mario Márquez;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+43;Mario Silva Rojas;5° Básico B;11;Educación Física;4.3;Muy responsable y puntual con sus entregas.;;0.63;Catalina Tapia;Apoderado: Mario Márquez;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+44;Marisol Contreras Leiva;5° Básico B;11;Lenguaje;6.3;;;0.99;Daniela Rojas;Apoderado: Catalina Morales;Sin entrevistas registradas.
+44;Marisol Contreras Leiva;5° Básico B;11;Matemáticas;6.5;Muy responsable y puntual con sus entregas.;;0.99;Daniela Rojas;Apoderado: Catalina Morales;Sin entrevistas registradas.
+44;Marisol Contreras Leiva;5° Básico B;11;Ciencias Naturales;5.5;;;0.99;Daniela Rojas;Apoderado: Catalina Morales;Sin entrevistas registradas.
+44;Marisol Contreras Leiva;5° Básico B;11;Historia;5.9;Molesta a sus compañeros e interrumpe la clase.;;0.99;Daniela Rojas;Apoderado: Catalina Morales;Sin entrevistas registradas.
+44;Marisol Contreras Leiva;5° Básico B;11;Inglés;6.2;Liderazgo positivo dentro del grupo.;;0.99;Daniela Rojas;Apoderado: Catalina Morales;Sin entrevistas registradas.
+44;Marisol Contreras Leiva;5° Básico B;11;Música;5.3;Progreso inconsistente, alterna entre notas altas y bajas.;;0.99;Daniela Rojas;Apoderado: Catalina Morales;Sin entrevistas registradas.
+44;Marisol Contreras Leiva;5° Básico B;11;Artes Visuales;5.1;Molesta a sus compañeros e interrumpe la clase.;;0.99;Daniela Rojas;Apoderado: Catalina Morales;Sin entrevistas registradas.
+44;Marisol Contreras Leiva;5° Básico B;11;Educación Física;5.5;;;0.99;Daniela Rojas;Apoderado: Catalina Morales;Sin entrevistas registradas.
+45;Alicia Gutiérrez Vega;6° Básico A;12;Lenguaje;6.4;;Matemáticas;0.96;Mario Campos;Apoderado: Antonia Ramírez;Se informa al apoderado sobre la falta recurrente de entrega de tareas. Apoderado se compromete a revisar la agenda escolar diariamente.
+45;Alicia Gutiérrez Vega;6° Básico A;12;Matemáticas;5.1;;Matemáticas;0.96;Mario Campos;Apoderado: Antonia Ramírez;Se informa al apoderado sobre la falta recurrente de entrega de tareas. Apoderado se compromete a revisar la agenda escolar diariamente.
+45;Alicia Gutiérrez Vega;6° Básico A;12;Ciencias Naturales;6.7;;Matemáticas;0.96;Mario Campos;Apoderado: Antonia Ramírez;Se informa al apoderado sobre la falta recurrente de entrega de tareas. Apoderado se compromete a revisar la agenda escolar diariamente.
+45;Alicia Gutiérrez Vega;6° Básico A;12;Historia;5.8;;Matemáticas;0.96;Mario Campos;Apoderado: Antonia Ramírez;Se informa al apoderado sobre la falta recurrente de entrega de tareas. Apoderado se compromete a revisar la agenda escolar diariamente.
+45;Alicia Gutiérrez Vega;6° Básico A;12;Inglés;6.9;Muy responsable y puntual con sus entregas.;Matemáticas;0.96;Mario Campos;Apoderado: Antonia Ramírez;Se informa al apoderado sobre la falta recurrente de entrega de tareas. Apoderado se compromete a revisar la agenda escolar diariamente.
+45;Alicia Gutiérrez Vega;6° Básico A;12;Música;6.9;;Matemáticas;0.96;Mario Campos;Apoderado: Antonia Ramírez;Se informa al apoderado sobre la falta recurrente de entrega de tareas. Apoderado se compromete a revisar la agenda escolar diariamente.
+45;Alicia Gutiérrez Vega;6° Básico A;12;Artes Visuales;6.1;Excelente participación en clases.;Matemáticas;0.96;Mario Campos;Apoderado: Antonia Ramírez;Se informa al apoderado sobre la falta recurrente de entrega de tareas. Apoderado se compromete a revisar la agenda escolar diariamente.
+45;Alicia Gutiérrez Vega;6° Básico A;12;Educación Física;7.0;Colabora activamente con sus compañeros.;Matemáticas;0.96;Mario Campos;Apoderado: Antonia Ramírez;Se informa al apoderado sobre la falta recurrente de entrega de tareas. Apoderado se compromete a revisar la agenda escolar diariamente.
+46;Fernanda Ortega López;6° Básico A;12;Lenguaje;5.1;Excelente participación en clases.;Matemáticas;0.98;Matías Pérez;Apoderado: Daniela Escobar;Sin entrevistas registradas.
+46;Fernanda Ortega López;6° Básico A;12;Matemáticas;4.0;Se distrae con facilidad.;Matemáticas;0.98;Matías Pérez;Apoderado: Daniela Escobar;Sin entrevistas registradas.
+46;Fernanda Ortega López;6° Básico A;12;Ciencias Naturales;5.2;Molesta a sus compañeros e interrumpe la clase.;Matemáticas;0.98;Matías Pérez;Apoderado: Daniela Escobar;Sin entrevistas registradas.
+46;Fernanda Ortega López;6° Básico A;12;Historia;4.8;;Matemáticas;0.98;Matías Pérez;Apoderado: Daniela Escobar;Sin entrevistas registradas.
+46;Fernanda Ortega López;6° Básico A;12;Inglés;5.2;Se distrae con facilidad.;Matemáticas;0.98;Matías Pérez;Apoderado: Daniela Escobar;Sin entrevistas registradas.
+46;Fernanda Ortega López;6° Básico A;12;Música;4.7;;Matemáticas;0.98;Matías Pérez;Apoderado: Daniela Escobar;Sin entrevistas registradas.
+46;Fernanda Ortega López;6° Básico A;12;Artes Visuales;5.1;;Matemáticas;0.98;Matías Pérez;Apoderado: Daniela Escobar;Sin entrevistas registradas.
+46;Fernanda Ortega López;6° Básico A;12;Educación Física;5.7;;Matemáticas;0.98;Matías Pérez;Apoderado: Daniela Escobar;Sin entrevistas registradas.
+47;Francisco Valenzuela Romero;6° Básico A;12;Lenguaje;6.5;;;1.0;Isabella Prieto;Apoderado: Matías Arteaga;Sin entrevistas registradas.
+47;Francisco Valenzuela Romero;6° Básico A;12;Matemáticas;5.8;Copia en la prueba.;;1.0;Isabella Prieto;Apoderado: Matías Arteaga;Sin entrevistas registradas.
+47;Francisco Valenzuela Romero;6° Básico A;12;Ciencias Naturales;6.1;Excelente participación en clases.;;1.0;Isabella Prieto;Apoderado: Matías Arteaga;Sin entrevistas registradas.
+47;Francisco Valenzuela Romero;6° Básico A;12;Historia;5.8;;;1.0;Isabella Prieto;Apoderado: Matías Arteaga;Sin entrevistas registradas.
+47;Francisco Valenzuela Romero;6° Básico A;12;Inglés;6.3;Demuestra gran interés por la asignatura.;;1.0;Isabella Prieto;Apoderado: Matías Arteaga;Sin entrevistas registradas.
+47;Francisco Valenzuela Romero;6° Básico A;12;Música;6.1;;;1.0;Isabella Prieto;Apoderado: Matías Arteaga;Sin entrevistas registradas.
+47;Francisco Valenzuela Romero;6° Básico A;12;Artes Visuales;6.2;Demuestra gran interés por la asignatura.;;1.0;Isabella Prieto;Apoderado: Matías Arteaga;Sin entrevistas registradas.
+47;Francisco Valenzuela Romero;6° Básico A;12;Educación Física;5.8;;;1.0;Isabella Prieto;Apoderado: Matías Arteaga;Sin entrevistas registradas.
+48;Isabella Ramírez Hidalgo;6° Básico A;12;Lenguaje;5.9;;;0.96;Fernanda Ortega;Apoderado: Luis Vega;Se felicita al apoderado por el notable avance del estudiante en conducta y responsabilidad.
+48;Isabella Ramírez Hidalgo;6° Básico A;12;Matemáticas;4.8;;;0.96;Fernanda Ortega;Apoderado: Luis Vega;Se felicita al apoderado por el notable avance del estudiante en conducta y responsabilidad.
+48;Isabella Ramírez Hidalgo;6° Básico A;12;Ciencias Naturales;4.4;Tímido, le cuesta participar oralmente.;;0.96;Fernanda Ortega;Apoderado: Luis Vega;Se felicita al apoderado por el notable avance del estudiante en conducta y responsabilidad.
+48;Isabella Ramírez Hidalgo;6° Básico A;12;Historia;4.6;;;0.96;Fernanda Ortega;Apoderado: Luis Vega;Se felicita al apoderado por el notable avance del estudiante en conducta y responsabilidad.
+48;Isabella Ramírez Hidalgo;6° Básico A;12;Inglés;5.9;;;0.96;Fernanda Ortega;Apoderado: Luis Vega;Se felicita al apoderado por el notable avance del estudiante en conducta y responsabilidad.
+48;Isabella Ramírez Hidalgo;6° Básico A;12;Música;4.7;Se distrae con facilidad.;;0.96;Fernanda Ortega;Apoderado: Luis Vega;Se felicita al apoderado por el notable avance del estudiante en conducta y responsabilidad.
+48;Isabella Ramírez Hidalgo;6° Básico A;12;Artes Visuales;5.2;;;0.96;Fernanda Ortega;Apoderado: Luis Vega;Se felicita al apoderado por el notable avance del estudiante en conducta y responsabilidad.
+48;Isabella Ramírez Hidalgo;6° Básico A;12;Educación Física;4.7;;;0.96;Fernanda Ortega;Apoderado: Luis Vega;Se felicita al apoderado por el notable avance del estudiante en conducta y responsabilidad.
+49;Francisco Hidalgo Muñoz;6° Básico B;12;Lenguaje;4.3;;;0.94;Luis Salazar;Apoderado: Julio Herrera;Sin entrevistas registradas.
+49;Francisco Hidalgo Muñoz;6° Básico B;12;Matemáticas;3.4;Copia en la prueba.;;0.94;Luis Salazar;Apoderado: Julio Herrera;Sin entrevistas registradas.
+49;Francisco Hidalgo Muñoz;6° Básico B;12;Ciencias Naturales;4.3;;;0.94;Luis Salazar;Apoderado: Julio Herrera;Sin entrevistas registradas.
+49;Francisco Hidalgo Muñoz;6° Básico B;12;Historia;3.5;;;0.94;Luis Salazar;Apoderado: Julio Herrera;Sin entrevistas registradas.
+49;Francisco Hidalgo Muñoz;6° Básico B;12;Inglés;4.5;Progreso inconsistente, alterna entre notas altas y bajas.;;0.94;Luis Salazar;Apoderado: Julio Herrera;Sin entrevistas registradas.
+49;Francisco Hidalgo Muñoz;6° Básico B;12;Música;3.4;Registra agresiones físicas a compañeros.;;0.94;Luis Salazar;Apoderado: Julio Herrera;Sin entrevistas registradas.
+49;Francisco Hidalgo Muñoz;6° Básico B;12;Artes Visuales;3.2;Falta de respeto hacia el profesor.;;0.94;Luis Salazar;Apoderado: Julio Herrera;Sin entrevistas registradas.
+49;Francisco Hidalgo Muñoz;6° Básico B;12;Educación Física;4.0;Falta de respeto hacia el profesor.;;0.94;Luis Salazar;Apoderado: Julio Herrera;Sin entrevistas registradas.
+50;Daniela Soto Pizarro;6° Básico B;12;Lenguaje;5.7;;;0.95;Daniela Hidalgo;Apoderado: Isabella Riquelme;Sin entrevistas registradas.
+50;Daniela Soto Pizarro;6° Básico B;12;Matemáticas;5.6;;;0.95;Daniela Hidalgo;Apoderado: Isabella Riquelme;Sin entrevistas registradas.
+50;Daniela Soto Pizarro;6° Básico B;12;Ciencias Naturales;5.1;Copia en la prueba.;;0.95;Daniela Hidalgo;Apoderado: Isabella Riquelme;Sin entrevistas registradas.
+50;Daniela Soto Pizarro;6° Básico B;12;Historia;5.5;;;0.95;Daniela Hidalgo;Apoderado: Isabella Riquelme;Sin entrevistas registradas.
+50;Daniela Soto Pizarro;6° Básico B;12;Inglés;5.3;;;0.95;Daniela Hidalgo;Apoderado: Isabella Riquelme;Sin entrevistas registradas.
+50;Daniela Soto Pizarro;6° Básico B;12;Música;4.9;;;0.95;Daniela Hidalgo;Apoderado: Isabella Riquelme;Sin entrevistas registradas.
+50;Daniela Soto Pizarro;6° Básico B;12;Artes Visuales;5.3;;;0.95;Daniela Hidalgo;Apoderado: Isabella Riquelme;Sin entrevistas registradas.
+50;Daniela Soto Pizarro;6° Básico B;12;Educación Física;6.0;;;0.95;Daniela Hidalgo;Apoderado: Isabella Riquelme;Sin entrevistas registradas.
+51;Luis Contreras Miranda;6° Básico B;12;Lenguaje;6.2;;;0.96;Benjamín Hidalgo;Apoderado: Francisca Contreras;Sin entrevistas registradas.
+51;Luis Contreras Miranda;6° Básico B;12;Matemáticas;5.0;Muy responsable y puntual con sus entregas.;;0.96;Benjamín Hidalgo;Apoderado: Francisca Contreras;Sin entrevistas registradas.
+51;Luis Contreras Miranda;6° Básico B;12;Ciencias Naturales;5.5;;;0.96;Benjamín Hidalgo;Apoderado: Francisca Contreras;Sin entrevistas registradas.
+51;Luis Contreras Miranda;6° Básico B;12;Historia;5.8;Creativo y con gran potencial.;;0.96;Benjamín Hidalgo;Apoderado: Francisca Contreras;Sin entrevistas registradas.
+51;Luis Contreras Miranda;6° Básico B;12;Inglés;5.9;;;0.96;Benjamín Hidalgo;Apoderado: Francisca Contreras;Sin entrevistas registradas.
+51;Luis Contreras Miranda;6° Básico B;12;Música;5.3;;;0.96;Benjamín Hidalgo;Apoderado: Francisca Contreras;Sin entrevistas registradas.
+51;Luis Contreras Miranda;6° Básico B;12;Artes Visuales;6.0;;;0.96;Benjamín Hidalgo;Apoderado: Francisca Contreras;Sin entrevistas registradas.
+51;Luis Contreras Miranda;6° Básico B;12;Educación Física;5.8;Molesta a sus compañeros e interrumpe la clase.;;0.96;Benjamín Hidalgo;Apoderado: Francisca Contreras;Sin entrevistas registradas.
+52;Claudia Díaz Miranda;6° Básico B;12;Lenguaje;4.9;Dificultad para concentrarse en clases.;;0.94;Antonia Reyes;Apoderado: Esteban Salazar;Sin entrevistas registradas.
+52;Claudia Díaz Miranda;6° Básico B;12;Matemáticas;5.9;;;0.94;Antonia Reyes;Apoderado: Esteban Salazar;Sin entrevistas registradas.
+52;Claudia Díaz Miranda;6° Básico B;12;Ciencias Naturales;5.6;;;0.94;Antonia Reyes;Apoderado: Esteban Salazar;Sin entrevistas registradas.
+52;Claudia Díaz Miranda;6° Básico B;12;Historia;6.1;Ha mejorado notablemente su rendimiento.;;0.94;Antonia Reyes;Apoderado: Esteban Salazar;Sin entrevistas registradas.
+52;Claudia Díaz Miranda;6° Básico B;12;Inglés;5.6;Registra agresiones físicas a compañeros.;;0.94;Antonia Reyes;Apoderado: Esteban Salazar;Sin entrevistas registradas.
+52;Claudia Díaz Miranda;6° Básico B;12;Música;5.0;;;0.94;Antonia Reyes;Apoderado: Esteban Salazar;Sin entrevistas registradas.
+52;Claudia Díaz Miranda;6° Básico B;12;Artes Visuales;5.8;;;0.94;Antonia Reyes;Apoderado: Esteban Salazar;Sin entrevistas registradas.
+52;Claudia Díaz Miranda;6° Básico B;12;Educación Física;5.7;Ha mejorado notablemente su rendimiento.;;0.94;Antonia Reyes;Apoderado: Esteban Salazar;Sin entrevistas registradas.
+53;Andrea Sepúlveda Romero;7° Básico A;13;Lenguaje;5.4;Copia en la prueba.;;0.98;Alicia Riquelme;Apoderado: Felipe Márquez;Sin entrevistas registradas.
+53;Andrea Sepúlveda Romero;7° Básico A;13;Matemáticas;6.1;Excelente participación en clases.;;0.98;Alicia Riquelme;Apoderado: Felipe Márquez;Sin entrevistas registradas.
+53;Andrea Sepúlveda Romero;7° Básico A;13;Ciencias Naturales;6.1;Liderazgo positivo dentro del grupo.;;0.98;Alicia Riquelme;Apoderado: Felipe Márquez;Sin entrevistas registradas.
+53;Andrea Sepúlveda Romero;7° Básico A;13;Historia;5.7;;;0.98;Alicia Riquelme;Apoderado: Felipe Márquez;Sin entrevistas registradas.
+53;Andrea Sepúlveda Romero;7° Básico A;13;Inglés;5.8;Muy responsable y puntual con sus entregas.;;0.98;Alicia Riquelme;Apoderado: Felipe Márquez;Sin entrevistas registradas.
+53;Andrea Sepúlveda Romero;7° Básico A;13;Música;6.5;Muy responsable y puntual con sus entregas.;;0.98;Alicia Riquelme;Apoderado: Felipe Márquez;Sin entrevistas registradas.
+53;Andrea Sepúlveda Romero;7° Básico A;13;Artes Visuales;5.5;Registra agresiones físicas a compañeros.;;0.98;Alicia Riquelme;Apoderado: Felipe Márquez;Sin entrevistas registradas.
+53;Andrea Sepúlveda Romero;7° Básico A;13;Educación Física;6.8;;;0.98;Alicia Riquelme;Apoderado: Felipe Márquez;Sin entrevistas registradas.
+54;Andrea Soto Escobar;7° Básico A;13;Lenguaje;6.6;;;0.99;Ignacio Ibarra;Apoderado: Andrea Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+54;Andrea Soto Escobar;7° Básico A;13;Matemáticas;6.7;Demuestra gran interés por la asignatura.;;0.99;Ignacio Ibarra;Apoderado: Andrea Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+54;Andrea Soto Escobar;7° Básico A;13;Ciencias Naturales;6.4;;;0.99;Ignacio Ibarra;Apoderado: Andrea Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+54;Andrea Soto Escobar;7° Básico A;13;Historia;6.9;;;0.99;Ignacio Ibarra;Apoderado: Andrea Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+54;Andrea Soto Escobar;7° Básico A;13;Inglés;6.1;Creativo y con gran potencial.;;0.99;Ignacio Ibarra;Apoderado: Andrea Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+54;Andrea Soto Escobar;7° Básico A;13;Música;5.9;;;0.99;Ignacio Ibarra;Apoderado: Andrea Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+54;Andrea Soto Escobar;7° Básico A;13;Artes Visuales;6.0;Molesta a sus compañeros e interrumpe la clase.;;0.99;Ignacio Ibarra;Apoderado: Andrea Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+54;Andrea Soto Escobar;7° Básico A;13;Educación Física;6.6;;;0.99;Ignacio Ibarra;Apoderado: Andrea Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+55;Gabriela Ibarra Tapia;7° Básico A;13;Lenguaje;5.6;Muy responsable y puntual con sus entregas.;;0.98;Camila Baltra;Apoderado: Antonia López;Sin entrevistas registradas.
+55;Gabriela Ibarra Tapia;7° Básico A;13;Matemáticas;5.5;;;0.98;Camila Baltra;Apoderado: Antonia López;Sin entrevistas registradas.
+55;Gabriela Ibarra Tapia;7° Básico A;13;Ciencias Naturales;5.3;;;0.98;Camila Baltra;Apoderado: Antonia López;Sin entrevistas registradas.
+55;Gabriela Ibarra Tapia;7° Básico A;13;Historia;5.4;Ha mejorado notablemente su rendimiento.;;0.98;Camila Baltra;Apoderado: Antonia López;Sin entrevistas registradas.
+55;Gabriela Ibarra Tapia;7° Básico A;13;Inglés;6.7;;;0.98;Camila Baltra;Apoderado: Antonia López;Sin entrevistas registradas.
+55;Gabriela Ibarra Tapia;7° Básico A;13;Música;6.4;Colabora activamente con sus compañeros.;;0.98;Camila Baltra;Apoderado: Antonia López;Sin entrevistas registradas.
+55;Gabriela Ibarra Tapia;7° Básico A;13;Artes Visuales;6.4;;;0.98;Camila Baltra;Apoderado: Antonia López;Sin entrevistas registradas.
+55;Gabriela Ibarra Tapia;7° Básico A;13;Educación Física;6.0;Liderazgo positivo dentro del grupo.;;0.98;Camila Baltra;Apoderado: Antonia López;Sin entrevistas registradas.
+56;Benjamín Díaz Pizarro;7° Básico A;13;Lenguaje;6.7;;;0.86;Carlos Romero;Apoderado: Ignacio Díaz;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+56;Benjamín Díaz Pizarro;7° Básico A;13;Matemáticas;7.0;Muy responsable y puntual con sus entregas.;;0.86;Carlos Romero;Apoderado: Ignacio Díaz;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+56;Benjamín Díaz Pizarro;7° Básico A;13;Ciencias Naturales;7.0;Excelente participación en clases.;;0.86;Carlos Romero;Apoderado: Ignacio Díaz;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+56;Benjamín Díaz Pizarro;7° Básico A;13;Historia;5.8;;;0.86;Carlos Romero;Apoderado: Ignacio Díaz;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+56;Benjamín Díaz Pizarro;7° Básico A;13;Inglés;6.7;;;0.86;Carlos Romero;Apoderado: Ignacio Díaz;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+56;Benjamín Díaz Pizarro;7° Básico A;13;Música;6.4;;;0.86;Carlos Romero;Apoderado: Ignacio Díaz;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+56;Benjamín Díaz Pizarro;7° Básico A;13;Artes Visuales;7.0;Colabora activamente con sus compañeros.;;0.86;Carlos Romero;Apoderado: Ignacio Díaz;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+56;Benjamín Díaz Pizarro;7° Básico A;13;Educación Física;6.1;;;0.86;Carlos Romero;Apoderado: Ignacio Díaz;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+57;María Valenzuela Carrasco;7° Básico B;13;Lenguaje;4.9;;;0.88;Luis Gutiérrez;Apoderado: Marisol Sepúlveda;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+57;María Valenzuela Carrasco;7° Básico B;13;Matemáticas;4.5;;;0.88;Luis Gutiérrez;Apoderado: Marisol Sepúlveda;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+57;María Valenzuela Carrasco;7° Básico B;13;Ciencias Naturales;5.6;Falta de estudio y preparación para las evaluaciones.;;0.88;Luis Gutiérrez;Apoderado: Marisol Sepúlveda;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+57;María Valenzuela Carrasco;7° Básico B;13;Historia;5.8;Muy responsable y puntual con sus entregas.;;0.88;Luis Gutiérrez;Apoderado: Marisol Sepúlveda;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+57;María Valenzuela Carrasco;7° Básico B;13;Inglés;5.2;;;0.88;Luis Gutiérrez;Apoderado: Marisol Sepúlveda;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+57;María Valenzuela Carrasco;7° Básico B;13;Música;5.1;;;0.88;Luis Gutiérrez;Apoderado: Marisol Sepúlveda;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+57;María Valenzuela Carrasco;7° Básico B;13;Artes Visuales;4.9;;;0.88;Luis Gutiérrez;Apoderado: Marisol Sepúlveda;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+57;María Valenzuela Carrasco;7° Básico B;13;Educación Física;5.1;Muy responsable y puntual con sus entregas.;;0.88;Luis Gutiérrez;Apoderado: Marisol Sepúlveda;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+58;Andrea Silva Contreras;7° Básico B;13;Lenguaje;5.4;Dificultad para concentrarse en clases.;;0.92;Fernanda Vega;Apoderado: Sofía Romero;Sin entrevistas registradas.
+58;Andrea Silva Contreras;7° Básico B;13;Matemáticas;6.1;Muy responsable y puntual con sus entregas.;;0.92;Fernanda Vega;Apoderado: Sofía Romero;Sin entrevistas registradas.
+58;Andrea Silva Contreras;7° Básico B;13;Ciencias Naturales;5.7;;;0.92;Fernanda Vega;Apoderado: Sofía Romero;Sin entrevistas registradas.
+58;Andrea Silva Contreras;7° Básico B;13;Historia;5.4;;;0.92;Fernanda Vega;Apoderado: Sofía Romero;Sin entrevistas registradas.
+58;Andrea Silva Contreras;7° Básico B;13;Inglés;5.5;;;0.92;Fernanda Vega;Apoderado: Sofía Romero;Sin entrevistas registradas.
+58;Andrea Silva Contreras;7° Básico B;13;Música;5.9;;;0.92;Fernanda Vega;Apoderado: Sofía Romero;Sin entrevistas registradas.
+58;Andrea Silva Contreras;7° Básico B;13;Artes Visuales;5.1;Muy responsable y puntual con sus entregas.;;0.92;Fernanda Vega;Apoderado: Sofía Romero;Sin entrevistas registradas.
+58;Andrea Silva Contreras;7° Básico B;13;Educación Física;5.3;Creativo y con gran potencial.;;0.92;Fernanda Vega;Apoderado: Sofía Romero;Sin entrevistas registradas.
+59;Matías Ortega Miranda;7° Básico B;13;Lenguaje;4.7;;;0.92;Francisca Araya;Apoderado: Ignacio Valenzuela;Sin entrevistas registradas.
+59;Matías Ortega Miranda;7° Básico B;13;Matemáticas;4.9;;;0.92;Francisca Araya;Apoderado: Ignacio Valenzuela;Sin entrevistas registradas.
+59;Matías Ortega Miranda;7° Básico B;13;Ciencias Naturales;5.5;;;0.92;Francisca Araya;Apoderado: Ignacio Valenzuela;Sin entrevistas registradas.
+59;Matías Ortega Miranda;7° Básico B;13;Historia;6.0;;;0.92;Francisca Araya;Apoderado: Ignacio Valenzuela;Sin entrevistas registradas.
+59;Matías Ortega Miranda;7° Básico B;13;Inglés;5.3;Molesta a sus compañeros e interrumpe la clase.;;0.92;Francisca Araya;Apoderado: Ignacio Valenzuela;Sin entrevistas registradas.
+59;Matías Ortega Miranda;7° Básico B;13;Música;5.8;;;0.92;Francisca Araya;Apoderado: Ignacio Valenzuela;Sin entrevistas registradas.
+59;Matías Ortega Miranda;7° Básico B;13;Artes Visuales;6.2;;;0.92;Francisca Araya;Apoderado: Ignacio Valenzuela;Sin entrevistas registradas.
+59;Matías Ortega Miranda;7° Básico B;13;Educación Física;5.0;;;0.92;Francisca Araya;Apoderado: Ignacio Valenzuela;Sin entrevistas registradas.
+60;Paola Campos Ortega;7° Básico B;13;Lenguaje;4.9;Dificultad para concentrarse en clases.;Lenguaje;0.99;Tomás Pizarro;Apoderado: Lucía Gutiérrez;Se conversa con apoderado sobre la importancia de reforzar hábitos de estudio en casa.
+60;Paola Campos Ortega;7° Básico B;13;Matemáticas;5.8;;Lenguaje;0.99;Tomás Pizarro;Apoderado: Lucía Gutiérrez;Se conversa con apoderado sobre la importancia de reforzar hábitos de estudio en casa.
+60;Paola Campos Ortega;7° Básico B;13;Ciencias Naturales;5.9;;Lenguaje;0.99;Tomás Pizarro;Apoderado: Lucía Gutiérrez;Se conversa con apoderado sobre la importancia de reforzar hábitos de estudio en casa.
+60;Paola Campos Ortega;7° Básico B;13;Historia;5.7;;Lenguaje;0.99;Tomás Pizarro;Apoderado: Lucía Gutiérrez;Se conversa con apoderado sobre la importancia de reforzar hábitos de estudio en casa.
+60;Paola Campos Ortega;7° Básico B;13;Inglés;6.9;Liderazgo positivo dentro del grupo.;Lenguaje;0.99;Tomás Pizarro;Apoderado: Lucía Gutiérrez;Se conversa con apoderado sobre la importancia de reforzar hábitos de estudio en casa.
+60;Paola Campos Ortega;7° Básico B;13;Música;6.1;Excelente participación en clases.;Lenguaje;0.99;Tomás Pizarro;Apoderado: Lucía Gutiérrez;Se conversa con apoderado sobre la importancia de reforzar hábitos de estudio en casa.
+60;Paola Campos Ortega;7° Básico B;13;Artes Visuales;6.6;;Lenguaje;0.99;Tomás Pizarro;Apoderado: Lucía Gutiérrez;Se conversa con apoderado sobre la importancia de reforzar hábitos de estudio en casa.
+60;Paola Campos Ortega;7° Básico B;13;Educación Física;6.1;Ha mejorado notablemente su rendimiento.;Lenguaje;0.99;Tomás Pizarro;Apoderado: Lucía Gutiérrez;Se conversa con apoderado sobre la importancia de reforzar hábitos de estudio en casa.
+61;Mario Baltra Ibarra;8° Básico A;14;Lenguaje;6.2;;;0.96;Julio Soto;Apoderado: Matías Muñoz;Sin entrevistas registradas.
+61;Mario Baltra Ibarra;8° Básico A;14;Matemáticas;6.0;;;0.96;Julio Soto;Apoderado: Matías Muñoz;Sin entrevistas registradas.
+61;Mario Baltra Ibarra;8° Básico A;14;Ciencias Naturales;5.8;Ha mejorado notablemente su rendimiento.;;0.96;Julio Soto;Apoderado: Matías Muñoz;Sin entrevistas registradas.
+61;Mario Baltra Ibarra;8° Básico A;14;Historia;6.4;;;0.96;Julio Soto;Apoderado: Matías Muñoz;Sin entrevistas registradas.
+61;Mario Baltra Ibarra;8° Básico A;14;Inglés;5.8;Tímido, le cuesta participar oralmente.;;0.96;Julio Soto;Apoderado: Matías Muñoz;Sin entrevistas registradas.
+61;Mario Baltra Ibarra;8° Básico A;14;Música;5.9;;;0.96;Julio Soto;Apoderado: Matías Muñoz;Sin entrevistas registradas.
+61;Mario Baltra Ibarra;8° Básico A;14;Artes Visuales;6.1;;;0.96;Julio Soto;Apoderado: Matías Muñoz;Sin entrevistas registradas.
+61;Mario Baltra Ibarra;8° Básico A;14;Educación Física;5.9;Muy responsable y puntual con sus entregas.;;0.96;Julio Soto;Apoderado: Matías Muñoz;Sin entrevistas registradas.
+62;Matías Muñoz Araya;8° Básico A;14;Lenguaje;5.9;;;0.86;Francisco Tapia;Apoderado: Javiera Tapia;Sin entrevistas registradas.
+62;Matías Muñoz Araya;8° Básico A;14;Matemáticas;6.0;;;0.86;Francisco Tapia;Apoderado: Javiera Tapia;Sin entrevistas registradas.
+62;Matías Muñoz Araya;8° Básico A;14;Ciencias Naturales;5.4;;;0.86;Francisco Tapia;Apoderado: Javiera Tapia;Sin entrevistas registradas.
+62;Matías Muñoz Araya;8° Básico A;14;Historia;4.7;Copia en la prueba.;;0.86;Francisco Tapia;Apoderado: Javiera Tapia;Sin entrevistas registradas.
+62;Matías Muñoz Araya;8° Básico A;14;Inglés;5.2;Se distrae con facilidad.;;0.86;Francisco Tapia;Apoderado: Javiera Tapia;Sin entrevistas registradas.
+62;Matías Muñoz Araya;8° Básico A;14;Música;5.6;;;0.86;Francisco Tapia;Apoderado: Javiera Tapia;Sin entrevistas registradas.
+62;Matías Muñoz Araya;8° Básico A;14;Artes Visuales;5.3;Falta de respeto hacia el profesor.;;0.86;Francisco Tapia;Apoderado: Javiera Tapia;Sin entrevistas registradas.
+62;Matías Muñoz Araya;8° Básico A;14;Educación Física;4.9;;;0.86;Francisco Tapia;Apoderado: Javiera Tapia;Sin entrevistas registradas.
+63;Pedro Rojas Araya;8° Básico A;14;Lenguaje;5.5;Registra agresiones físicas a compañeros.;;0.99;Matías Rojas;Apoderado: Matías Carrasco;Sin entrevistas registradas.
+63;Pedro Rojas Araya;8° Básico A;14;Matemáticas;6.5;;;0.99;Matías Rojas;Apoderado: Matías Carrasco;Sin entrevistas registradas.
+63;Pedro Rojas Araya;8° Básico A;14;Ciencias Naturales;5.7;Muy responsable y puntual con sus entregas.;;0.99;Matías Rojas;Apoderado: Matías Carrasco;Sin entrevistas registradas.
+63;Pedro Rojas Araya;8° Básico A;14;Historia;6.5;;;0.99;Matías Rojas;Apoderado: Matías Carrasco;Sin entrevistas registradas.
+63;Pedro Rojas Araya;8° Básico A;14;Inglés;6.0;Registra agresiones físicas a compañeros.;;0.99;Matías Rojas;Apoderado: Matías Carrasco;Sin entrevistas registradas.
+63;Pedro Rojas Araya;8° Básico A;14;Música;6.1;;;0.99;Matías Rojas;Apoderado: Matías Carrasco;Sin entrevistas registradas.
+63;Pedro Rojas Araya;8° Básico A;14;Artes Visuales;6.8;Muy responsable y puntual con sus entregas.;;0.99;Matías Rojas;Apoderado: Matías Carrasco;Sin entrevistas registradas.
+63;Pedro Rojas Araya;8° Básico A;14;Educación Física;5.9;Copia en la prueba.;;0.99;Matías Rojas;Apoderado: Matías Carrasco;Sin entrevistas registradas.
+64;Javiera Figueroa Ibarra;8° Básico A;14;Lenguaje;5.7;;Física;0.95;Carlos Muñoz;Apoderado: Alicia Muñoz;Sin entrevistas registradas.
+64;Javiera Figueroa Ibarra;8° Básico A;14;Matemáticas;6.1;;Física;0.95;Carlos Muñoz;Apoderado: Alicia Muñoz;Sin entrevistas registradas.
+64;Javiera Figueroa Ibarra;8° Básico A;14;Ciencias Naturales;5.1;;Física;0.95;Carlos Muñoz;Apoderado: Alicia Muñoz;Sin entrevistas registradas.
+64;Javiera Figueroa Ibarra;8° Básico A;14;Historia;5.6;;Física;0.95;Carlos Muñoz;Apoderado: Alicia Muñoz;Sin entrevistas registradas.
+64;Javiera Figueroa Ibarra;8° Básico A;14;Inglés;6.0;;Física;0.95;Carlos Muñoz;Apoderado: Alicia Muñoz;Sin entrevistas registradas.
+64;Javiera Figueroa Ibarra;8° Básico A;14;Música;6.2;Ha mejorado notablemente su rendimiento.;Física;0.95;Carlos Muñoz;Apoderado: Alicia Muñoz;Sin entrevistas registradas.
+64;Javiera Figueroa Ibarra;8° Básico A;14;Artes Visuales;5.7;Ha mejorado notablemente su rendimiento.;Física;0.95;Carlos Muñoz;Apoderado: Alicia Muñoz;Sin entrevistas registradas.
+64;Javiera Figueroa Ibarra;8° Básico A;14;Educación Física;4.4;Molesta a sus compañeros e interrumpe la clase.;Física;0.95;Carlos Muñoz;Apoderado: Alicia Muñoz;Sin entrevistas registradas.
+65;Ignacio Campos Márquez;8° Básico B;14;Lenguaje;6.0;Demuestra gran interés por la asignatura.;;0.91;Gabriela Arteaga;Apoderado: Nicolás Ortega;Sin entrevistas registradas.
+65;Ignacio Campos Márquez;8° Básico B;14;Matemáticas;6.0;;;0.91;Gabriela Arteaga;Apoderado: Nicolás Ortega;Sin entrevistas registradas.
+65;Ignacio Campos Márquez;8° Básico B;14;Ciencias Naturales;5.9;Tímido, le cuesta participar oralmente.;;0.91;Gabriela Arteaga;Apoderado: Nicolás Ortega;Sin entrevistas registradas.
+65;Ignacio Campos Márquez;8° Básico B;14;Historia;5.9;Registra agresiones físicas a compañeros.;;0.91;Gabriela Arteaga;Apoderado: Nicolás Ortega;Sin entrevistas registradas.
+65;Ignacio Campos Márquez;8° Básico B;14;Inglés;6.2;Liderazgo positivo dentro del grupo.;;0.91;Gabriela Arteaga;Apoderado: Nicolás Ortega;Sin entrevistas registradas.
+65;Ignacio Campos Márquez;8° Básico B;14;Música;4.6;;;0.91;Gabriela Arteaga;Apoderado: Nicolás Ortega;Sin entrevistas registradas.
+65;Ignacio Campos Márquez;8° Básico B;14;Artes Visuales;4.9;;;0.91;Gabriela Arteaga;Apoderado: Nicolás Ortega;Sin entrevistas registradas.
+65;Ignacio Campos Márquez;8° Básico B;14;Educación Física;5.2;;;0.91;Gabriela Arteaga;Apoderado: Nicolás Ortega;Sin entrevistas registradas.
+66;Francisca Muñoz López;8° Básico B;14;Lenguaje;4.2;;;0.91;Ana López;Apoderado: Luis Ramírez;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+66;Francisca Muñoz López;8° Básico B;14;Matemáticas;4.3;Dificultad para concentrarse en clases.;;0.91;Ana López;Apoderado: Luis Ramírez;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+66;Francisca Muñoz López;8° Básico B;14;Ciencias Naturales;5.3;;;0.91;Ana López;Apoderado: Luis Ramírez;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+66;Francisca Muñoz López;8° Básico B;14;Historia;5.5;;;0.91;Ana López;Apoderado: Luis Ramírez;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+66;Francisca Muñoz López;8° Básico B;14;Inglés;5.4;;;0.91;Ana López;Apoderado: Luis Ramírez;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+66;Francisca Muñoz López;8° Básico B;14;Música;4.5;Creativo y con gran potencial.;;0.91;Ana López;Apoderado: Luis Ramírez;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+66;Francisca Muñoz López;8° Básico B;14;Artes Visuales;4.8;;;0.91;Ana López;Apoderado: Luis Ramírez;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+66;Francisca Muñoz López;8° Básico B;14;Educación Física;5.2;;;0.91;Ana López;Apoderado: Luis Ramírez;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+67;Alicia Castro Rojas;8° Básico B;14;Lenguaje;5.3;;Matemáticas;0.86;Pedro Ibarra;Apoderado: Julio Figueroa;Se felicita al apoderado por el notable avance del estudiante en conducta y responsabilidad.
+67;Alicia Castro Rojas;8° Básico B;14;Matemáticas;4.1;Colabora activamente con sus compañeros.;Matemáticas;0.86;Pedro Ibarra;Apoderado: Julio Figueroa;Se felicita al apoderado por el notable avance del estudiante en conducta y responsabilidad.
+67;Alicia Castro Rojas;8° Básico B;14;Ciencias Naturales;5.7;Colabora activamente con sus compañeros.;Matemáticas;0.86;Pedro Ibarra;Apoderado: Julio Figueroa;Se felicita al apoderado por el notable avance del estudiante en conducta y responsabilidad.
+67;Alicia Castro Rojas;8° Básico B;14;Historia;4.8;;Matemáticas;0.86;Pedro Ibarra;Apoderado: Julio Figueroa;Se felicita al apoderado por el notable avance del estudiante en conducta y responsabilidad.
+67;Alicia Castro Rojas;8° Básico B;14;Inglés;4.6;Se distrae con facilidad.;Matemáticas;0.86;Pedro Ibarra;Apoderado: Julio Figueroa;Se felicita al apoderado por el notable avance del estudiante en conducta y responsabilidad.
+67;Alicia Castro Rojas;8° Básico B;14;Música;6.1;Colabora activamente con sus compañeros.;Matemáticas;0.86;Pedro Ibarra;Apoderado: Julio Figueroa;Se felicita al apoderado por el notable avance del estudiante en conducta y responsabilidad.
+67;Alicia Castro Rojas;8° Básico B;14;Artes Visuales;5.5;Falta de estudio y preparación para las evaluaciones.;Matemáticas;0.86;Pedro Ibarra;Apoderado: Julio Figueroa;Se felicita al apoderado por el notable avance del estudiante en conducta y responsabilidad.
+67;Alicia Castro Rojas;8° Básico B;14;Educación Física;5.9;Colabora activamente con sus compañeros.;Matemáticas;0.86;Pedro Ibarra;Apoderado: Julio Figueroa;Se felicita al apoderado por el notable avance del estudiante en conducta y responsabilidad.
+68;Sebastián Figueroa Sepúlveda;8° Básico B;14;Lenguaje;5.7;;;0.96;Tomás Leiva;Apoderado: Diego Silva;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+68;Sebastián Figueroa Sepúlveda;8° Básico B;14;Matemáticas;5.5;Liderazgo positivo dentro del grupo.;;0.96;Tomás Leiva;Apoderado: Diego Silva;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+68;Sebastián Figueroa Sepúlveda;8° Básico B;14;Ciencias Naturales;6.6;Creativo y con gran potencial.;;0.96;Tomás Leiva;Apoderado: Diego Silva;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+68;Sebastián Figueroa Sepúlveda;8° Básico B;14;Historia;6.0;;;0.96;Tomás Leiva;Apoderado: Diego Silva;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+68;Sebastián Figueroa Sepúlveda;8° Básico B;14;Inglés;6.4;;;0.96;Tomás Leiva;Apoderado: Diego Silva;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+68;Sebastián Figueroa Sepúlveda;8° Básico B;14;Música;6.3;Demuestra gran interés por la asignatura.;;0.96;Tomás Leiva;Apoderado: Diego Silva;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+68;Sebastián Figueroa Sepúlveda;8° Básico B;14;Artes Visuales;5.3;;;0.96;Tomás Leiva;Apoderado: Diego Silva;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+68;Sebastián Figueroa Sepúlveda;8° Básico B;14;Educación Física;5.3;;;0.96;Tomás Leiva;Apoderado: Diego Silva;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+69;Claudia Hidalgo Vega;1° Medio A;15;Lenguaje;6.1;;;0.93;Pablo Herrera;Apoderado: Felipe Soto;Sin entrevistas registradas.
+69;Claudia Hidalgo Vega;1° Medio A;15;Matemáticas;6.1;;;0.93;Pablo Herrera;Apoderado: Felipe Soto;Sin entrevistas registradas.
+69;Claudia Hidalgo Vega;1° Medio A;15;Física;5.3;Dificultad para concentrarse en clases.;;0.93;Pablo Herrera;Apoderado: Felipe Soto;Sin entrevistas registradas.
+69;Claudia Hidalgo Vega;1° Medio A;15;Química;5.4;;;0.93;Pablo Herrera;Apoderado: Felipe Soto;Sin entrevistas registradas.
+69;Claudia Hidalgo Vega;1° Medio A;15;Biología;5.8;;;0.93;Pablo Herrera;Apoderado: Felipe Soto;Sin entrevistas registradas.
+69;Claudia Hidalgo Vega;1° Medio A;15;Historia;5.7;;;0.93;Pablo Herrera;Apoderado: Felipe Soto;Sin entrevistas registradas.
+69;Claudia Hidalgo Vega;1° Medio A;15;Inglés;5.7;Demuestra gran interés por la asignatura.;;0.93;Pablo Herrera;Apoderado: Felipe Soto;Sin entrevistas registradas.
+69;Claudia Hidalgo Vega;1° Medio A;15;Filosofía;5.1;Ha mejorado notablemente su rendimiento.;;0.93;Pablo Herrera;Apoderado: Felipe Soto;Sin entrevistas registradas.
+69;Claudia Hidalgo Vega;1° Medio A;15;Artes Visuales;6.3;;;0.93;Pablo Herrera;Apoderado: Felipe Soto;Sin entrevistas registradas.
+69;Claudia Hidalgo Vega;1° Medio A;15;Educación Física;5.6;;;0.93;Pablo Herrera;Apoderado: Felipe Soto;Sin entrevistas registradas.
+70;José Tapia González;1° Medio A;15;Lenguaje;6.3;;;0.9;Paula Ramírez;Apoderado: Ignacio Morales;Sin entrevistas registradas.
+70;José Tapia González;1° Medio A;15;Matemáticas;5.9;Creativo y con gran potencial.;;0.9;Paula Ramírez;Apoderado: Ignacio Morales;Sin entrevistas registradas.
+70;José Tapia González;1° Medio A;15;Física;6.4;Demuestra gran interés por la asignatura.;;0.9;Paula Ramírez;Apoderado: Ignacio Morales;Sin entrevistas registradas.
+70;José Tapia González;1° Medio A;15;Química;6.6;Creativo y con gran potencial.;;0.9;Paula Ramírez;Apoderado: Ignacio Morales;Sin entrevistas registradas.
+70;José Tapia González;1° Medio A;15;Biología;6.1;;;0.9;Paula Ramírez;Apoderado: Ignacio Morales;Sin entrevistas registradas.
+70;José Tapia González;1° Medio A;15;Historia;6.7;;;0.9;Paula Ramírez;Apoderado: Ignacio Morales;Sin entrevistas registradas.
+70;José Tapia González;1° Medio A;15;Inglés;5.9;;;0.9;Paula Ramírez;Apoderado: Ignacio Morales;Sin entrevistas registradas.
+70;José Tapia González;1° Medio A;15;Filosofía;7.0;;;0.9;Paula Ramírez;Apoderado: Ignacio Morales;Sin entrevistas registradas.
+70;José Tapia González;1° Medio A;15;Artes Visuales;6.4;Ha mejorado notablemente su rendimiento.;;0.9;Paula Ramírez;Apoderado: Ignacio Morales;Sin entrevistas registradas.
+70;José Tapia González;1° Medio A;15;Educación Física;6.9;Liderazgo positivo dentro del grupo.;;0.9;Paula Ramírez;Apoderado: Ignacio Morales;Sin entrevistas registradas.
+71;Matías Aguirre Ortega;1° Medio A;15;Lenguaje;6.6;Creativo y con gran potencial.;;0.88;Tomás Prieto;Apoderado: Francisca Hidalgo;Sin entrevistas registradas.
+71;Matías Aguirre Ortega;1° Medio A;15;Matemáticas;7.0;Colabora activamente con sus compañeros.;;0.88;Tomás Prieto;Apoderado: Francisca Hidalgo;Sin entrevistas registradas.
+71;Matías Aguirre Ortega;1° Medio A;15;Física;6.5;;;0.88;Tomás Prieto;Apoderado: Francisca Hidalgo;Sin entrevistas registradas.
+71;Matías Aguirre Ortega;1° Medio A;15;Química;6.1;;;0.88;Tomás Prieto;Apoderado: Francisca Hidalgo;Sin entrevistas registradas.
+71;Matías Aguirre Ortega;1° Medio A;15;Biología;6.4;;;0.88;Tomás Prieto;Apoderado: Francisca Hidalgo;Sin entrevistas registradas.
+71;Matías Aguirre Ortega;1° Medio A;15;Historia;6.9;;;0.88;Tomás Prieto;Apoderado: Francisca Hidalgo;Sin entrevistas registradas.
+71;Matías Aguirre Ortega;1° Medio A;15;Inglés;6.5;Liderazgo positivo dentro del grupo.;;0.88;Tomás Prieto;Apoderado: Francisca Hidalgo;Sin entrevistas registradas.
+71;Matías Aguirre Ortega;1° Medio A;15;Filosofía;6.2;;;0.88;Tomás Prieto;Apoderado: Francisca Hidalgo;Sin entrevistas registradas.
+71;Matías Aguirre Ortega;1° Medio A;15;Artes Visuales;6.7;;;0.88;Tomás Prieto;Apoderado: Francisca Hidalgo;Sin entrevistas registradas.
+71;Matías Aguirre Ortega;1° Medio A;15;Educación Física;6.7;Ha mejorado notablemente su rendimiento.;;0.88;Tomás Prieto;Apoderado: Francisca Hidalgo;Sin entrevistas registradas.
+72;Benjamín Araya González;1° Medio A;15;Lenguaje;5.8;;;0.89;Javiera Pérez;Apoderado: Lucía Romero;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+72;Benjamín Araya González;1° Medio A;15;Matemáticas;5.6;;;0.89;Javiera Pérez;Apoderado: Lucía Romero;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+72;Benjamín Araya González;1° Medio A;15;Física;5.8;Registra agresiones físicas a compañeros.;;0.89;Javiera Pérez;Apoderado: Lucía Romero;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+72;Benjamín Araya González;1° Medio A;15;Química;5.9;;;0.89;Javiera Pérez;Apoderado: Lucía Romero;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+72;Benjamín Araya González;1° Medio A;15;Biología;6.6;;;0.89;Javiera Pérez;Apoderado: Lucía Romero;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+72;Benjamín Araya González;1° Medio A;15;Historia;6.8;;;0.89;Javiera Pérez;Apoderado: Lucía Romero;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+72;Benjamín Araya González;1° Medio A;15;Inglés;6.2;Liderazgo positivo dentro del grupo.;;0.89;Javiera Pérez;Apoderado: Lucía Romero;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+72;Benjamín Araya González;1° Medio A;15;Filosofía;6.7;;;0.89;Javiera Pérez;Apoderado: Lucía Romero;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+72;Benjamín Araya González;1° Medio A;15;Artes Visuales;5.7;Demuestra gran interés por la asignatura.;;0.89;Javiera Pérez;Apoderado: Lucía Romero;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+72;Benjamín Araya González;1° Medio A;15;Educación Física;6.9;;;0.89;Javiera Pérez;Apoderado: Lucía Romero;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+73;Paula López Vega;1° Medio B;15;Lenguaje;4.6;Demuestra gran interés por la asignatura.;;0.96;María Muñoz;Apoderado: Carlos López;Sin entrevistas registradas.
+73;Paula López Vega;1° Medio B;15;Matemáticas;3.4;;;0.96;María Muñoz;Apoderado: Carlos López;Sin entrevistas registradas.
+73;Paula López Vega;1° Medio B;15;Física;3.4;Registra agresiones físicas a compañeros.;;0.96;María Muñoz;Apoderado: Carlos López;Sin entrevistas registradas.
+73;Paula López Vega;1° Medio B;15;Química;3.7;Falta de respeto hacia el profesor.;;0.96;María Muñoz;Apoderado: Carlos López;Sin entrevistas registradas.
+73;Paula López Vega;1° Medio B;15;Biología;4.4;;;0.96;María Muñoz;Apoderado: Carlos López;Sin entrevistas registradas.
+73;Paula López Vega;1° Medio B;15;Historia;3.7;Se distrae con facilidad.;;0.96;María Muñoz;Apoderado: Carlos López;Sin entrevistas registradas.
+73;Paula López Vega;1° Medio B;15;Inglés;4.0;;;0.96;María Muñoz;Apoderado: Carlos López;Sin entrevistas registradas.
+73;Paula López Vega;1° Medio B;15;Filosofía;3.2;;;0.96;María Muñoz;Apoderado: Carlos López;Sin entrevistas registradas.
+73;Paula López Vega;1° Medio B;15;Artes Visuales;3.5;;;0.96;María Muñoz;Apoderado: Carlos López;Sin entrevistas registradas.
+73;Paula López Vega;1° Medio B;15;Educación Física;3.1;;;0.96;María Muñoz;Apoderado: Carlos López;Sin entrevistas registradas.
+74;Andrea González Saavedra;1° Medio B;15;Lenguaje;6.2;;;0.88;Andrea Contreras;Apoderado: Miguel Romero;Sin entrevistas registradas.
+74;Andrea González Saavedra;1° Medio B;15;Matemáticas;6.0;;;0.88;Andrea Contreras;Apoderado: Miguel Romero;Sin entrevistas registradas.
+74;Andrea González Saavedra;1° Medio B;15;Física;5.6;;;0.88;Andrea Contreras;Apoderado: Miguel Romero;Sin entrevistas registradas.
+74;Andrea González Saavedra;1° Medio B;15;Química;4.8;;;0.88;Andrea Contreras;Apoderado: Miguel Romero;Sin entrevistas registradas.
+74;Andrea González Saavedra;1° Medio B;15;Biología;5.7;;;0.88;Andrea Contreras;Apoderado: Miguel Romero;Sin entrevistas registradas.
+74;Andrea González Saavedra;1° Medio B;15;Historia;6.0;;;0.88;Andrea Contreras;Apoderado: Miguel Romero;Sin entrevistas registradas.
+74;Andrea González Saavedra;1° Medio B;15;Inglés;4.9;;;0.88;Andrea Contreras;Apoderado: Miguel Romero;Sin entrevistas registradas.
+74;Andrea González Saavedra;1° Medio B;15;Filosofía;6.1;Muy responsable y puntual con sus entregas.;;0.88;Andrea Contreras;Apoderado: Miguel Romero;Sin entrevistas registradas.
+74;Andrea González Saavedra;1° Medio B;15;Artes Visuales;4.9;;;0.88;Andrea Contreras;Apoderado: Miguel Romero;Sin entrevistas registradas.
+74;Andrea González Saavedra;1° Medio B;15;Educación Física;4.7;;;0.88;Andrea Contreras;Apoderado: Miguel Romero;Sin entrevistas registradas.
+75;Pablo Márquez Riquelme;1° Medio B;15;Lenguaje;5.2;Ha mejorado notablemente su rendimiento.;;0.97;Paula Aguirre;Apoderado: Julio Ibarra;Sin entrevistas registradas.
+75;Pablo Márquez Riquelme;1° Medio B;15;Matemáticas;5.8;;;0.97;Paula Aguirre;Apoderado: Julio Ibarra;Sin entrevistas registradas.
+75;Pablo Márquez Riquelme;1° Medio B;15;Física;5.1;;;0.97;Paula Aguirre;Apoderado: Julio Ibarra;Sin entrevistas registradas.
+75;Pablo Márquez Riquelme;1° Medio B;15;Química;5.6;Colabora activamente con sus compañeros.;;0.97;Paula Aguirre;Apoderado: Julio Ibarra;Sin entrevistas registradas.
+75;Pablo Márquez Riquelme;1° Medio B;15;Biología;6.0;Falta de respeto hacia el profesor.;;0.97;Paula Aguirre;Apoderado: Julio Ibarra;Sin entrevistas registradas.
+75;Pablo Márquez Riquelme;1° Medio B;15;Historia;5.5;Registra agresiones físicas a compañeros.;;0.97;Paula Aguirre;Apoderado: Julio Ibarra;Sin entrevistas registradas.
+75;Pablo Márquez Riquelme;1° Medio B;15;Inglés;5.2;;;0.97;Paula Aguirre;Apoderado: Julio Ibarra;Sin entrevistas registradas.
+75;Pablo Márquez Riquelme;1° Medio B;15;Filosofía;6.2;;;0.97;Paula Aguirre;Apoderado: Julio Ibarra;Sin entrevistas registradas.
+75;Pablo Márquez Riquelme;1° Medio B;15;Artes Visuales;6.6;Ha mejorado notablemente su rendimiento.;;0.97;Paula Aguirre;Apoderado: Julio Ibarra;Sin entrevistas registradas.
+75;Pablo Márquez Riquelme;1° Medio B;15;Educación Física;5.2;Ha mejorado notablemente su rendimiento.;;0.97;Paula Aguirre;Apoderado: Julio Ibarra;Sin entrevistas registradas.
+76;María Ramírez Carrasco;1° Medio B;15;Lenguaje;5.8;;Inglés;0.98;Matías Ibarra;Apoderado: Valentina Valenzuela;Sin entrevistas registradas.
+76;María Ramírez Carrasco;1° Medio B;15;Matemáticas;5.9;;Inglés;0.98;Matías Ibarra;Apoderado: Valentina Valenzuela;Sin entrevistas registradas.
+76;María Ramírez Carrasco;1° Medio B;15;Física;5.9;;Inglés;0.98;Matías Ibarra;Apoderado: Valentina Valenzuela;Sin entrevistas registradas.
+76;María Ramírez Carrasco;1° Medio B;15;Química;6.9;Demuestra gran interés por la asignatura.;Inglés;0.98;Matías Ibarra;Apoderado: Valentina Valenzuela;Sin entrevistas registradas.
+76;María Ramírez Carrasco;1° Medio B;15;Biología;6.4;;Inglés;0.98;Matías Ibarra;Apoderado: Valentina Valenzuela;Sin entrevistas registradas.
+76;María Ramírez Carrasco;1° Medio B;15;Historia;6.0;;Inglés;0.98;Matías Ibarra;Apoderado: Valentina Valenzuela;Sin entrevistas registradas.
+76;María Ramírez Carrasco;1° Medio B;15;Inglés;6.2;;Inglés;0.98;Matías Ibarra;Apoderado: Valentina Valenzuela;Sin entrevistas registradas.
+76;María Ramírez Carrasco;1° Medio B;15;Filosofía;6.4;;Inglés;0.98;Matías Ibarra;Apoderado: Valentina Valenzuela;Sin entrevistas registradas.
+76;María Ramírez Carrasco;1° Medio B;15;Artes Visuales;6.4;Demuestra gran interés por la asignatura.;Inglés;0.98;Matías Ibarra;Apoderado: Valentina Valenzuela;Sin entrevistas registradas.
+76;María Ramírez Carrasco;1° Medio B;15;Educación Física;6.8;Ha mejorado notablemente su rendimiento.;Inglés;0.98;Matías Ibarra;Apoderado: Valentina Valenzuela;Sin entrevistas registradas.
+77;Martina Romero Saavedra;2° Medio A;16;Lenguaje;6.4;Excelente participación en clases.;;0.88;Martina Figueroa;Apoderado: Francisca Campos;Apoderado informa diagnóstico reciente de TDAH del estudiante. Se acuerda derivar a equipo PIE para evaluación de apoyos.
+77;Martina Romero Saavedra;2° Medio A;16;Matemáticas;5.7;Se distrae con facilidad.;;0.88;Martina Figueroa;Apoderado: Francisca Campos;Apoderado informa diagnóstico reciente de TDAH del estudiante. Se acuerda derivar a equipo PIE para evaluación de apoyos.
+77;Martina Romero Saavedra;2° Medio A;16;Física;5.5;Falta de respeto hacia el profesor.;;0.88;Martina Figueroa;Apoderado: Francisca Campos;Apoderado informa diagnóstico reciente de TDAH del estudiante. Se acuerda derivar a equipo PIE para evaluación de apoyos.
+77;Martina Romero Saavedra;2° Medio A;16;Química;5.7;;;0.88;Martina Figueroa;Apoderado: Francisca Campos;Apoderado informa diagnóstico reciente de TDAH del estudiante. Se acuerda derivar a equipo PIE para evaluación de apoyos.
+77;Martina Romero Saavedra;2° Medio A;16;Biología;6.3;;;0.88;Martina Figueroa;Apoderado: Francisca Campos;Apoderado informa diagnóstico reciente de TDAH del estudiante. Se acuerda derivar a equipo PIE para evaluación de apoyos.
+77;Martina Romero Saavedra;2° Medio A;16;Historia;5.9;Copia en la prueba.;;0.88;Martina Figueroa;Apoderado: Francisca Campos;Apoderado informa diagnóstico reciente de TDAH del estudiante. Se acuerda derivar a equipo PIE para evaluación de apoyos.
+77;Martina Romero Saavedra;2° Medio A;16;Inglés;5.3;;;0.88;Martina Figueroa;Apoderado: Francisca Campos;Apoderado informa diagnóstico reciente de TDAH del estudiante. Se acuerda derivar a equipo PIE para evaluación de apoyos.
+77;Martina Romero Saavedra;2° Medio A;16;Filosofía;4.9;;;0.88;Martina Figueroa;Apoderado: Francisca Campos;Apoderado informa diagnóstico reciente de TDAH del estudiante. Se acuerda derivar a equipo PIE para evaluación de apoyos.
+77;Martina Romero Saavedra;2° Medio A;16;Artes Visuales;5.2;;;0.88;Martina Figueroa;Apoderado: Francisca Campos;Apoderado informa diagnóstico reciente de TDAH del estudiante. Se acuerda derivar a equipo PIE para evaluación de apoyos.
+77;Martina Romero Saavedra;2° Medio A;16;Educación Física;5.1;Se distrae con facilidad.;;0.88;Martina Figueroa;Apoderado: Francisca Campos;Apoderado informa diagnóstico reciente de TDAH del estudiante. Se acuerda derivar a equipo PIE para evaluación de apoyos.
+78;Javiera Pizarro Valenzuela;2° Medio A;16;Lenguaje;7.0;Excelente participación en clases.;;0.87;Pedro Morales;Apoderado: Sebastián Contreras;Sin entrevistas registradas.
+78;Javiera Pizarro Valenzuela;2° Medio A;16;Matemáticas;6.9;;;0.87;Pedro Morales;Apoderado: Sebastián Contreras;Sin entrevistas registradas.
+78;Javiera Pizarro Valenzuela;2° Medio A;16;Física;6.8;Colabora activamente con sus compañeros.;;0.87;Pedro Morales;Apoderado: Sebastián Contreras;Sin entrevistas registradas.
+78;Javiera Pizarro Valenzuela;2° Medio A;16;Química;6.1;;;0.87;Pedro Morales;Apoderado: Sebastián Contreras;Sin entrevistas registradas.
+78;Javiera Pizarro Valenzuela;2° Medio A;16;Biología;6.3;Excelente participación en clases.;;0.87;Pedro Morales;Apoderado: Sebastián Contreras;Sin entrevistas registradas.
+78;Javiera Pizarro Valenzuela;2° Medio A;16;Historia;6.2;;;0.87;Pedro Morales;Apoderado: Sebastián Contreras;Sin entrevistas registradas.
+78;Javiera Pizarro Valenzuela;2° Medio A;16;Inglés;6.4;;;0.87;Pedro Morales;Apoderado: Sebastián Contreras;Sin entrevistas registradas.
+78;Javiera Pizarro Valenzuela;2° Medio A;16;Filosofía;6.6;;;0.87;Pedro Morales;Apoderado: Sebastián Contreras;Sin entrevistas registradas.
+78;Javiera Pizarro Valenzuela;2° Medio A;16;Artes Visuales;6.7;;;0.87;Pedro Morales;Apoderado: Sebastián Contreras;Sin entrevistas registradas.
+78;Javiera Pizarro Valenzuela;2° Medio A;16;Educación Física;7.0;;;0.87;Pedro Morales;Apoderado: Sebastián Contreras;Sin entrevistas registradas.
+79;Ignacio Baltra Araya;2° Medio A;16;Lenguaje;6.2;Muy responsable y puntual con sus entregas.;;0.85;Felipe Soto;Apoderado: Pedro Vásquez;Sin entrevistas registradas.
+79;Ignacio Baltra Araya;2° Medio A;16;Matemáticas;7.0;Demuestra gran interés por la asignatura.;;0.85;Felipe Soto;Apoderado: Pedro Vásquez;Sin entrevistas registradas.
+79;Ignacio Baltra Araya;2° Medio A;16;Física;6.8;;;0.85;Felipe Soto;Apoderado: Pedro Vásquez;Sin entrevistas registradas.
+79;Ignacio Baltra Araya;2° Medio A;16;Química;6.0;;;0.85;Felipe Soto;Apoderado: Pedro Vásquez;Sin entrevistas registradas.
+79;Ignacio Baltra Araya;2° Medio A;16;Biología;6.0;Muy responsable y puntual con sus entregas.;;0.85;Felipe Soto;Apoderado: Pedro Vásquez;Sin entrevistas registradas.
+79;Ignacio Baltra Araya;2° Medio A;16;Historia;7.0;Demuestra gran interés por la asignatura.;;0.85;Felipe Soto;Apoderado: Pedro Vásquez;Sin entrevistas registradas.
+79;Ignacio Baltra Araya;2° Medio A;16;Inglés;6.8;;;0.85;Felipe Soto;Apoderado: Pedro Vásquez;Sin entrevistas registradas.
+79;Ignacio Baltra Araya;2° Medio A;16;Filosofía;6.0;;;0.85;Felipe Soto;Apoderado: Pedro Vásquez;Sin entrevistas registradas.
+79;Ignacio Baltra Araya;2° Medio A;16;Artes Visuales;7.0;Creativo y con gran potencial.;;0.85;Felipe Soto;Apoderado: Pedro Vásquez;Sin entrevistas registradas.
+79;Ignacio Baltra Araya;2° Medio A;16;Educación Física;6.8;;;0.85;Felipe Soto;Apoderado: Pedro Vásquez;Sin entrevistas registradas.
+80;Paola Valenzuela Contreras;2° Medio A;16;Lenguaje;5.2;;Física;0.87;Mario Salazar;Apoderado: Julio Pérez;Los apoderados informan que están en un proceso de separación y que eso ha afectado a sus hijos.
+80;Paola Valenzuela Contreras;2° Medio A;16;Matemáticas;5.9;;Física;0.87;Mario Salazar;Apoderado: Julio Pérez;Los apoderados informan que están en un proceso de separación y que eso ha afectado a sus hijos.
+80;Paola Valenzuela Contreras;2° Medio A;16;Física;4.6;Demuestra gran interés por la asignatura.;Física;0.87;Mario Salazar;Apoderado: Julio Pérez;Los apoderados informan que están en un proceso de separación y que eso ha afectado a sus hijos.
+80;Paola Valenzuela Contreras;2° Medio A;16;Química;4.6;Se distrae con facilidad.;Física;0.87;Mario Salazar;Apoderado: Julio Pérez;Los apoderados informan que están en un proceso de separación y que eso ha afectado a sus hijos.
+80;Paola Valenzuela Contreras;2° Medio A;16;Biología;5.6;Muy responsable y puntual con sus entregas.;Física;0.87;Mario Salazar;Apoderado: Julio Pérez;Los apoderados informan que están en un proceso de separación y que eso ha afectado a sus hijos.
+80;Paola Valenzuela Contreras;2° Medio A;16;Historia;4.9;;Física;0.87;Mario Salazar;Apoderado: Julio Pérez;Los apoderados informan que están en un proceso de separación y que eso ha afectado a sus hijos.
+80;Paola Valenzuela Contreras;2° Medio A;16;Inglés;5.0;Molesta a sus compañeros e interrumpe la clase.;Física;0.87;Mario Salazar;Apoderado: Julio Pérez;Los apoderados informan que están en un proceso de separación y que eso ha afectado a sus hijos.
+80;Paola Valenzuela Contreras;2° Medio A;16;Filosofía;4.9;;Física;0.87;Mario Salazar;Apoderado: Julio Pérez;Los apoderados informan que están en un proceso de separación y que eso ha afectado a sus hijos.
+80;Paola Valenzuela Contreras;2° Medio A;16;Artes Visuales;4.7;Se distrae con facilidad.;Física;0.87;Mario Salazar;Apoderado: Julio Pérez;Los apoderados informan que están en un proceso de separación y que eso ha afectado a sus hijos.
+80;Paola Valenzuela Contreras;2° Medio A;16;Educación Física;3.7;Falta de estudio y preparación para las evaluaciones.;Física;0.87;Mario Salazar;Apoderado: Julio Pérez;Los apoderados informan que están en un proceso de separación y que eso ha afectado a sus hijos.
+81;Gabriela Rojas González;2° Medio B;16;Lenguaje;5.7;;Inglés;0.97;Paola Vásquez;Apoderado: Ana Silva;Sin entrevistas registradas.
+81;Gabriela Rojas González;2° Medio B;16;Matemáticas;6.1;;Inglés;0.97;Paola Vásquez;Apoderado: Ana Silva;Sin entrevistas registradas.
+81;Gabriela Rojas González;2° Medio B;16;Física;6.5;Ha mejorado notablemente su rendimiento.;Inglés;0.97;Paola Vásquez;Apoderado: Ana Silva;Sin entrevistas registradas.
+81;Gabriela Rojas González;2° Medio B;16;Química;5.6;Registra agresiones físicas a compañeros.;Inglés;0.97;Paola Vásquez;Apoderado: Ana Silva;Sin entrevistas registradas.
+81;Gabriela Rojas González;2° Medio B;16;Biología;6.7;Creativo y con gran potencial.;Inglés;0.97;Paola Vásquez;Apoderado: Ana Silva;Sin entrevistas registradas.
+81;Gabriela Rojas González;2° Medio B;16;Historia;6.5;;Inglés;0.97;Paola Vásquez;Apoderado: Ana Silva;Sin entrevistas registradas.
+81;Gabriela Rojas González;2° Medio B;16;Inglés;5.5;;Inglés;0.97;Paola Vásquez;Apoderado: Ana Silva;Sin entrevistas registradas.
+81;Gabriela Rojas González;2° Medio B;16;Filosofía;5.6;;Inglés;0.97;Paola Vásquez;Apoderado: Ana Silva;Sin entrevistas registradas.
+81;Gabriela Rojas González;2° Medio B;16;Artes Visuales;6.5;;Inglés;0.97;Paola Vásquez;Apoderado: Ana Silva;Sin entrevistas registradas.
+81;Gabriela Rojas González;2° Medio B;16;Educación Física;6.8;Muy responsable y puntual con sus entregas.;Inglés;0.97;Paola Vásquez;Apoderado: Ana Silva;Sin entrevistas registradas.
+82;José Carrasco Contreras;2° Medio B;16;Lenguaje;5.0;Liderazgo positivo dentro del grupo.;;0.86;Miguel Campos;Apoderado: Felipe López;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+82;José Carrasco Contreras;2° Medio B;16;Matemáticas;6.5;;;0.86;Miguel Campos;Apoderado: Felipe López;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+82;José Carrasco Contreras;2° Medio B;16;Física;6.5;Liderazgo positivo dentro del grupo.;;0.86;Miguel Campos;Apoderado: Felipe López;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+82;José Carrasco Contreras;2° Medio B;16;Química;6.2;Creativo y con gran potencial.;;0.86;Miguel Campos;Apoderado: Felipe López;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+82;José Carrasco Contreras;2° Medio B;16;Biología;5.0;;;0.86;Miguel Campos;Apoderado: Felipe López;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+82;José Carrasco Contreras;2° Medio B;16;Historia;5.1;;;0.86;Miguel Campos;Apoderado: Felipe López;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+82;José Carrasco Contreras;2° Medio B;16;Inglés;5.5;Dificultad para concentrarse en clases.;;0.86;Miguel Campos;Apoderado: Felipe López;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+82;José Carrasco Contreras;2° Medio B;16;Filosofía;5.9;;;0.86;Miguel Campos;Apoderado: Felipe López;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+82;José Carrasco Contreras;2° Medio B;16;Artes Visuales;6.3;Creativo y con gran potencial.;;0.86;Miguel Campos;Apoderado: Felipe López;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+82;José Carrasco Contreras;2° Medio B;16;Educación Física;5.5;Creativo y con gran potencial.;;0.86;Miguel Campos;Apoderado: Felipe López;Apoderado informa que el estudiante presenta dificultades de concentración en casa y solicita estrategias de apoyo.
+83;Claudia Herrera Sepúlveda;2° Medio B;16;Lenguaje;4.5;;;0.88;Miguel González;Apoderado: Claudia Vásquez;Sin entrevistas registradas.
+83;Claudia Herrera Sepúlveda;2° Medio B;16;Matemáticas;3.9;Progreso inconsistente, alterna entre notas altas y bajas.;;0.88;Miguel González;Apoderado: Claudia Vásquez;Sin entrevistas registradas.
+83;Claudia Herrera Sepúlveda;2° Medio B;16;Física;3.4;Falta de respeto hacia el profesor.;;0.88;Miguel González;Apoderado: Claudia Vásquez;Sin entrevistas registradas.
+83;Claudia Herrera Sepúlveda;2° Medio B;16;Química;3.6;Dificultad para concentrarse en clases.;;0.88;Miguel González;Apoderado: Claudia Vásquez;Sin entrevistas registradas.
+83;Claudia Herrera Sepúlveda;2° Medio B;16;Biología;3.6;;;0.88;Miguel González;Apoderado: Claudia Vásquez;Sin entrevistas registradas.
+83;Claudia Herrera Sepúlveda;2° Medio B;16;Historia;3.1;;;0.88;Miguel González;Apoderado: Claudia Vásquez;Sin entrevistas registradas.
+83;Claudia Herrera Sepúlveda;2° Medio B;16;Inglés;3.7;;;0.88;Miguel González;Apoderado: Claudia Vásquez;Sin entrevistas registradas.
+83;Claudia Herrera Sepúlveda;2° Medio B;16;Filosofía;3.2;Tímido, le cuesta participar oralmente.;;0.88;Miguel González;Apoderado: Claudia Vásquez;Sin entrevistas registradas.
+83;Claudia Herrera Sepúlveda;2° Medio B;16;Artes Visuales;4.0;;;0.88;Miguel González;Apoderado: Claudia Vásquez;Sin entrevistas registradas.
+83;Claudia Herrera Sepúlveda;2° Medio B;16;Educación Física;4.6;Ha mejorado notablemente su rendimiento.;;0.88;Miguel González;Apoderado: Claudia Vásquez;Sin entrevistas registradas.
+84;Luis Herrera Ramírez;2° Medio B;16;Lenguaje;5.9;Muy responsable y puntual con sus entregas.;;0.87;Pablo Díaz;Apoderado: Ignacio Prieto;Sin entrevistas registradas.
+84;Luis Herrera Ramírez;2° Medio B;16;Matemáticas;6.0;;;0.87;Pablo Díaz;Apoderado: Ignacio Prieto;Sin entrevistas registradas.
+84;Luis Herrera Ramírez;2° Medio B;16;Física;4.8;Registra agresiones físicas a compañeros.;;0.87;Pablo Díaz;Apoderado: Ignacio Prieto;Sin entrevistas registradas.
+84;Luis Herrera Ramírez;2° Medio B;16;Química;5.1;;;0.87;Pablo Díaz;Apoderado: Ignacio Prieto;Sin entrevistas registradas.
+84;Luis Herrera Ramírez;2° Medio B;16;Biología;4.8;Dificultad para concentrarse en clases.;;0.87;Pablo Díaz;Apoderado: Ignacio Prieto;Sin entrevistas registradas.
+84;Luis Herrera Ramírez;2° Medio B;16;Historia;5.3;Muy responsable y puntual con sus entregas.;;0.87;Pablo Díaz;Apoderado: Ignacio Prieto;Sin entrevistas registradas.
+84;Luis Herrera Ramírez;2° Medio B;16;Inglés;5.8;Dificultad para concentrarse en clases.;;0.87;Pablo Díaz;Apoderado: Ignacio Prieto;Sin entrevistas registradas.
+84;Luis Herrera Ramírez;2° Medio B;16;Filosofía;5.4;Copia en la prueba.;;0.87;Pablo Díaz;Apoderado: Ignacio Prieto;Sin entrevistas registradas.
+84;Luis Herrera Ramírez;2° Medio B;16;Artes Visuales;4.6;Excelente participación en clases.;;0.87;Pablo Díaz;Apoderado: Ignacio Prieto;Sin entrevistas registradas.
+84;Luis Herrera Ramírez;2° Medio B;16;Educación Física;5.9;;;0.87;Pablo Díaz;Apoderado: Ignacio Prieto;Sin entrevistas registradas.
+85;Valentina Reyes Escobar;3° Medio A;17;Lenguaje;7.0;;;0.87;Gabriela Riquelme;Apoderado: Gabriela Ortega;Sin entrevistas registradas.
+85;Valentina Reyes Escobar;3° Medio A;17;Matemáticas;5.8;;;0.87;Gabriela Riquelme;Apoderado: Gabriela Ortega;Sin entrevistas registradas.
+85;Valentina Reyes Escobar;3° Medio A;17;Física;6.6;Creativo y con gran potencial.;;0.87;Gabriela Riquelme;Apoderado: Gabriela Ortega;Sin entrevistas registradas.
+85;Valentina Reyes Escobar;3° Medio A;17;Química;6.5;;;0.87;Gabriela Riquelme;Apoderado: Gabriela Ortega;Sin entrevistas registradas.
+85;Valentina Reyes Escobar;3° Medio A;17;Biología;6.6;;;0.87;Gabriela Riquelme;Apoderado: Gabriela Ortega;Sin entrevistas registradas.
+85;Valentina Reyes Escobar;3° Medio A;17;Historia;6.3;Creativo y con gran potencial.;;0.87;Gabriela Riquelme;Apoderado: Gabriela Ortega;Sin entrevistas registradas.
+85;Valentina Reyes Escobar;3° Medio A;17;Inglés;5.8;Registra agresiones físicas a compañeros.;;0.87;Gabriela Riquelme;Apoderado: Gabriela Ortega;Sin entrevistas registradas.
+85;Valentina Reyes Escobar;3° Medio A;17;Filosofía;5.8;;;0.87;Gabriela Riquelme;Apoderado: Gabriela Ortega;Sin entrevistas registradas.
+85;Valentina Reyes Escobar;3° Medio A;17;Artes Visuales;7.0;Muy responsable y puntual con sus entregas.;;0.87;Gabriela Riquelme;Apoderado: Gabriela Ortega;Sin entrevistas registradas.
+85;Valentina Reyes Escobar;3° Medio A;17;Educación Física;6.7;Liderazgo positivo dentro del grupo.;;0.87;Gabriela Riquelme;Apoderado: Gabriela Ortega;Sin entrevistas registradas.
+86;María Morales Valenzuela;3° Medio A;17;Lenguaje;4.7;;;0.91;Tomás Silva;Apoderado: Carlos Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+86;María Morales Valenzuela;3° Medio A;17;Matemáticas;4.5;;;0.91;Tomás Silva;Apoderado: Carlos Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+86;María Morales Valenzuela;3° Medio A;17;Física;5.3;Liderazgo positivo dentro del grupo.;;0.91;Tomás Silva;Apoderado: Carlos Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+86;María Morales Valenzuela;3° Medio A;17;Química;5.7;Colabora activamente con sus compañeros.;;0.91;Tomás Silva;Apoderado: Carlos Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+86;María Morales Valenzuela;3° Medio A;17;Biología;5.0;Se distrae con facilidad.;;0.91;Tomás Silva;Apoderado: Carlos Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+86;María Morales Valenzuela;3° Medio A;17;Historia;4.8;Progreso inconsistente, alterna entre notas altas y bajas.;;0.91;Tomás Silva;Apoderado: Carlos Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+86;María Morales Valenzuela;3° Medio A;17;Inglés;5.1;;;0.91;Tomás Silva;Apoderado: Carlos Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+86;María Morales Valenzuela;3° Medio A;17;Filosofía;5.5;;;0.91;Tomás Silva;Apoderado: Carlos Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+86;María Morales Valenzuela;3° Medio A;17;Artes Visuales;6.0;Copia en la prueba.;;0.91;Tomás Silva;Apoderado: Carlos Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+86;María Morales Valenzuela;3° Medio A;17;Educación Física;4.6;;;0.91;Tomás Silva;Apoderado: Carlos Vega;Los apoderados solicitan al colegio que su hijo sea incorporado a la selección de futbol.
+87;Marisol Romero Sepúlveda;3° Medio A;17;Lenguaje;6.4;Colabora activamente con sus compañeros.;;0.95;Catalina Vega;Apoderado: Pablo Soto;Sin entrevistas registradas.
+87;Marisol Romero Sepúlveda;3° Medio A;17;Matemáticas;6.8;;;0.95;Catalina Vega;Apoderado: Pablo Soto;Sin entrevistas registradas.
+87;Marisol Romero Sepúlveda;3° Medio A;17;Física;5.8;;;0.95;Catalina Vega;Apoderado: Pablo Soto;Sin entrevistas registradas.
+87;Marisol Romero Sepúlveda;3° Medio A;17;Química;6.4;Creativo y con gran potencial.;;0.95;Catalina Vega;Apoderado: Pablo Soto;Sin entrevistas registradas.
+87;Marisol Romero Sepúlveda;3° Medio A;17;Biología;6.3;Liderazgo positivo dentro del grupo.;;0.95;Catalina Vega;Apoderado: Pablo Soto;Sin entrevistas registradas.
+87;Marisol Romero Sepúlveda;3° Medio A;17;Historia;6.6;;;0.95;Catalina Vega;Apoderado: Pablo Soto;Sin entrevistas registradas.
+87;Marisol Romero Sepúlveda;3° Medio A;17;Inglés;6.1;;;0.95;Catalina Vega;Apoderado: Pablo Soto;Sin entrevistas registradas.
+87;Marisol Romero Sepúlveda;3° Medio A;17;Filosofía;6.7;;;0.95;Catalina Vega;Apoderado: Pablo Soto;Sin entrevistas registradas.
+87;Marisol Romero Sepúlveda;3° Medio A;17;Artes Visuales;5.5;Ha mejorado notablemente su rendimiento.;;0.95;Catalina Vega;Apoderado: Pablo Soto;Sin entrevistas registradas.
+87;Marisol Romero Sepúlveda;3° Medio A;17;Educación Física;5.3;Se distrae con facilidad.;;0.95;Catalina Vega;Apoderado: Pablo Soto;Sin entrevistas registradas.
+88;Fernanda Gutiérrez Escobar;3° Medio A;17;Lenguaje;5.9;;;0.89;Catalina Hidalgo;Apoderado: Sofía Rojas;Sin entrevistas registradas.
+88;Fernanda Gutiérrez Escobar;3° Medio A;17;Matemáticas;5.6;;;0.89;Catalina Hidalgo;Apoderado: Sofía Rojas;Sin entrevistas registradas.
+88;Fernanda Gutiérrez Escobar;3° Medio A;17;Física;6.8;;;0.89;Catalina Hidalgo;Apoderado: Sofía Rojas;Sin entrevistas registradas.
+88;Fernanda Gutiérrez Escobar;3° Medio A;17;Química;5.7;Se distrae con facilidad.;;0.89;Catalina Hidalgo;Apoderado: Sofía Rojas;Sin entrevistas registradas.
+88;Fernanda Gutiérrez Escobar;3° Medio A;17;Biología;6.9;;;0.89;Catalina Hidalgo;Apoderado: Sofía Rojas;Sin entrevistas registradas.
+88;Fernanda Gutiérrez Escobar;3° Medio A;17;Historia;6.3;;;0.89;Catalina Hidalgo;Apoderado: Sofía Rojas;Sin entrevistas registradas.
+88;Fernanda Gutiérrez Escobar;3° Medio A;17;Inglés;5.8;;;0.89;Catalina Hidalgo;Apoderado: Sofía Rojas;Sin entrevistas registradas.
+88;Fernanda Gutiérrez Escobar;3° Medio A;17;Filosofía;6.8;;;0.89;Catalina Hidalgo;Apoderado: Sofía Rojas;Sin entrevistas registradas.
+88;Fernanda Gutiérrez Escobar;3° Medio A;17;Artes Visuales;6.2;;;0.89;Catalina Hidalgo;Apoderado: Sofía Rojas;Sin entrevistas registradas.
+88;Fernanda Gutiérrez Escobar;3° Medio A;17;Educación Física;6.4;Muy responsable y puntual con sus entregas.;;0.89;Catalina Hidalgo;Apoderado: Sofía Rojas;Sin entrevistas registradas.
+89;Catalina Carrasco Campos;3° Medio B;17;Lenguaje;6.4;;;0.89;Nicolás Pizarro;Apoderado: Julio Rojas;Sin entrevistas registradas.
+89;Catalina Carrasco Campos;3° Medio B;17;Matemáticas;5.8;Falta de estudio y preparación para las evaluaciones.;;0.89;Nicolás Pizarro;Apoderado: Julio Rojas;Sin entrevistas registradas.
+89;Catalina Carrasco Campos;3° Medio B;17;Física;5.9;Creativo y con gran potencial.;;0.89;Nicolás Pizarro;Apoderado: Julio Rojas;Sin entrevistas registradas.
+89;Catalina Carrasco Campos;3° Medio B;17;Química;7.0;;;0.89;Nicolás Pizarro;Apoderado: Julio Rojas;Sin entrevistas registradas.
+89;Catalina Carrasco Campos;3° Medio B;17;Biología;6.4;Creativo y con gran potencial.;;0.89;Nicolás Pizarro;Apoderado: Julio Rojas;Sin entrevistas registradas.
+89;Catalina Carrasco Campos;3° Medio B;17;Historia;6.4;;;0.89;Nicolás Pizarro;Apoderado: Julio Rojas;Sin entrevistas registradas.
+89;Catalina Carrasco Campos;3° Medio B;17;Inglés;6.0;Liderazgo positivo dentro del grupo.;;0.89;Nicolás Pizarro;Apoderado: Julio Rojas;Sin entrevistas registradas.
+89;Catalina Carrasco Campos;3° Medio B;17;Filosofía;5.9;;;0.89;Nicolás Pizarro;Apoderado: Julio Rojas;Sin entrevistas registradas.
+89;Catalina Carrasco Campos;3° Medio B;17;Artes Visuales;7.0;;;0.89;Nicolás Pizarro;Apoderado: Julio Rojas;Sin entrevistas registradas.
+89;Catalina Carrasco Campos;3° Medio B;17;Educación Física;7.0;;;0.89;Nicolás Pizarro;Apoderado: Julio Rojas;Sin entrevistas registradas.
+90;Marisol Castro Vásquez;3° Medio B;17;Lenguaje;5.5;;Matemáticas;0.98;Fernanda Araya;Apoderado: José Campos;Sin entrevistas registradas.
+90;Marisol Castro Vásquez;3° Medio B;17;Matemáticas;4.5;;Matemáticas;0.98;Fernanda Araya;Apoderado: José Campos;Sin entrevistas registradas.
+90;Marisol Castro Vásquez;3° Medio B;17;Física;6.3;Ha mejorado notablemente su rendimiento.;Matemáticas;0.98;Fernanda Araya;Apoderado: José Campos;Sin entrevistas registradas.
+90;Marisol Castro Vásquez;3° Medio B;17;Química;5.5;;Matemáticas;0.98;Fernanda Araya;Apoderado: José Campos;Sin entrevistas registradas.
+90;Marisol Castro Vásquez;3° Medio B;17;Biología;5.8;Copia en la prueba.;Matemáticas;0.98;Fernanda Araya;Apoderado: José Campos;Sin entrevistas registradas.
+90;Marisol Castro Vásquez;3° Medio B;17;Historia;6.5;Excelente participación en clases.;Matemáticas;0.98;Fernanda Araya;Apoderado: José Campos;Sin entrevistas registradas.
+90;Marisol Castro Vásquez;3° Medio B;17;Inglés;6.4;;Matemáticas;0.98;Fernanda Araya;Apoderado: José Campos;Sin entrevistas registradas.
+90;Marisol Castro Vásquez;3° Medio B;17;Filosofía;5.9;Copia en la prueba.;Matemáticas;0.98;Fernanda Araya;Apoderado: José Campos;Sin entrevistas registradas.
+90;Marisol Castro Vásquez;3° Medio B;17;Artes Visuales;5.6;;Matemáticas;0.98;Fernanda Araya;Apoderado: José Campos;Sin entrevistas registradas.
+90;Marisol Castro Vásquez;3° Medio B;17;Educación Física;6.6;Ha mejorado notablemente su rendimiento.;Matemáticas;0.98;Fernanda Araya;Apoderado: José Campos;Sin entrevistas registradas.
+91;Lucía Herrera Soto;3° Medio B;17;Lenguaje;5.3;;;0.93;María Escobar;Apoderado: Camila Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+91;Lucía Herrera Soto;3° Medio B;17;Matemáticas;6.3;Demuestra gran interés por la asignatura.;;0.93;María Escobar;Apoderado: Camila Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+91;Lucía Herrera Soto;3° Medio B;17;Física;6.1;Demuestra gran interés por la asignatura.;;0.93;María Escobar;Apoderado: Camila Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+91;Lucía Herrera Soto;3° Medio B;17;Química;5.2;Demuestra gran interés por la asignatura.;;0.93;María Escobar;Apoderado: Camila Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+91;Lucía Herrera Soto;3° Medio B;17;Biología;5.4;Tímido, le cuesta participar oralmente.;;0.93;María Escobar;Apoderado: Camila Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+91;Lucía Herrera Soto;3° Medio B;17;Historia;5.9;;;0.93;María Escobar;Apoderado: Camila Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+91;Lucía Herrera Soto;3° Medio B;17;Inglés;6.0;Dificultad para concentrarse en clases.;;0.93;María Escobar;Apoderado: Camila Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+91;Lucía Herrera Soto;3° Medio B;17;Filosofía;5.6;;;0.93;María Escobar;Apoderado: Camila Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+91;Lucía Herrera Soto;3° Medio B;17;Artes Visuales;6.5;Excelente participación en clases.;;0.93;María Escobar;Apoderado: Camila Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+91;Lucía Herrera Soto;3° Medio B;17;Educación Física;6.4;;;0.93;María Escobar;Apoderado: Camila Sepúlveda;Apoderado solicita reunión con UTP para revisar la cobertura curricular y los métodos de evaluación de la asignatura de Inglés.
+92;Sebastián Ortega Miranda;3° Medio B;17;Lenguaje;6.5;;;0.94;Mario Ramírez;Apoderado: Mario Aguirre;Sin entrevistas registradas.
+92;Sebastián Ortega Miranda;3° Medio B;17;Matemáticas;6.0;;;0.94;Mario Ramírez;Apoderado: Mario Aguirre;Sin entrevistas registradas.
+92;Sebastián Ortega Miranda;3° Medio B;17;Física;5.6;Muy responsable y puntual con sus entregas.;;0.94;Mario Ramírez;Apoderado: Mario Aguirre;Sin entrevistas registradas.
+92;Sebastián Ortega Miranda;3° Medio B;17;Química;6.1;;;0.94;Mario Ramírez;Apoderado: Mario Aguirre;Sin entrevistas registradas.
+92;Sebastián Ortega Miranda;3° Medio B;17;Biología;6.3;;;0.94;Mario Ramírez;Apoderado: Mario Aguirre;Sin entrevistas registradas.
+92;Sebastián Ortega Miranda;3° Medio B;17;Historia;5.6;Demuestra gran interés por la asignatura.;;0.94;Mario Ramírez;Apoderado: Mario Aguirre;Sin entrevistas registradas.
+92;Sebastián Ortega Miranda;3° Medio B;17;Inglés;6.1;Liderazgo positivo dentro del grupo.;;0.94;Mario Ramírez;Apoderado: Mario Aguirre;Sin entrevistas registradas.
+92;Sebastián Ortega Miranda;3° Medio B;17;Filosofía;5.8;;;0.94;Mario Ramírez;Apoderado: Mario Aguirre;Sin entrevistas registradas.
+92;Sebastián Ortega Miranda;3° Medio B;17;Artes Visuales;5.8;Falta de estudio y preparación para las evaluaciones.;;0.94;Mario Ramírez;Apoderado: Mario Aguirre;Sin entrevistas registradas.
+92;Sebastián Ortega Miranda;3° Medio B;17;Educación Física;6.6;Ha mejorado notablemente su rendimiento.;;0.94;Mario Ramírez;Apoderado: Mario Aguirre;Sin entrevistas registradas.
+93;Valentina Romero Herrera;4° Medio A;18;Lenguaje;3.1;Tímido, le cuesta participar oralmente.;;0.95;Benjamín Miranda;Apoderado: Pablo Hidalgo;Sin entrevistas registradas.
+93;Valentina Romero Herrera;4° Medio A;18;Matemáticas;3.1;;;0.95;Benjamín Miranda;Apoderado: Pablo Hidalgo;Sin entrevistas registradas.
+93;Valentina Romero Herrera;4° Medio A;18;Física;3.2;;;0.95;Benjamín Miranda;Apoderado: Pablo Hidalgo;Sin entrevistas registradas.
+93;Valentina Romero Herrera;4° Medio A;18;Química;3.8;;;0.95;Benjamín Miranda;Apoderado: Pablo Hidalgo;Sin entrevistas registradas.
+93;Valentina Romero Herrera;4° Medio A;18;Biología;3.2;;;0.95;Benjamín Miranda;Apoderado: Pablo Hidalgo;Sin entrevistas registradas.
+93;Valentina Romero Herrera;4° Medio A;18;Historia;3.9;Progreso inconsistente, alterna entre notas altas y bajas.;;0.95;Benjamín Miranda;Apoderado: Pablo Hidalgo;Sin entrevistas registradas.
+93;Valentina Romero Herrera;4° Medio A;18;Inglés;4.6;;;0.95;Benjamín Miranda;Apoderado: Pablo Hidalgo;Sin entrevistas registradas.
+93;Valentina Romero Herrera;4° Medio A;18;Filosofía;4.5;;;0.95;Benjamín Miranda;Apoderado: Pablo Hidalgo;Sin entrevistas registradas.
+93;Valentina Romero Herrera;4° Medio A;18;Artes Visuales;3.1;Se distrae con facilidad.;;0.95;Benjamín Miranda;Apoderado: Pablo Hidalgo;Sin entrevistas registradas.
+93;Valentina Romero Herrera;4° Medio A;18;Educación Física;3.2;;;0.95;Benjamín Miranda;Apoderado: Pablo Hidalgo;Sin entrevistas registradas.
+94;Gabriela López Valenzuela;4° Medio A;18;Lenguaje;5.2;;Inglés;0.88;Andrea Márquez;Apoderado: Andrea Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+94;Gabriela López Valenzuela;4° Medio A;18;Matemáticas;5.2;;Inglés;0.88;Andrea Márquez;Apoderado: Andrea Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+94;Gabriela López Valenzuela;4° Medio A;18;Física;5.8;Colabora activamente con sus compañeros.;Inglés;0.88;Andrea Márquez;Apoderado: Andrea Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+94;Gabriela López Valenzuela;4° Medio A;18;Química;5.9;;Inglés;0.88;Andrea Márquez;Apoderado: Andrea Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+94;Gabriela López Valenzuela;4° Medio A;18;Biología;5.5;;Inglés;0.88;Andrea Márquez;Apoderado: Andrea Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+94;Gabriela López Valenzuela;4° Medio A;18;Historia;4.7;;Inglés;0.88;Andrea Márquez;Apoderado: Andrea Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+94;Gabriela López Valenzuela;4° Medio A;18;Inglés;5.2;;Inglés;0.88;Andrea Márquez;Apoderado: Andrea Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+94;Gabriela López Valenzuela;4° Medio A;18;Filosofía;4.7;Ha mejorado notablemente su rendimiento.;Inglés;0.88;Andrea Márquez;Apoderado: Andrea Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+94;Gabriela López Valenzuela;4° Medio A;18;Artes Visuales;5.7;Falta de estudio y preparación para las evaluaciones.;Inglés;0.88;Andrea Márquez;Apoderado: Andrea Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+94;Gabriela López Valenzuela;4° Medio A;18;Educación Física;6.2;;Inglés;0.88;Andrea Márquez;Apoderado: Andrea Salazar;Apoderado: Se observa con los apoderados una mejora en la intención de estudios.
+95;Alicia Pérez Rojas;4° Medio A;18;Lenguaje;5.3;;;0.99;Paula Figueroa;Apoderado: Martina Araya;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+95;Alicia Pérez Rojas;4° Medio A;18;Matemáticas;6.0;Falta de respeto hacia el profesor.;;0.99;Paula Figueroa;Apoderado: Martina Araya;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+95;Alicia Pérez Rojas;4° Medio A;18;Física;5.4;Demuestra gran interés por la asignatura.;;0.99;Paula Figueroa;Apoderado: Martina Araya;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+95;Alicia Pérez Rojas;4° Medio A;18;Química;4.9;Colabora activamente con sus compañeros.;;0.99;Paula Figueroa;Apoderado: Martina Araya;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+95;Alicia Pérez Rojas;4° Medio A;18;Biología;6.0;Demuestra gran interés por la asignatura.;;0.99;Paula Figueroa;Apoderado: Martina Araya;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+95;Alicia Pérez Rojas;4° Medio A;18;Historia;5.8;Se distrae con facilidad.;;0.99;Paula Figueroa;Apoderado: Martina Araya;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+95;Alicia Pérez Rojas;4° Medio A;18;Inglés;6.4;;;0.99;Paula Figueroa;Apoderado: Martina Araya;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+95;Alicia Pérez Rojas;4° Medio A;18;Filosofía;5.8;Demuestra gran interés por la asignatura.;;0.99;Paula Figueroa;Apoderado: Martina Araya;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+95;Alicia Pérez Rojas;4° Medio A;18;Artes Visuales;6.2;;;0.99;Paula Figueroa;Apoderado: Martina Araya;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+95;Alicia Pérez Rojas;4° Medio A;18;Educación Física;5.4;Ha mejorado notablemente su rendimiento.;;0.99;Paula Figueroa;Apoderado: Martina Araya;"Conversación sobre la integración social del estudiante. Apoderados mencionan que es tímido; se acuerda fomentar participación en clases."
+96;Benjamín Arteaga Riquelme;4° Medio A;18;Lenguaje;5.4;Muy responsable y puntual con sus entregas.;Física;0.96;Ana Vásquez;Apoderado: Martina Araya;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+96;Benjamín Arteaga Riquelme;4° Medio A;18;Matemáticas;6.7;;Física;0.96;Ana Vásquez;Apoderado: Martina Araya;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+96;Benjamín Arteaga Riquelme;4° Medio A;18;Física;5.6;Muy responsable y puntual con sus entregas.;Física;0.96;Ana Vásquez;Apoderado: Martina Araya;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+96;Benjamín Arteaga Riquelme;4° Medio A;18;Química;6.5;Excelente participación en clases.;Física;0.96;Ana Vásquez;Apoderado: Martina Araya;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+96;Benjamín Arteaga Riquelme;4° Medio A;18;Biología;6.4;;Física;0.96;Ana Vásquez;Apoderado: Martina Araya;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+96;Benjamín Arteaga Riquelme;4° Medio A;18;Historia;6.7;Creativo y con gran potencial.;Física;0.96;Ana Vásquez;Apoderado: Martina Araya;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+96;Benjamín Arteaga Riquelme;4° Medio A;18;Inglés;5.5;Dificultad para concentrarse en clases.;Física;0.96;Ana Vásquez;Apoderado: Martina Araya;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+96;Benjamín Arteaga Riquelme;4° Medio A;18;Filosofía;5.5;;Física;0.96;Ana Vásquez;Apoderado: Martina Araya;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+96;Benjamín Arteaga Riquelme;4° Medio A;18;Artes Visuales;5.4;;Física;0.96;Ana Vásquez;Apoderado: Martina Araya;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+96;Benjamín Arteaga Riquelme;4° Medio A;18;Educación Física;4.9;;Física;0.96;Ana Vásquez;Apoderado: Martina Araya;Reunión de seguimiento con apoderado. Se revisan los compromisos de la entrevista anterior y se constatan avances positivos en la conducta.
+97;Sofía Leiva Herrera;4° Medio B;18;Lenguaje;4.7;;;0.86;Camila Pizarro;Apoderado: Tomás Morales;Sin entrevistas registradas.
+97;Sofía Leiva Herrera;4° Medio B;18;Matemáticas;5.0;;;0.86;Camila Pizarro;Apoderado: Tomás Morales;Sin entrevistas registradas.
+97;Sofía Leiva Herrera;4° Medio B;18;Física;5.8;Colabora activamente con sus compañeros.;;0.86;Camila Pizarro;Apoderado: Tomás Morales;Sin entrevistas registradas.
+97;Sofía Leiva Herrera;4° Medio B;18;Química;5.8;;;0.86;Camila Pizarro;Apoderado: Tomás Morales;Sin entrevistas registradas.
+97;Sofía Leiva Herrera;4° Medio B;18;Biología;5.9;;;0.86;Camila Pizarro;Apoderado: Tomás Morales;Sin entrevistas registradas.
+97;Sofía Leiva Herrera;4° Medio B;18;Historia;6.1;;;0.86;Camila Pizarro;Apoderado: Tomás Morales;Sin entrevistas registradas.
+97;Sofía Leiva Herrera;4° Medio B;18;Inglés;5.8;Progreso inconsistente, alterna entre notas altas y bajas.;;0.86;Camila Pizarro;Apoderado: Tomás Morales;Sin entrevistas registradas.
+97;Sofía Leiva Herrera;4° Medio B;18;Filosofía;6.1;Excelente participación en clases.;;0.86;Camila Pizarro;Apoderado: Tomás Morales;Sin entrevistas registradas.
+97;Sofía Leiva Herrera;4° Medio B;18;Artes Visuales;5.5;Excelente participación en clases.;;0.86;Camila Pizarro;Apoderado: Tomás Morales;Sin entrevistas registradas.
+97;Sofía Leiva Herrera;4° Medio B;18;Educación Física;5.4;;;0.86;Camila Pizarro;Apoderado: Tomás Morales;Sin entrevistas registradas.
+98;Claudia Prieto Tapia;4° Medio B;18;Lenguaje;5.5;;;0.85;Fernanda Escobar;Apoderado: Diego Baltra;Sin entrevistas registradas.
+98;Claudia Prieto Tapia;4° Medio B;18;Matemáticas;5.5;;;0.85;Fernanda Escobar;Apoderado: Diego Baltra;Sin entrevistas registradas.
+98;Claudia Prieto Tapia;4° Medio B;18;Física;5.8;Creativo y con gran potencial.;;0.85;Fernanda Escobar;Apoderado: Diego Baltra;Sin entrevistas registradas.
+98;Claudia Prieto Tapia;4° Medio B;18;Química;5.8;;;0.85;Fernanda Escobar;Apoderado: Diego Baltra;Sin entrevistas registradas.
+98;Claudia Prieto Tapia;4° Medio B;18;Biología;6.4;Ha mejorado notablemente su rendimiento.;;0.85;Fernanda Escobar;Apoderado: Diego Baltra;Sin entrevistas registradas.
+98;Claudia Prieto Tapia;4° Medio B;18;Historia;6.0;;;0.85;Fernanda Escobar;Apoderado: Diego Baltra;Sin entrevistas registradas.
+98;Claudia Prieto Tapia;4° Medio B;18;Inglés;6.2;Demuestra gran interés por la asignatura.;;0.85;Fernanda Escobar;Apoderado: Diego Baltra;Sin entrevistas registradas.
+98;Claudia Prieto Tapia;4° Medio B;18;Filosofía;6.1;;;0.85;Fernanda Escobar;Apoderado: Diego Baltra;Sin entrevistas registradas.
+98;Claudia Prieto Tapia;4° Medio B;18;Artes Visuales;5.8;;;0.85;Fernanda Escobar;Apoderado: Diego Baltra;Sin entrevistas registradas.
+98;Claudia Prieto Tapia;4° Medio B;18;Educación Física;6.5;Demuestra gran interés por la asignatura.;;0.85;Fernanda Escobar;Apoderado: Diego Baltra;Sin entrevistas registradas.
+99;Sebastián Aguirre Riquelme;4° Medio B;18;Lenguaje;5.0;Copia en la prueba.;Lenguaje;0.89;Fernanda Rojas;Apoderado: José Baltra;Sin entrevistas registradas.
+99;Sebastián Aguirre Riquelme;4° Medio B;18;Matemáticas;6.0;;Lenguaje;0.89;Fernanda Rojas;Apoderado: José Baltra;Sin entrevistas registradas.
+99;Sebastián Aguirre Riquelme;4° Medio B;18;Física;5.1;;Lenguaje;0.89;Fernanda Rojas;Apoderado: José Baltra;Sin entrevistas registradas.
+99;Sebastián Aguirre Riquelme;4° Medio B;18;Química;6.0;;Lenguaje;0.89;Fernanda Rojas;Apoderado: José Baltra;Sin entrevistas registradas.
+99;Sebastián Aguirre Riquelme;4° Medio B;18;Biología;5.0;;Lenguaje;0.89;Fernanda Rojas;Apoderado: José Baltra;Sin entrevistas registradas.
+99;Sebastián Aguirre Riquelme;4° Medio B;18;Historia;5.7;;Lenguaje;0.89;Fernanda Rojas;Apoderado: José Baltra;Sin entrevistas registradas.
+99;Sebastián Aguirre Riquelme;4° Medio B;18;Inglés;5.4;Liderazgo positivo dentro del grupo.;Lenguaje;0.89;Fernanda Rojas;Apoderado: José Baltra;Sin entrevistas registradas.
+99;Sebastián Aguirre Riquelme;4° Medio B;18;Filosofía;5.3;Demuestra gran interés por la asignatura.;Lenguaje;0.89;Fernanda Rojas;Apoderado: José Baltra;Sin entrevistas registradas.
+99;Sebastián Aguirre Riquelme;4° Medio B;18;Artes Visuales;6.3;Muy responsable y puntual con sus entregas.;Lenguaje;0.89;Fernanda Rojas;Apoderado: José Baltra;Sin entrevistas registradas.
+99;Sebastián Aguirre Riquelme;4° Medio B;18;Educación Física;6.4;Liderazgo positivo dentro del grupo.;Lenguaje;0.89;Fernanda Rojas;Apoderado: José Baltra;Sin entrevistas registradas.
+100;Carlos Salazar Herrera;4° Medio B;18;Lenguaje;5.4;;Lenguaje;0.74;Javiera Escobar;Apoderado: Andrea Herrera;Sin entrevistas registradas.
+100;Carlos Salazar Herrera;4° Medio B;18;Matemáticas;6.6;;Lenguaje;0.74;Javiera Escobar;Apoderado: Andrea Herrera;Sin entrevistas registradas.
+100;Carlos Salazar Herrera;4° Medio B;18;Física;5.8;Dificultad para concentrarse en clases.;Lenguaje;0.74;Javiera Escobar;Apoderado: Andrea Herrera;Sin entrevistas registradas.
+100;Carlos Salazar Herrera;4° Medio B;18;Química;5.9;Progreso inconsistente, alterna entre notas altas y bajas.;Lenguaje;0.74;Javiera Escobar;Apoderado: Andrea Herrera;Sin entrevistas registradas.
+100;Carlos Salazar Herrera;4° Medio B;18;Biología;6.5;Muy responsable y puntual con sus entregas.;Lenguaje;0.74;Javiera Escobar;Apoderado: Andrea Herrera;Sin entrevistas registradas.
+100;Carlos Salazar Herrera;4° Medio B;18;Historia;6.5;;Lenguaje;0.74;Javiera Escobar;Apoderado: Andrea Herrera;Sin entrevistas registradas.
+100;Carlos Salazar Herrera;4° Medio B;18;Inglés;6.5;Demuestra gran interés por la asignatura.;Lenguaje;0.74;Javiera Escobar;Apoderado: Andrea Herrera;Sin entrevistas registradas.
+100;Carlos Salazar Herrera;4° Medio B;18;Filosofía;6.2;;Lenguaje;0.74;Javiera Escobar;Apoderado: Andrea Herrera;Sin entrevistas registradas.
+100;Carlos Salazar Herrera;4° Medio B;18;Artes Visuales;6.4;;Lenguaje;0.74;Javiera Escobar;Apoderado: Andrea Herrera;Sin entrevistas registradas.
+100;Carlos Salazar Herrera;4° Medio B;18;Educación Física;6.6;;Lenguaje;0.74;Javiera Escobar;Apoderado: Andrea Herrera;Sin entrevistas registradas.

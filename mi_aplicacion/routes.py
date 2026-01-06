@@ -448,7 +448,11 @@ def riesgos_por_curso_nivel(level, course):
         model_preds = {}
         try:
             if bool(current_app.config.get('ENABLE_PREDICTIVE_MODEL_VIS')):
-                preds = predict_risk_with_model_for_fs(fs, current_app.config.get('MODEL_ARTIFACTS_DIR'))
+                preds = predict_risk_with_model_for_fs(
+                    fs, 
+                    current_app.config.get('MODEL_ARTIFACTS_DIR'), 
+                    current_app.config.get('DATABASE_FILE')
+                )
                 model_preds = preds or {}
         except Exception:
             model_preds = {}
@@ -2205,13 +2209,14 @@ def biblioteca_reportes():
     search_nombre = request.args.get('nombre_entidad')
     
     reportes = []
-    query_params = [current_filename]
+    # query_params = [current_filename]
+    query_params = []
     
     base_query = """
         SELECT id, timestamp, report_date, follow_up_type, related_entity_type, related_entity_name
         FROM follow_ups
         WHERE (follow_up_type = 'reporte_360' OR follow_up_type = 'intervention_plan' OR follow_up_type = 'observacion_entidad')
-        AND related_filename = ?
+        -- AND related_filename = ?  <-- ELIMINADO para permitir ver reportes de meses anteriores
     """
 
     if owner:
