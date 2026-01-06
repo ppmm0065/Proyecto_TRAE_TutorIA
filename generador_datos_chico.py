@@ -118,17 +118,64 @@ def cargar_roster_desde_csv(csv_path):
     print(f"Se identificaron {len(estudiantes)} estudiantes únicos.")
     return estudiantes
 
-def generar_mes(mes_idx, estudiantes, semilla_csv):
+def cargar_cierre_ano_anterior(csv_prev_path, estudiantes):
+    """
+    Lee el archivo de Diciembre del año anterior y ajusta el 'promedio_objetivo'
+    de cada estudiante según cómo terminó el año.
+    """
+    if not os.path.exists(csv_prev_path):
+        print(f"Advertencia: Archivo de cierre anterior '{csv_prev_path}' no existe. Se usará base inicial.")
+        return estudiantes
+    
+    print(f"Cargando historial de cierre desde '{csv_prev_path}' para ajustar Year 2...")
+    try:
+        df = pd.read_csv(csv_prev_path, sep=';', encoding='utf-8-sig')
+    except:
+        df = pd.read_csv(csv_prev_path, sep=',', encoding='utf-8-sig')
+        
+    # Normalizar columnas
+    df.columns = [c.lower().strip() for c in df.columns]
+    
+    # Calcular promedio final real por alumno en ese archivo
+    # Asumimos columna 'id estudiante' y 'nota'
+    if 'id estudiante' not in df.columns or 'nota' not in df.columns:
+        return estudiantes
+        
+    df['nota'] = pd.to_numeric(df['nota'], errors='coerce')
+    promedios_cierre = df.groupby('id estudiante')['nota'].mean().to_dict()
+    
+    impactados = 0
+    for est in estudiantes:
+        eid = est['id_estudiante']
+        if eid in promedios_cierre:
+            cierre = promedios_cierre[eid]
+            
+            # LÓGICA DE HERENCIA:
+            # 1. Si cerró rojo (<4.0): Parte el nuevo año con desventaja severa (-0.5 a su base)
+            #    Simula que "no aprendió la base" del año anterior.
+            if cierre < 4.0:
+                est['promedio_objetivo'] = max(2.0, cierre - 0.3)
+                est['etiqueta_simulacion'] = 'riesgo_heredado'
+                
+            # 2. Si cerró mediocre (4.0 - 5.0): Parte igual o levemente peor
+            elif cierre < 5.0:
+                est['promedio_objetivo'] = cierre
+                
+            # 3. Si cerró excelente (>6.0): Mantiene su excelencia
+            else:
+                est['promedio_objetivo'] = cierre
+            
+            impactados += 1
+            
+    print(f"Se ajustaron los perfiles de {impactados} estudiantes basados en su cierre anterior.")
+    return estudiantes
+
+def generar_mes(mes_idx, estudiantes, semilla_csv, suffix_ano=""):
     """Genera los datos para un mes específico."""
     nombre_mes = MESES[mes_idx]
-    # Determinar año (cada 10 meses aumentamos un año virtual, partiendo del año 1)
-    # Como la instrucción pide comenzar en año 1 y generar secuencialmente,
-    # el nombre del archivo incluirá el mes.
-    # Si quisieramos guardar historial de años, podríamos añadirlo al nombre, 
-    # pero la instrucción pide "datos_marzo.csv", "datos_abril.csv"...
-    # Asumiremos que se sobrescriben o se gestionan externamente si pasa un año.
     
-    out_csv = f"datos_{nombre_mes}.csv"
+    # Nombre de archivo puede incluir sufijo si es año 2 (ej. datos_marzo_y2.csv)
+    out_csv = f"datos_{nombre_mes}{suffix_ano}.csv"
     print(f"Generando datos para: {nombre_mes.capitalize()} -> {out_csv}")
     
     datos_out = []
@@ -228,21 +275,28 @@ def main():
     parser = argparse.ArgumentParser(description="Generador secuencial de datos mensuales para estudiantes.")
     parser.add_argument("--semilla", type=str, default="datos_completos_100_estudiantes.csv", help="Archivo CSV base con los estudiantes")
     parser.add_argument("--mes", type=str, default=None, help="Nombre del mes a generar (ej: marzo). Si no se especifica, genera todos secuencialmente.")
+    parser.add_argument("--prev-year-closure", type=str, default=None, help="Archivo CSV de diciembre del año anterior para heredar rendimiento.")
+    parser.add_argument("--suffix", type=str, default="", help="Sufijo para los archivos generados (ej: _y2)")
+    
     args = parser.parse_args()
 
     estudiantes = cargar_roster_desde_csv(args.semilla)
+    
+    # Si se provee cierre anterior, ajustar promedios objetivos
+    if args.prev_year_closure:
+        estudiantes = cargar_cierre_ano_anterior(args.prev_year_closure, estudiantes)
     
     if args.mes:
         m = args.mes.lower()
         if m in MESES:
             idx = MESES.index(m)
-            generar_mes(idx, estudiantes, args.semilla)
+            generar_mes(idx, estudiantes, args.semilla, suffix_ano=args.suffix)
         else:
             print(f"Mes '{m}' no válido. Use: {', '.join(MESES)}")
     else:
         print("Generando ciclo completo (Marzo a Diciembre)...")
         for i in range(10):
-            generar_mes(i, estudiantes, args.semilla)
+            generar_mes(i, estudiantes, args.semilla, suffix_ano=args.suffix)
 
 if __name__ == "__main__":
     main()
