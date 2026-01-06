@@ -3852,7 +3852,23 @@ def predict_risk_with_model_for_fs(fs, artifacts_dir, db_path=None):
                  if p_prob < min_prob:
                      p_prob = min_prob
                      p_label = 'alto' if p_prob > 0.6 else 'medio'
-                    
+             
+             else: # Marzo-Junio (Inicio de Año)
+                 # SUAVIZADO: Evitar pánico temprano (100%) pero mantener alerta (min 20%)
+                 # Si el modelo predice > 90% en marzo, lo bajamos a un techo razonable (ej. 75%)
+                 # porque "aún queda año". Si predice < 10%, lo subimos a un piso de alerta (20%)
+                 # porque "empezó mal".
+                 
+                 # Piso de Alerta (por empezar con rojo)
+                 if p_prob < 0.20:
+                     p_prob = 0.25
+                     p_label = 'bajo' # Sigue siendo bajo/medio numéricamente, pero con alerta
+                     
+                 # Techo de Esperanza (no condenar en Marzo)
+                 if p_prob > 0.85:
+                     p_prob = 0.75
+                     p_label = 'medio' # Bajamos de 'alto' a 'medio'
+                     
         out[s] = {'predicted_level': p_label, 'prob_high': p_prob}
     return out
 
