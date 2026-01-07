@@ -800,7 +800,7 @@ def analyze_data_with_gemini(data_string, user_prompt, vs_inst, vs_followup,
     api_key = current_app.config.get('GEMINI_API_KEY')
     num_relevant_chunks_inst = int(current_app.config.get('NUM_RELEVANT_CHUNKS_INST', current_app.config.get('NUM_RELEVANT_CHUNKS', 10)))
     num_relevant_chunks_fu = int(current_app.config.get('NUM_RELEVANT_CHUNKS_FU', current_app.config.get('NUM_RELEVANT_CHUNKS', 10)))
-    model_name = current_app.config.get('GEMINI_MODEL_NAME', 'gemini-3-pro-preview') 
+    model_name = current_app.config.get('GEMINI_MODEL_NAME', 'gemini-3-pro-preview')  
 
     def create_error_response(error_message):
         # ... (código interno de create_error_response no cambia) ...
