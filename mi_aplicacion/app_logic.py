@@ -3477,6 +3477,7 @@ def build_training_dataset_from_db(db_path):
     y = []
     meta = []
     last_feats = {}
+    last_december_grades = {}
     for sid, ts in snaps:
         df = _load_snapshot_dataframe(db_path, sid)
         if df is None or df.empty:
@@ -3505,6 +3506,12 @@ def build_training_dataset_from_db(db_path):
             if prev:
                 grade_trend = f['avg_grade'] - prev['avg_grade']
                 att_trend = f['attendance_perc'] - prev['attendance_perc']
+            
+            # Delta respecto al año anterior
+            delta_prev_year = 0.0
+            prev_final = last_december_grades.get(student, 0.0)
+            if prev_final > 0:
+                delta_prev_year = f['avg_grade'] - prev_final
             
             label = 'bajo'
             r = risks.get(student)
@@ -3535,12 +3542,19 @@ def build_training_dataset_from_db(db_path):
                 float(f['neg_observations']),
                 float(f['family_complexity']),
                 grade_trend,
-                att_trend
+                att_trend,
+                delta_prev_year
             ])
             y.append(label)
             meta.append({'snapshot_id': sid, 'timestamp': ts, 'student_name': student})
+        
+        # Si es Diciembre (o el último mes del año cargado), guardamos las notas finales
+        if snapshot_month == 12:
+            for student, f in feats.items():
+                last_december_grades[student] = f['avg_grade']
+
         last_feats = feats
-    feature_names = ['avg_grade', 'attendance_perc', 'neg_observations', 'family_complexity', 'grade_trend', 'attendance_trend']
+    feature_names = ['avg_grade', 'attendance_perc', 'neg_observations', 'family_complexity', 'grade_trend', 'attendance_trend', 'delta_prev_year']
     return {'X': X, 'y': y, 'meta': meta, 'feature_names': feature_names, 'snapshots': snaps}
 
 def _normalize_train_test(dataset):
@@ -3751,6 +3765,50 @@ def train_predictive_risk_model(db_path, artifacts_dir):
         json.dump({'params': params, 'metrics': metrics}, f)
     return metrics
 
+def get_student_prev_year_final_grade(db_path, student_name):
+    """Obtiene la nota promedio del último registro del año anterior al actual."""
+    try:
+        import sqlite3
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+        
+        # 1. Obtener el año del último snapshot cargado
+        cursor.execute('''
+            SELECT timestamp FROM data_snapshots 
+            ORDER BY timestamp DESC LIMIT 1
+        ''')
+        row = cursor.fetchone()
+        if not row:
+            conn.close()
+            return 0.0
+            
+        last_ts_str = row[0]
+        try:
+            last_ts = datetime.datetime.strptime(last_ts_str, '%Y-%m-%d %H:%M:%S')
+            current_year = last_ts.year
+        except:
+            current_year = datetime.datetime.now().year
+            
+        # 2. Buscar nota del estudiante en un año anterior
+        cursor.execute('''
+            SELECT h.grade 
+            FROM student_data_history h
+            JOIN data_snapshots s ON h.snapshot_id = s.id
+            WHERE h.student_name = ? 
+            AND CAST(strftime('%Y', s.timestamp) AS INTEGER) < ?
+            ORDER BY s.timestamp DESC
+            LIMIT 1
+        ''', (student_name, current_year))
+        
+        grade_row = cursor.fetchone()
+        conn.close()
+        
+        if grade_row:
+            return float(grade_row[0])
+        return 0.0
+    except Exception:
+        return 0.0
+
 def predict_risk_with_model_for_fs(fs, artifacts_dir, db_path=None):
     path = os.path.join(artifacts_dir, 'predictive_risk_model.pkl')
     if not os.path.exists(path):
@@ -3774,6 +3832,7 @@ def predict_risk_with_model_for_fs(fs, artifacts_dir, db_path=None):
         # Calcular tendencias reales usando funciones existentes
         grade_trend = 0.0
         att_trend = 0.0
+        delta_prev_year = 0.0
         if db_path:
             try:
                 gt = get_student_grade_evolution_value(db_path, s)
@@ -3782,10 +3841,15 @@ def predict_risk_with_model_for_fs(fs, artifacts_dir, db_path=None):
                 at = get_student_attendance_evolution_value(db_path, s)
                 if at is not None:
                     att_trend = float(at)
+                
+                # Calcular delta respecto al año anterior
+                prev_final = get_student_prev_year_final_grade(db_path, s)
+                if prev_final > 0:
+                    delta_prev_year = avg_grade - prev_final
             except Exception:
                 pass
 
-        rows.append([avg_grade, attendance, float(neg), float(fam), grade_trend, att_trend])
+        rows.append([avg_grade, attendance, float(neg), float(fam), grade_trend, att_trend, delta_prev_year])
     means = params.get('means') or ([0.0]*len(rows[0]) if rows else [])
     stds = params.get('stds') or ([1.0]*len(rows[0]) if rows else [])
     def _norm_row(r):

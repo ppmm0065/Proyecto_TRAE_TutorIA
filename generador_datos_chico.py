@@ -7,6 +7,10 @@ import argparse
 import sys
 
 # --- CONFIGURACIÓN ---
+ALUMNOS_REDENCION = [
+    "Diego Arteaga Herrera",
+    "Fernanda Ibarra Carrasco"
+]
 OBSERVACIONES_POSITIVAS = [
     "Excelente participación en clases.", "Demuestra gran interés por la asignatura.",
     "Colabora activamente con sus compañeros.", "Muy responsable y puntual con sus entregas.",
@@ -185,12 +189,28 @@ def generar_mes(mes_idx, estudiantes, semilla_csv, suffix_ano=""):
     if mes_idx == 0: factor_mes = 0.2 # Marzo empieza bien
     if mes_idx == 9: factor_mes = -0.2 # Diciembre cansados
 
+    # Factor de progreso para casos de redención (0.0 en marzo -> 1.0 en diciembre)
+    progreso_anual = float(mes_idx) / 9.0
+
     for est in estudiantes:
         # Variación de asistencia del mes
         # Base alta (0.85-1.0) pero con fluctuación mensual
         asistencia_mes = round(random.uniform(RANGO_ASISTENCIA[0], RANGO_ASISTENCIA[1]), 2)
+        
+        # LÓGICA DE REDENCIÓN (AÑO 3)
+        es_redencion = False
+        if est["nombre"] in ALUMNOS_REDENCION and "_y3" in suffix_ano:
+            es_redencion = True
+            # Meta: Partir en ~3.9 y terminar en ~6.4
+            nota_inicio = 3.9
+            nota_fin = 6.4
+            # Interpolación lineal + pequeña variación aleatoria
+            est["promedio_objetivo"] = nota_inicio + (nota_fin - nota_inicio) * progreso_anual
+            # Mejorar asistencia también
+            asistencia_mes = 0.90 + (0.10 * progreso_anual) # 90% -> 100%
+
         # Algunos alumnos bajan asistencia drasticamente a veces
-        if random.random() < 0.05:
+        if not es_redencion and random.random() < 0.05:
             asistencia_mes = round(random.uniform(0.6, 0.8), 2)
             
         # Entrevistas: Evento mensual
