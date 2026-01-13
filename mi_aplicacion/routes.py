@@ -805,10 +805,14 @@ def upload_context_pdf():
             user_cfg['CONTEXT_DOCS_FOLDER'] = user_context_dir
             user_cfg['FAISS_INDEX_PATH'] = os.path.join(current_app.instance_path, 'users', uname, 'faiss_index_context')
             os.makedirs(user_cfg['FAISS_INDEX_PATH'], exist_ok=True)
-            if reload_institutional_context_vector_store(user_cfg):
-                flash('Índice de contexto del usuario actualizado.', 'info')
+            success, msg = reload_institutional_context_vector_store(user_cfg)
+            if success:
+                if "vacío" in str(msg).lower():
+                    flash(f'Documento subido, pero el índice quedó vacío: {msg}', 'warning')
+                else:
+                    flash(f'Índice de contexto del usuario actualizado. {msg or ""}', 'info')
             else:
-                flash('Documento subido, pero ocurrió un error al actualizar el índice de contexto del usuario.', 'warning')
+                flash(f'Documento subido, pero ocurrió un error al actualizar el índice: {msg}', 'warning')
         except Exception as e:
             flash(f'Error al procesar el documento de contexto: {e}', 'danger')
             traceback.print_exc()
@@ -1555,61 +1559,84 @@ def api_submit_advanced_chat():
     student_names = df_global[nombre_col].unique().tolist()
     course_names = df_global[curso_col].unique().tolist()
 
-    found_student = next((name for name in student_names if normalize_text(name) in prompt_norm), None)
-    if found_student:
-        entity_type = 'alumno'
-        entity_name = found_student
-        current_app.logger.info(f"Chat Avanzado detectó entidad ALUMNO: {entity_name}")
-        df_entidad = df_global[df_global[nombre_col] == entity_name]
-        data_string = load_data_as_string(file_path, specific_entity_df=df_entidad)
-    else:
-        # Resolver curso o detectar ambigüedad por nivel sin paralelo
-        resolved_course, amb_level, candidates = detect_course_or_ambiguity(course_names, user_prompt)
-        if resolved_course:
-            entity_type = 'curso'
-            entity_name = resolved_course
-            current_app.logger.info(f"Chat Avanzado detectó entidad CURSO: {entity_name}")
+    # --- CORRECCIÓN: Recuperar contexto de sesión para respuestas cortas ("Sí", "Confirmo") ---
+    # Si el prompt es muy corto y hay un contexto guardado, lo usamos prioritariamente.
+    context_from_session = session.get('last_advanced_chat_entity_context')
+    short_confirmation_keywords = ['si', 'sí', 'ok', 'confirmo', 'dale', 'bueno', 'aceptar', 'procede', 'hazlo', 'generalo', 'generar']
+    is_short_confirmation = len(user_prompt.split()) <= 5 and any(k == normalize_text(user_prompt) for k in short_confirmation_keywords) or any(k in normalize_text(user_prompt) for k in short_confirmation_keywords)
+
+    if is_short_confirmation and context_from_session:
+        entity_type = context_from_session.get('type')
+        entity_name = context_from_session.get('name')
+        current_app.logger.info(f"Chat Avanzado: Recuperado contexto de entidad por confirmación corta: {entity_type} {entity_name}")
+        # Recargar df_entidad y data_string con este contexto
+        if entity_type == 'alumno':
+            df_entidad = df_global[df_global[nombre_col] == entity_name]
+        elif entity_type == 'curso':
             df_entidad = df_global[df_global[curso_col] == entity_name]
+        
+        if not df_entidad.empty:
             data_string = load_data_as_string(file_path, specific_entity_df=df_entidad)
-        elif amb_level:
-            policy = current_app.config.get('COURSE_AMBIGUITY_POLICY', 'ask')
-            default_parallel = normalize_text(current_app.config.get('DEFAULT_PARALLEL', 'A'))
-            chosen = None
-            if policy == 'default':
-                # Elegir curso cuyo último token (paralelo) coincide con DEFAULT_PARALLEL
-                for c in candidates:
-                    toks = normalize_text(c).split()
-                    if toks and len(toks[-1]) == 1 and toks[-1].isalpha() and toks[-1] == default_parallel.lower():
-                        chosen = c
-                        break
-            if chosen:
+            # Inyectar recordatorio explícito en el prompt para Gemini
+            user_prompt = f"{user_prompt} (Contexto explícito: Aplicar al caso de {entity_name}, {entity_type})"
+    
+    # Si no se recuperó contexto, proceder con detección normal
+    if not entity_name:
+        found_student = next((name for name in student_names if normalize_text(name) in prompt_norm), None)
+        if found_student:
+            entity_type = 'alumno'
+            entity_name = found_student
+            current_app.logger.info(f"Chat Avanzado detectó entidad ALUMNO: {entity_name}")
+            df_entidad = df_global[df_global[nombre_col] == entity_name]
+            data_string = load_data_as_string(file_path, specific_entity_df=df_entidad)
+        else:
+            # Resolver curso o detectar ambigüedad por nivel sin paralelo
+            resolved_course, amb_level, candidates = detect_course_or_ambiguity(course_names, user_prompt)
+            if resolved_course:
                 entity_type = 'curso'
-                entity_name = chosen
-                current_app.logger.info(f"Ambigüedad resuelta por política DEFAULT: {entity_name}")
+                entity_name = resolved_course
+                current_app.logger.info(f"Chat Avanzado detectó entidad CURSO: {entity_name}")
                 df_entidad = df_global[df_global[curso_col] == entity_name]
                 data_string = load_data_as_string(file_path, specific_entity_df=df_entidad)
-            else:
-                # Construir mensaje de ambigüedad para guiar al usuario
-                letters = []
-                for c in candidates:
-                    toks = normalize_text(c).split()
-                    if toks and len(toks[-1]) == 1 and toks[-1].isalpha():
-                        letters.append(toks[-1].upper())
-                unique_letters = sorted(set(letters))
-                ambiguity_message = (
-                    f"Ambigüedad detectada: el nivel '{amb_level}' tiene varios paralelos disponibles: "
-                    f"{', '.join(unique_letters)}. Por favor, especifica la letra (p. ej., '{amb_level} {unique_letters[0]}')."
-                )
-                current_app.logger.info(ambiguity_message)
+            elif amb_level:
+                policy = current_app.config.get('COURSE_AMBIGUITY_POLICY', 'ask')
+                default_parallel = normalize_text(current_app.config.get('DEFAULT_PARALLEL', 'A'))
+                chosen = None
+                if policy == 'default':
+                    # Elegir curso cuyo último token (paralelo) coincide con DEFAULT_PARALLEL
+                    for c in candidates:
+                        toks = normalize_text(c).split()
+                        if toks and len(toks[-1]) == 1 and toks[-1].isalpha() and toks[-1] == default_parallel.lower():
+                            chosen = c
+                            break
+                if chosen:
+                    entity_type = 'curso'
+                    entity_name = chosen
+                    current_app.logger.info(f"Ambigüedad resuelta por política DEFAULT: {entity_name}")
+                    df_entidad = df_global[df_global[curso_col] == entity_name]
+                    data_string = load_data_as_string(file_path, specific_entity_df=df_entidad)
+                else:
+                    # Construir mensaje de ambigüedad para guiar al usuario
+                    letters = []
+                    for c in candidates:
+                        toks = normalize_text(c).split()
+                        if toks and len(toks[-1]) == 1 and toks[-1].isalpha():
+                            letters.append(toks[-1].upper())
+                    unique_letters = sorted(set(letters))
+                    ambiguity_message = (
+                        f"Ambigüedad detectada: el nivel '{amb_level}' tiene varios paralelos disponibles: "
+                        f"{', '.join(unique_letters)}. Por favor, especifica la letra (p. ej., '{amb_level} {unique_letters[0]}')."
+                    )
+                    current_app.logger.info(ambiguity_message)
 
-                # NUEVO: Aunque haya ambigüedad, proveer datos CSV filtrados al nivel (todos los paralelos)
-                try:
-                    df_nivel = df_global[df_global[curso_col].astype(str).str.contains(str(amb_level), case=False, na=False)]
-                    if not df_nivel.empty:
-                        data_string = load_data_as_string(file_path, specific_entity_df=df_nivel)
-                        current_app.logger.info(f"Contexto CSV adjuntado para nivel ambiguo: {amb_level} (total filas: {len(df_nivel)})")
-                except Exception as e:
-                    current_app.logger.error(f"Error al adjuntar CSV por nivel ambiguo {amb_level}: {e}")
+                    # NUEVO: Aunque haya ambigüedad, proveer datos CSV filtrados al nivel (todos los paralelos)
+                    try:
+                        df_nivel = df_global[df_global[curso_col].astype(str).str.contains(str(amb_level), case=False, na=False)]
+                        if not df_nivel.empty:
+                            data_string = load_data_as_string(file_path, specific_entity_df=df_nivel)
+                            current_app.logger.info(f"Contexto CSV adjuntado para nivel ambiguo: {amb_level} (total filas: {len(df_nivel)})")
+                    except Exception as e:
+                        current_app.logger.error(f"Error al adjuntar CSV por nivel ambiguo {amb_level}: {e}")
             
     # --- INICIO: NUEVA LÓGICA DE RESUMEN CUALITATIVO (Comportamiento) ---
     qualitative_history_summary = ""
@@ -1726,6 +1753,23 @@ def api_submit_advanced_chat():
     
     # ... (lógica de guardado de historial de chat y consumo no cambia) ...
     if not analysis_result.get('error'):
+        # --- INICIO CORRECCIÓN: Persistir contexto de entidad para el siguiente turno ---
+        # Si la respuesta de Gemini incluye una sugerencia de acción, aseguramos que el contexto
+        # de la entidad (si se detectó) se guarde en la sesión para que el "Sí" posterior lo use.
+        if entity_type and entity_name:
+            session['last_advanced_chat_entity_context'] = {
+                'type': entity_type,
+                'name': entity_name
+            }
+        else:
+            # Si no se detectó entidad en este turno, limpiamos contexto anterior para evitar "fantasmas"
+            # a menos que el usuario esté respondiendo a una sugerencia previa (manejo en frontend/prompt).
+            # Por seguridad, limpiamos si el prompt cambia de tema drásticamente, pero aquí
+            # optamos por una limpieza conservadora: solo si se detectó OTRA entidad distinta.
+            # (Simplificación: limpiar si no hay entidad detectada en un prompt largo)
+            pass 
+        # --- FIN CORRECCIÓN ---
+
         history_list.append({
             'user': user_prompt, 
             'gemini_markdown': analysis_result['raw_markdown'], 

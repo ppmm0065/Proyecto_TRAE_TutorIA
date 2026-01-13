@@ -828,7 +828,24 @@ def analyze_data_with_gemini(data_string, user_prompt, vs_inst, vs_followup,
     # Siempre intentamos recuperar contexto RAG; la inclusión en el prompt dependerá del modo.
     if not final_user_instruction:
          final_user_instruction = default_analysis_prompt
+
     # Recuperación de contexto institucional
+    # INTENTO DE RECUPERACIÓN DINÁMICA DE ÍNDICE DE USUARIO SI vs_inst ES GENÉRICO
+    # Esto asegura que si el usuario tiene un índice propio, se use ese en lugar del global vacío
+    try:
+        user = session.get('user') or {}
+        uname = user.get('username')
+        if uname and _FAISS_AVAILABLE and embedding_model_instance:
+            user_index_path = os.path.join(current_app.instance_path, 'users', uname, 'faiss_index_context')
+            if os.path.exists(os.path.join(user_index_path, "index.faiss")):
+                # Cargar índice específico del usuario
+                try:
+                    vs_inst = FAISS.load_local(user_index_path, embedding_model_instance, allow_dangerous_deserialization=True)
+                except Exception as e:
+                    current_app.logger.warning(f"No se pudo cargar índice de usuario {uname}: {e}")
+    except Exception:
+        pass
+
     if vs_inst:
         try:
             relevant_docs_inst = vs_inst.similarity_search(final_user_instruction, k=num_relevant_chunks_inst)
@@ -920,15 +937,26 @@ def analyze_data_with_gemini(data_string, user_prompt, vs_inst, vs_followup,
         retrieved_context_followup = f"Error crítico al buscar en el historial de seguimiento: {e_followup_retrieval}"
         traceback.print_exc()
     try:
+        # Determinar carpeta de contexto (priorizando usuario actual si existe)
         folder_ctx = current_app.config.get('CONTEXT_DOCS_FOLDER')
+        try:
+            user = session.get('user') or {}
+            uname = user.get('username')
+            if uname:
+                user_ctx = os.path.join(current_app.instance_path, 'users', uname, 'context_docs')
+                if os.path.isdir(user_ctx):
+                    folder_ctx = user_ctx
+        except Exception:
+            pass
+
         if folder_ctx and os.path.isdir(folder_ctx):
             names = [n for n in os.listdir(folder_ctx) if n.lower().endswith(('.pdf', '.txt'))]
             if names:
                 listing = "\n".join([f"* {n}" for n in sorted(names)])
-                header = "Documentos de Contexto Institucional:\n"
+                header = "Documentos de Contexto Institucional Disponibles:\n"
                 retrieved_context_inst = (header + listing + "\n\n" + (retrieved_context_inst or "")).strip()
-    except Exception:
-        pass
+    except Exception as e:
+        current_app.logger.warning(f"Error listando documentos de contexto: {e}")
             
     # --- Helpers de presupuesto de prompt ---
     def _trim_to_char_budget(text: str, max_chars: int) -> str:
@@ -1790,8 +1818,11 @@ def initialize_rag_components(app_config):
     # Modo de inicialización: 'lazy' intenta cargar índices existentes, 'eager' reconstruye
     rag_init_mode = (os.environ.get('RAG_INIT_MODE') or app_config.get('RAG_INIT_MODE') or 'lazy').lower()
     if rag_init_mode == 'eager':
-        if not reload_institutional_context_vector_store(app_config):
-            print("Advertencia: Vector store institucional no inicializado.")
+        success_inst, msg_inst = reload_institutional_context_vector_store(app_config)
+        if not success_inst:
+            print(f"Advertencia: Vector store institucional no inicializado. {msg_inst}")
+        
+        # reload_followup_vector_store todavía devuelve booleano (no lo cambié)
         if not reload_followup_vector_store(app_config):
             print("Advertencia: Vector store seguimientos/reportes/obs no inicializado.")
     else:
@@ -1843,23 +1874,33 @@ def try_load_existing_vector_stores(app_config):
     return loaded_any
 
 def _load_and_split_context_documents(context_docs_folder_path): 
-    # No changes
     all_docs = []
+    warnings = []
     if context_docs_folder_path and os.path.exists(context_docs_folder_path):
         for filename in os.listdir(context_docs_folder_path):
-            path = os.path.join(context_docs_folder_path, filename); loader = None; docs_list = [] # Renamed docs to docs_list
+            path = os.path.join(context_docs_folder_path, filename); loader = None; docs_list = []
             if filename.lower().endswith(".pdf"): loader = PyPDFLoader(path)
             elif filename.lower().endswith(".txt"): loader = TextLoader(path, encoding='utf-8', autodetect_encoding=True)
+            
             if loader:
-                try: docs_list = loader.load()
-                except Exception as e: print(f"Error cargando {filename}: {e}")
+                try: 
+                    docs_list = loader.load()
+                    # Verificar si se extrajo texto
+                    if not docs_list or all(not d.page_content.strip() for d in docs_list):
+                        warnings.append(f"El archivo '{filename}' no contiene texto extraíble (posible PDF escaneado).")
+                except Exception as e: 
+                    print(f"Error cargando {filename}: {e}")
+                    warnings.append(f"Error al leer '{filename}': {str(e)}")
+                
                 for doc_item in docs_list: 
                     doc_item.metadata = doc_item.metadata or {}; doc_item.metadata["source"] = path
                 all_docs.extend(docs_list)
+    
     chunks = []
     if all_docs:
         if RecursiveCharacterTextSplitter is None:
             print("Text splitter no disponible; se omite partición de documentos")
+            warnings.append("Text splitter no disponible.")
             chunks = []
         else:
             splitter = RecursiveCharacterTextSplitter(chunk_size=current_app.config.get('TEXT_SPLITTER_CHUNK_SIZE', 1000), 
@@ -1869,55 +1910,67 @@ def _load_and_split_context_documents(context_docs_folder_path):
             except Exception as e:
                 print(f"Error dividiendo docs: {e}")
                 traceback.print_exc()
-    return chunks
+                warnings.append(f"Error procesando el texto de los documentos: {e}")
+    return chunks, warnings
 
 def reload_institutional_context_vector_store(app_config):
     global vector_store, embedding_model_instance
     if not embedding_model_instance:
         print("Error CRÍTICO: Modelo embeddings no disponible.")
         vector_store = None
-        return False
+        return False, "Modelo de embeddings no disponible."
     if not _FAISS_AVAILABLE:
         print("FAISS no disponible; no se puede crear índice institucional")
         vector_store = None
-        return False
+        return False, "Librería FAISS no disponible."
 
     folder = app_config.get('CONTEXT_DOCS_FOLDER')
     path = app_config.get('FAISS_INDEX_PATH')
     if not folder or not path:
         print("Error: Rutas de contexto o índice FAISS no configuradas.")
         vector_store = None
-        return False
+        return False, "Rutas de configuración inválidas."
 
-    chunks = _load_and_split_context_documents(folder)
+    chunks, warnings = _load_and_split_context_documents(folder)
     
+    warning_msg = " ".join(warnings) if warnings else None
+
     if chunks:
         # Si hay documentos, creamos un nuevo índice y lo guardamos
         try:
             vs_temp = FAISS.from_documents(chunks, embedding_model_instance)
             vs_temp.save_local(path)
-            vector_store = vs_temp
+            # Solo actualizamos la variable global si NO es una ruta de usuario específica
+            # para evitar condiciones de carrera en entornos multi-usuario (aunque Flask es threaded)
+            # Si es el índice global por defecto, sí actualizamos.
+            if "users" not in path: 
+                vector_store = vs_temp
             print(f"Índice FAISS institucional actualizado desde {len(chunks)} chunks: {path}")
-            return True
+            return True, warning_msg
         except Exception as e:
             print(f"Error creando/guardando índice FAISS institucional: {e}")
             traceback.print_exc()
-            vector_store = None
-            return False
+            if "users" not in path:
+                vector_store = None
+            return False, f"Error al crear índice: {str(e)}"
     else:
-        # Si NO hay documentos, eliminamos cualquier índice antiguo
-        print("No se encontraron documentos de contexto. Limpiando índice existente si lo hubiera.")
+        # Si NO hay documentos (o no tienen texto), eliminamos cualquier índice antiguo
+        print("No se encontraron documentos de contexto válidos. Limpiando índice existente si lo hubiera.")
         if os.path.exists(path):
             try:
                 shutil.rmtree(path) # Elimina la carpeta del índice
                 print(f"Índice FAISS institucional antiguo eliminado de: {path}")
             except Exception as e:
                 print(f"Error al intentar eliminar el índice FAISS antiguo: {e}")
-                traceback.print_exc()
-                return False # Indica que hubo un problema en la limpieza
+                return False, f"Error al limpiar índice antiguo: {e}"
         
-        vector_store = None # Aseguramos que el vector store en memoria esté vacío
-        return True
+        if "users" not in path:
+            vector_store = None
+        
+        # Si hubo advertencias (ej. PDF escaneado), devolvemos True pero con mensaje
+        if warning_msg:
+            return True, f"Índice vacío. {warning_msg}"
+        return True, "Índice vacío (sin documentos)."
 
 def reload_followup_vector_store(app_config): 
     global vector_store_followups, embedding_model_instance

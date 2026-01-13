@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Chat Avanzado con IA - Colegio Nueva Esperanza 
+    Chat Avanzado con IA - Colegio Piloto
 {% endblock %}
 
 {% block head_extra %}
@@ -58,7 +58,7 @@
     <div class="bg-slate-50 p-4 rounded-lg shadow-sm border border-slate-200 mb-6">
 
         <p class="text-sm text-slate-600">Institución:</p>
-        <p class="font-semibold text-indigo-700 break-words">Colegio Nueva Esperanza</p>
+        <p class="font-semibold text-indigo-700 break-words">Colegio Piloto</p>
         <p class="text-sm text-slate-600 mt-1">Archivo de datos:</p>
         <p class="font-semibold text-indigo-700 break-words text-xs">{{ session.get('uploaded_filename', 'No hay archivo cargado') }}</p>
         {% if not session.get('uploaded_filename') %}
@@ -84,7 +84,7 @@
 {# --- FIN: MODIFICACIÓN --- #}
     
     <h1 class="text-2xl md:text-3xl font-bold text-slate-800 mb-6">
-        Chat Avanzado sobre: <span class="text-indigo-600">Colegio Nueva Esperanza</span>
+        Chat Avanzado sobre: <span class="text-indigo-600">Colegio Piloto</span>
     </h1>
 
     {% if not session.get('uploaded_filename') %}
@@ -100,7 +100,7 @@
             {# Cambiado 'bg-slate-50' a 'bg-white' para contrastar con la nueva tarjeta contenedora #}
             <div id="advanced-chat-history" class="overflow-y-auto mb-4 p-4 border border-slate-300 rounded-lg bg-white custom-scrollbar space-y-4 h-[45vh] flex-grow">
 
-                <p class="text-sm text-slate-500 italic initial-chat-message">Inicia la conversación con una pregunta sobre los datos del Colegio Nueva Esperanza.</p>
+                <p class="text-sm text-slate-500 italic initial-chat-message">Inicia la conversación con una pregunta sobre los datos del Colegio Piloto.</p>
             </div>
             
             <form id="advanced-chat-form" class="flex items-start gap-3">
