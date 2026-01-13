@@ -6,6 +6,49 @@
 
 {% block head_extra %}
 <style>
+    /* Estilos base */
+    .dashboard-tool-btn {
+        background: #ffffff;
+        color: #475569; /* slate-600 */
+        border: 1px solid #cbd5e1; /* slate-300 */
+        font-weight: 600;
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        white-space: nowrap;
+        font-size: 0.9rem;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .dashboard-tool-btn:hover:not(.disabled) {
+        background-color: #f8fafc;
+        border-color: #94a3b8;
+        color: #0f172a;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .dashboard-tool-btn.primary-tool {
+        background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); /* Purple */
+        color: white;
+        border: none;
+        box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.3);
+    }
+    .dashboard-tool-btn.primary-tool:hover {
+        background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+        box-shadow: 0 6px 10px -1px rgba(139, 92, 246, 0.4);
+    }
+    .dashboard-tool-btn.disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        background: #f1f5f9;
+        color: #94a3b8;
+        border-color: #e2e8f0;
+        pointer-events: none;
+    }
+
     /* Estilos para personalizar la salida del reporte generado por IA */
     .ia-report-content h3 {
         font-size: 1.125rem; /* text-lg */
@@ -85,7 +128,7 @@
     <h3 class="text-md font-semibold text-slate-700 mb-3">Acciones</h3>
     <ul class="space-y-2 text-sm">
         <li>
-            <a href="{{ url_for('main.detalle_entidad', tipo=tipo_entidad, valor_codificado=nombre_entidad) }}" class="text-slate-600 hover:text-indigo-600 hover:font-semibold flex items-center">
+            <a href="{{ url_for('main.detalle_entidad', tipo_entidad=tipo_entidad, valor_codificado=nombre_entidad) }}" class="text-slate-600 hover:text-indigo-600 hover:font-semibold flex items-center">
                 <i class="fas fa-arrow-left mr-2 w-4 text-center"></i> Volver al Detalle de {{ tipo_entidad|capitalize }}
             </a>
         </li>
@@ -115,20 +158,35 @@
 <div class="flex flex-col h-full">
     
     {# --- INICIO: MODIFICACIÓN EN ESTE BLOQUE --- #}
-    <div class="flex justify-between items-start mb-6">
+    <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
         <div>
             <h1 class="text-2xl md:text-3xl font-bold text-slate-800">
                 Reporte 360: <span class="text-indigo-600">{{ nombre_entidad }}</span>
             </h1>
             {% if timestamp_generacion %}
-            {# MODIFICADO: Se quitó .split(' ')[0] para mostrar la hora #}
-            <p class="text-lg font-normal text-slate-500">
+            <p class="text-lg font-normal text-slate-500 mt-1">
                 ({{ tipo_entidad|capitalize }}) - Emitido el: {{ timestamp_generacion }}
             </p>
             {% else %}
-            <p class="text-lg font-normal text-slate-500">
+            <p class="text-lg font-normal text-slate-500 mt-1">
                 ({{ tipo_entidad|capitalize }})
             </p>
+            {% endif %}
+        </div>
+
+        <div class="flex items-center gap-2 flex-wrap">
+            {% if reporte_html and not reporte_html.startswith("Error:") %}
+                <a href="{{ url_for('main.generar_plan_intervencion', tipo_entidad=tipo_entidad, valor_codificado=nombre_entidad) }}" 
+                   class="dashboard-tool-btn primary-tool group" title="Generar Plan de Intervención">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span class="hidden xl:inline">Generar Plan</span>
+                </a>
+                
+                <a href="{{ url_for('main.detalle_entidad', tipo_entidad=tipo_entidad, valor_codificado=nombre_entidad) }}" 
+                   class="dashboard-tool-btn group" title="Volver al Dashboard">
+                    <i class="fas fa-arrow-left text-slate-600 group-hover:text-indigo-600"></i>
+                    <span class="hidden xl:inline">Volver</span>
+                </a>
             {% endif %}
         </div>
     </div>

@@ -6,6 +6,41 @@
 
 {% block head_extra %}
 <style>
+    /* Estilos base reutilizados para consistencia */
+    .dashboard-tool-btn {
+        background: #ffffff;
+        color: #475569; /* slate-600 */
+        border: 1px solid #cbd5e1; /* slate-300 */
+        font-weight: 600;
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        white-space: nowrap;
+        font-size: 0.9rem;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .dashboard-tool-btn:hover:not(.disabled) {
+        background-color: #f8fafc;
+        border-color: #94a3b8;
+        color: #0f172a;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .dashboard-tool-btn.primary-tool {
+        background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); /* Purple */
+        color: white;
+        border: none;
+        box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.3);
+    }
+    .dashboard-tool-btn.primary-tool:hover {
+        background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+        box-shadow: 0 6px 10px -1px rgba(139, 92, 246, 0.4);
+    }
+
     /* Estilos para personalizar la salida del plan generado por IA */
     .ia-plan-content h3 { /* Para "Objetivos Claros" y "Acciones y Estrategias" */
         font-size: 1.25rem; /* text-xl */
@@ -154,7 +189,7 @@
     <h3 class="text-md font-semibold text-slate-700 mb-3">Acciones</h3>
     <ul class="space-y-2 text-sm">
         <li>
-            <a href="{{ url_for('main.detalle_entidad', tipo=tipo_entidad, valor_codificado=nombre_entidad) }}" class="text-slate-600 hover:text-indigo-600 hover:font-semibold flex items-center">
+            <a href="{{ url_for('main.detalle_entidad', tipo_entidad=tipo_entidad, valor_codificado=nombre_entidad) }}" class="text-slate-600 hover:text-indigo-600 hover:font-semibold flex items-center">
                 <i class="fas fa-arrow-left mr-2 w-4 text-center"></i> Volver al Detalle de {{ tipo_entidad|capitalize }}
             </a>
         </li>
@@ -164,7 +199,7 @@
             </a>
         </li>
         <li>
-            <a href="{{ url_for('main.generar_recursos_apoyo', tipo_entidad=tipo_entidad, valor_codificado=nombre_entidad, plan_ref=request.view_args.get('plan_ref')) }}"
+            <a href="{{ url_for('main.generar_recursos_apoyo', tipo_entidad=tipo_entidad, valor_codificado=nombre_entidad, plan_ref=plan_ref) }}"
             class="mt-3 block w-full text-left bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 px-4 rounded-lg transition duration-300 ease-in-out shadow-md hover:shadow-lg transform hover:scale-105">
                 <i class="fas fa-search-plus mr-2"></i> Generar Recursos de Apoyo
             </a>
@@ -174,13 +209,30 @@
 
 {% block panel_center_content %}
 <div class="flex flex-col h-full">
-    <div class="flex justify-between items-start mb-6">
+    <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
         <div>
             <h1 class="text-2xl md:text-3xl font-bold text-slate-800">
                 Plan de Intervención: <span class="text-indigo-600">{{ nombre_entidad }}</span>
             </h1>
-            {# MODIFICADO: Se quitó .split(' ')[0] para mostrar la hora #}
-            <p class="text-lg font-normal text-slate-500">({{ tipo_entidad|capitalize }}) - Emitido el: {{ fecha_emision_plan }}</p>
+            <p class="text-lg font-normal text-slate-500 mt-1">
+                ({{ tipo_entidad|capitalize }})
+            </p>
+        </div>
+
+        <div class="flex items-center gap-2 flex-wrap">
+            {% if plan_html and not plan_html.startswith("Error:") %}
+                <a href="{{ url_for('main.generar_recursos_apoyo', tipo_entidad=tipo_entidad, valor_codificado=nombre_entidad, plan_ref=plan_ref) }}" 
+                   class="dashboard-tool-btn primary-tool group" title="Generar Recursos de Apoyo">
+                    <i class="fas fa-lightbulb"></i>
+                    <span class="hidden xl:inline">Generar Recursos</span>
+                </a>
+                
+            {% endif %}
+                <a href="{{ url_for('main.detalle_entidad', tipo_entidad=tipo_entidad, valor_codificado=nombre_entidad) }}" 
+                   class="dashboard-tool-btn group" title="Volver al Dashboard">
+                    <i class="fas fa-arrow-left text-slate-600 group-hover:text-indigo-600"></i>
+                    <span class="hidden xl:inline">Volver</span>
+                </a>
         </div>
     </div>
 
@@ -191,8 +243,16 @@
                 <p>{{ plan_html|safe }}</p> 
             </div>
         {% else %}
-            <div class="bg-white p-6 rounded-lg shadow-xl border border-slate-200 ia-plan-content max-w-none">
+            <div class="bg-white p-6 rounded-lg shadow-xl border border-slate-200 ia-plan-content max-w-none mb-8">
                 {{ plan_html|safe }} 
+            </div>
+
+            <!-- Call to Action al final del plan -->
+            <div class="flex justify-center mt-8 mb-4">
+                <a href="{{ url_for('main.generar_recursos_apoyo', tipo_entidad=tipo_entidad, valor_codificado=nombre_entidad, plan_ref=plan_ref) }}"
+                   class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-lightbulb mr-3"></i> Continuar: Generar Recursos de Apoyo
+                </a>
             </div>
             <style>
               .action-control { margin-top: 0.75rem; padding: 0.5rem 0.75rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:0.5rem; display:flex; align-items:center; justify-content:space-between; }

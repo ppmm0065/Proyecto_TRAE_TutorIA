@@ -65,7 +65,14 @@ def create_app(config_name='dev', skip_rag=False):
 
     app.config['UPLOAD_FOLDER'] = os.path.join(project_root_for_paths, app.config.get('UPLOAD_FOLDER', 'uploads_fallback'))
     app.config['CONTEXT_DOCS_FOLDER'] = os.path.join(project_root_for_paths, app.config.get('CONTEXT_DOCS_FOLDER', 'context_docs_fallback'))
-    app.config['DATABASE_FILE'] = os.path.join(project_root_for_paths, app.config.get('DATABASE_FILE', 'seguimiento_fallback.db'))
+    
+    # Manejar caso especial para base de datos en memoria (tests)
+    db_file_config = app.config.get('DATABASE_FILE', 'seguimiento_fallback.db')
+    if db_file_config == ':memory:':
+        app.config['DATABASE_FILE'] = ':memory:'
+    else:
+        app.config['DATABASE_FILE'] = os.path.join(project_root_for_paths, db_file_config)
+        
     app.config['FAISS_INDEX_PATH'] = os.path.join(project_root_for_paths, app.config.get('FAISS_INDEX_PATH', 'faiss_index_multi_fallback'))
     app.config['FAISS_FOLLOWUP_INDEX_PATH'] = os.path.join(project_root_for_paths, app.config.get('FAISS_FOLLOWUP_INDEX_PATH', 'faiss_index_followups_fallback'))
     app.config['MODEL_ARTIFACTS_DIR'] = os.path.join(app.instance_path, app.config.get('MODEL_ARTIFACTS_SUBDIR', 'model_artifacts'))

@@ -1891,7 +1891,7 @@ def generar_reporte_360(tipo_entidad, valor_codificado):
     if reporte_360_id:
         observaciones_del_reporte = get_observations_for_reporte_360(db_path, reporte_360_id)
 
-# --- INICIO: MODIFICACIÓN ---
+    # --- INICIO: MODIFICACIÓN ---
     # Generar el timestamp actual en UTC y convertirlo a Santiago
     utc_now = datetime.datetime.now(pytz.utc)
     santiago_now = utc_now.astimezone(_get_tz())

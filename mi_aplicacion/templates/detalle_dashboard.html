@@ -47,6 +47,48 @@
         transform: scale(1.1);
     }
 
+    /* Estilos para botones de herramientas del dashboard */
+    .dashboard-tool-btn {
+        background: #ffffff;
+        color: #475569; /* slate-600 */
+        border: 1px solid #cbd5e1; /* slate-300 */
+        font-weight: 600;
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        white-space: nowrap;
+        font-size: 0.9rem;
+        text-decoration: none;
+    }
+    .dashboard-tool-btn:hover:not(.disabled) {
+        background-color: #f8fafc;
+        border-color: #94a3b8;
+        color: #0f172a;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .dashboard-tool-btn.primary-tool {
+        background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); /* Purple */
+        color: white;
+        border: none;
+        box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.3);
+    }
+    .dashboard-tool-btn.primary-tool:hover {
+        background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+        box-shadow: 0 6px 10px -1px rgba(139, 92, 246, 0.4);
+    }
+    .dashboard-tool-btn.disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        background: #f1f5f9;
+        color: #94a3b8;
+        border-color: #e2e8f0;
+        pointer-events: none;
+    }
+
     /* Mejoras en el header del dashboard */
     .dashboard-header {
         display: grid;
@@ -138,8 +180,8 @@
             <h1 class="text-2xl md:text-3xl font-bold text-slate-800">
                 Análisis Detallado: <span class="text-indigo-600">{{ nombre_entidad | fix_course_characters }}</span>
             </h1>
-            <div class="flex items-center gap-4 mt-2">
-                <p class="text-lg text-slate-600">({{ tipo_entidad|capitalize }})</p>
+            <div class="flex items-center gap-2 mt-2 flex-wrap">
+                <p class="text-lg text-slate-600 mr-2">({{ tipo_entidad|capitalize }})</p>
                 <a href="#chat-detalle-section" class="ai-consultation-button group inline-flex items-center">
                     <div class="icon-container flex items-center justify-center">
                         <svg class="w-5 h-5 icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
@@ -155,6 +197,19 @@
                         </svg>
                     </div>
                     <span>Chat Avanzado</span>
+                </a>
+
+                <!-- Herramientas: Acceso Directo -->
+                <a href="{{ url_for('main.generar_reporte_360', tipo_entidad=tipo_entidad, valor_codificado=nombre_entidad) }}" 
+                   class="dashboard-tool-btn primary-tool group" title="Generar Reporte 360">
+                    <i class="fas fa-file-invoice"></i>
+                    <span class="hidden xl:inline">Reporte 360</span>
+                </a>
+
+                <a href="{{ url_for('main.registrar_observacion', tipo_entidad=tipo_entidad, nombre_entidad=nombre_entidad) }}" 
+                   class="dashboard-tool-btn group" title="Registrar Observación">
+                    <i class="fas fa-comment-dots text-indigo-600 group-hover:text-indigo-700"></i>
+                    <span class="hidden xl:inline">Observación</span>
                 </a>
             </div>
         </div>

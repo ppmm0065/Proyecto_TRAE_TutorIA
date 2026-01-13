@@ -421,9 +421,19 @@ class ProductionConfig(Config):
     """Configuración para producción."""
     DEBUG = False
 
+class TestingConfig(Config):
+    """Configuración para pruebas."""
+    TESTING = True
+    DEBUG = True
+    # Usar base de datos en memoria o archivo temporal
+    DATABASE_FILE = ':memory:'
+    # Desactivar RAG para pruebas básicas si no se necesita
+    WTF_CSRF_ENABLED = False # Desactivar CSRF en forms para facilitar tests
+
 config_by_name = dict(
     dev=DevelopmentConfig,
-    prod=ProductionConfig
+    prod=ProductionConfig,
+    test=TestingConfig
 )
 
 key = Config.SECRET_KEY
